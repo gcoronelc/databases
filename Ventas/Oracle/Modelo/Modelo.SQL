@@ -8,6 +8,7 @@ REM Responsable    :  Ing. Eric Gustavo Coronel Castillo
 REM Telefono       :  (511) 9966-64457
 REM Email          :  gcoronelc@gmail.com
 REM Blog           :  http://gcoronelc.blogspot.com
+REM Creado el      :  20-FEB-2015
 
 REM 20-FEB-2015 Se agrega la tabla USUARIO.
 REM 20-FEB-2015 Se modifica la PK de la tabla PAGO y se agrega un UNIQUE (IdVenta,IdTipo)

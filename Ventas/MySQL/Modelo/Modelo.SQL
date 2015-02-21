@@ -8,6 +8,7 @@ Responsable    :  Ing. Eric Gustavo Coronel Castillo
 Telefono       :  (511) 9966-64457
 Email          :  gcoronelc@gmail.com
 Blog           :  http://gcoronelc.blogspot.com
+Creado el      :  20-FEB-2015
 
 20-FEB-2015 Se agrega la tabla USUARIO.
 20-FEB-2015 Se modifica la PK de la tabla PAGO y se agrega un UNIQUE (IdVenta,IdTipo)
