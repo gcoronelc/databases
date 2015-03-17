@@ -112,53 +112,54 @@ insert into cliente values( '00020', 'ZEGARRA', 'GARCIA', 'FERNANDO MOISES', '10
 
 -- Tabla: Cuenta
 
-insert into cuenta values('00200001','01','002','0001','00008',7000,to_date('20080105','YYYYMMDD'),'ACTIVO',16,'123456');
-insert into cuenta values('00200002','01','002','0001','00001',6800,to_date('20080109','YYYYMMDD'),'ACTIVO',4,'123456');
-insert into cuenta values('00200003','02','002','0001','00007',6000,to_date('20080111','YYYYMMDD'),'ACTIVO',7,'123456');
-insert into cuenta values('00100001','01','001','0004','00005',6900,to_date('20080106','YYYYMMDD'),'ACTIVO',8,'123456');
-insert into cuenta values('00100002','02','001','0004','00005',4500,to_date('20080108','YYYYMMDD'),'ACTIVO',5,'123456');
+insert into cuenta values('00100001','01','001','0004','00005',6900,to_date('20080106 16:27:48','YYYYMMDD HH24:MI:SS'),'ACTIVO',8,'123456');
+insert into cuenta values('00100002','02','001','0004','00005',4500,to_date('20080108 14:21:12','YYYYMMDD HH24:MI:SS'),'ACTIVO',5,'123456');
+insert into cuenta values('00200001','01','002','0001','00008',7000,to_date('20080105 13:15:30','YYYYMMDD HH24:MI:SS'),'ACTIVO',16,'123456');
+insert into cuenta values('00200002','01','002','0001','00001',6800,to_date('20080109 10:30:25','YYYYMMDD HH24:MI:SS'),'ACTIVO',4,'123456');
+insert into cuenta values('00200003','02','002','0001','00007',6000,to_date('20080111 15:45:12','YYYYMMDD HH24:MI:SS'),'ACTIVO',7,'123456');
+
 
 -- Tabla: Movimiento
 
-insert into movimiento values('00100002',01,to_date('20080108','YYYYMMDD'),'0004','001',1800,null);
-insert into movimiento values('00100002',02,to_date('20080125','YYYYMMDD'),'0004','004',1000,null);
-insert into movimiento values('00100002',03,to_date('20080213','YYYYMMDD'),'0004','003',2200,null);
-insert into movimiento values('00100002',04,to_date('20080308','YYYYMMDD'),'0004','003',1500,null);
+insert into movimiento values('00100001',01,to_date('20080106 16:27:48','YYYYMMDD HH24:MI:SS'),'0004','001',2800,null);
+insert into movimiento values('00100001',02,to_date('20080115 13:47:31','YYYYMMDD HH24:MI:SS'),'0004','003',3200,null);
+insert into movimiento values('00100001',03,to_date('20080120 17:11:15','YYYYMMDD HH24:MI:SS'),'0004','004',0800,null);
+insert into movimiento values('00100001',04,to_date('20080214 12:12:12','YYYYMMDD HH24:MI:SS'),'0004','003',2000,null);
+insert into movimiento values('00100001',05,to_date('20080225 15:45:23','YYYYMMDD HH24:MI:SS'),'0004','004',0500,null);
+insert into movimiento values('00100001',06,to_date('20080303 11:17:19','YYYYMMDD HH24:MI:SS'),'0004','004',0800,null);
+insert into movimiento values('00100001',07,to_date('20080315 13:26:39','YYYYMMDD HH24:MI:SS'),'0004','003',1000,null);
 
-insert into movimiento values('00100001',01,to_date('20080106','YYYYMMDD'),'0004','001',2800,null);
-insert into movimiento values('00100001',02,to_date('20080115','YYYYMMDD'),'0004','003',3200,null);
-insert into movimiento values('00100001',03,to_date('20080120','YYYYMMDD'),'0004','004',0800,null);
-insert into movimiento values('00100001',04,to_date('20080214','YYYYMMDD'),'0004','003',2000,null);
-insert into movimiento values('00100001',05,to_date('20080225','YYYYMMDD'),'0004','004',0500,null);
-insert into movimiento values('00100001',06,to_date('20080303','YYYYMMDD'),'0004','004',0800,null);
-insert into movimiento values('00100001',07,to_date('20080315','YYYYMMDD'),'0004','003',1000,null);
+insert into movimiento values('00100002',01,to_date('20080108 14:21:12','YYYYMMDD HH24:MI:SS'),'0004','001',1800,null);
+insert into movimiento values('00100002',02,to_date('20080125 15:15:15','YYYYMMDD HH24:MI:SS'),'0004','004',1000,null);
+insert into movimiento values('00100002',03,to_date('20080213 11:12:56','YYYYMMDD HH24:MI:SS'),'0004','003',2200,null);
+insert into movimiento values('00100002',04,to_date('20080308 10:21:12','YYYYMMDD HH24:MI:SS'),'0004','003',1500,null);
 
-insert into movimiento values('00200003',01,to_date('20080111','YYYYMMDD'),'0001','001',2500,null);
-insert into movimiento values('00200003',02,to_date('20080117','YYYYMMDD'),'0001','003',1500,null);
-insert into movimiento values('00200003',03,to_date('20080120','YYYYMMDD'),'0001','004',0500,null);
-insert into movimiento values('00200003',04,to_date('20080209','YYYYMMDD'),'0001','004',0500,null);
-insert into movimiento values('00200003',05,to_date('20080225','YYYYMMDD'),'0001','003',3500,null);
-insert into movimiento values('00200003',06,to_date('20080311','YYYYMMDD'),'0001','004',0500,null);
+insert into movimiento values('00200001',01,to_date('20080105 13:15:30','YYYYMMDD HH24:MI:SS'),'0001','001',5000,null);
+insert into movimiento values('00200001',02,to_date('20080107 12:14:18','YYYYMMDD HH24:MI:SS'),'0001','003',4000,null);
+insert into movimiento values('00200001',03,to_date('20080109 09:34:12','YYYYMMDD HH24:MI:SS'),'0001','004',2000,null);
+insert into movimiento values('00200001',04,to_date('20080111 11:11:11','YYYYMMDD HH24:MI:SS'),'0001','003',1000,null);
+insert into movimiento values('00200001',05,to_date('20080113 16:16:16','YYYYMMDD HH24:MI:SS'),'0001','003',2000,null);
+insert into movimiento values('00200001',06,to_date('20080115 14:15:16','YYYYMMDD HH24:MI:SS'),'0001','004',4000,null);
+insert into movimiento values('00200001',07,to_date('20080119 18:34:12','YYYYMMDD HH24:MI:SS'),'0001','003',2000,null);
+insert into movimiento values('00200001',08,to_date('20080121 16:34:18','YYYYMMDD HH24:MI:SS'),'0001','004',3000,null);
+insert into movimiento values('00200001',09,to_date('20080123 10:23:56','YYYYMMDD HH24:MI:SS'),'0001','003',7000,null);
+insert into movimiento values('00200001',10,to_date('20080127 09:12:56','YYYYMMDD HH24:MI:SS'),'0001','004',1000,null);
+insert into movimiento values('00200001',11,to_date('20080130 16:34:50','YYYYMMDD HH24:MI:SS'),'0001','004',3000,null);
+insert into movimiento values('00200001',12,to_date('20080204 16:12:21','YYYYMMDD HH24:MI:SS'),'0001','003',2000,null);
+insert into movimiento values('00200001',13,to_date('20080208 17:21:23','YYYYMMDD HH24:MI:SS'),'0001','004',4000,null);
+insert into movimiento values('00200001',14,to_date('20080213 14:17:45','YYYYMMDD HH24:MI:SS'),'0001','003',2000,null);
+insert into movimiento values('00200001',15,to_date('20080219 17:32:23','YYYYMMDD HH24:MI:SS'),'0001','004',1000,null);
 
-insert into movimiento values('00200002',01,to_date('20080109','YYYYMMDD'),'0001','001',3800,null);
-insert into movimiento values('00200002',02,to_date('20080120','YYYYMMDD'),'0001','003',4200,null);
-insert into movimiento values('00200002',03,to_date('20080306','YYYYMMDD'),'0001','004',1200,null);
+insert into movimiento values('00200002',01,to_date('20080109 10:30:25','YYYYMMDD HH24:MI:SS'),'0001','001',3800,null);
+insert into movimiento values('00200002',02,to_date('20080120 14:56:23','YYYYMMDD HH24:MI:SS'),'0001','003',4200,null);
+insert into movimiento values('00200002',03,to_date('20080306 13:58:58','YYYYMMDD HH24:MI:SS'),'0001','004',1200,null);
 
-insert into movimiento values('00200001',01,to_date('20080105','YYYYMMDD'),'0001','001',5000,null);
-insert into movimiento values('00200001',02,to_date('20080107','YYYYMMDD'),'0001','003',4000,null);
-insert into movimiento values('00200001',03,to_date('20080109','YYYYMMDD'),'0001','004',2000,null);
-insert into movimiento values('00200001',04,to_date('20080111','YYYYMMDD'),'0001','003',1000,null);
-insert into movimiento values('00200001',05,to_date('20080113','YYYYMMDD'),'0001','003',2000,null);
-insert into movimiento values('00200001',06,to_date('20080115','YYYYMMDD'),'0001','004',4000,null);
-insert into movimiento values('00200001',07,to_date('20080119','YYYYMMDD'),'0001','003',2000,null);
-insert into movimiento values('00200001',08,to_date('20080121','YYYYMMDD'),'0001','004',3000,null);
-insert into movimiento values('00200001',09,to_date('20080123','YYYYMMDD'),'0001','003',7000,null);
-insert into movimiento values('00200001',10,to_date('20080127','YYYYMMDD'),'0001','004',1000,null);
-insert into movimiento values('00200001',11,to_date('20080130','YYYYMMDD'),'0001','004',3000,null);
-insert into movimiento values('00200001',12,to_date('20080204','YYYYMMDD'),'0001','003',2000,null);
-insert into movimiento values('00200001',13,to_date('20080208','YYYYMMDD'),'0001','004',4000,null);
-insert into movimiento values('00200001',14,to_date('20080213','YYYYMMDD'),'0001','003',2000,null);
-insert into movimiento values('00200001',15,to_date('20080219','YYYYMMDD'),'0001','004',1000,null);
+insert into movimiento values('00200003',01,to_date('20080111 15:45:12','YYYYMMDD HH24:MI:SS'),'0001','001',2500,null);
+insert into movimiento values('00200003',02,to_date('20080117 14:17:12','YYYYMMDD HH24:MI:SS'),'0001','003',1500,null);
+insert into movimiento values('00200003',03,to_date('20080120 14:12:12','YYYYMMDD HH24:MI:SS'),'0001','004',0500,null);
+insert into movimiento values('00200003',04,to_date('20080209 15:45:34','YYYYMMDD HH24:MI:SS'),'0001','004',0500,null);
+insert into movimiento values('00200003',05,to_date('20080225 11:18:20','YYYYMMDD HH24:MI:SS'),'0001','003',3500,null);
+insert into movimiento values('00200003',06,to_date('20080311 10:56:23','YYYYMMDD HH24:MI:SS'),'0001','004',0500,null);
 
 --  Tabla: Contador
 
