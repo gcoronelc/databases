@@ -16,7 +16,8 @@ begin
     vch_cuenestado, chr_cuenclave
 		into v_saldo, v_moneda, v_cont, v_estado, v_clave
 		from cuenta
-		where chr_cuencodigo = p_cuenta;
+		where chr_cuencodigo = p_cuenta
+    for update;
 	if v_estado != 'ACTIVO' then
 		raise_application_error(-20001,'Cuenta no esta activa.');
 	end if;
