@@ -11,13 +11,14 @@ Blog           :  http://gcoronelc.blogspot.com
 Creado el      :  20-FEB-2015
 
 20-FEB-2015 Se agrega la tabla USUARIO.
-20-FEB-2015 Se modifica la PK de la tabla PAGO y se agrega un UNIQUE (IdVenta,IdTipo)
+20-FEB-2015 Se modifica la PK de la tabla PAGO y se agrega un UNIQUE (IdVenta,IdTipo).
+29-JUN-2015 Se agrego comentarios a las columnas.
 */
 
 
 
 -- =============================================
--- CreaciÃ³n de la Base de Datos
+-- Creación de la Base de Datos
 -- =============================================
 
 DROP DATABASE IF EXISTS VENTAS;
@@ -38,11 +39,11 @@ USE VENTAS;
 
 CREATE TABLE EMPLEADO
 (
-	idemp                INTEGER AUTO_INCREMENT,
-	nombre               VARCHAR(50) NOT NULL,
-	apellido             VARCHAR(50) NOT NULL,
-	email                VARCHAR(50) NOT NULL,
-	telefono             VARCHAR(20) NULL,
+	idemp                INTEGER AUTO_INCREMENT COMMENT 'Identificador del empleado.',
+	nombre               VARCHAR(50) NOT NULL COMMENT 'Nombre del empleado.',
+	apellido             VARCHAR(50) NOT NULL COMMENT 'Apellido del empleado.',
+	email                VARCHAR(50) NOT NULL COMMENT 'Email del empleado.',
+	telefono             VARCHAR(20) NULL COMMENT 'Teléfono del empleado.',
 	PRIMARY KEY (idemp)
 );
 
@@ -65,10 +66,10 @@ VALUES(1004,'LEONOR','CARRASCO','lcarrasco@gmail.com','986754373');
 
 CREATE TABLE USUARIO
 (
-	idemp                INTEGER NOT NULL,
-	usuario              VARCHAR(20) NOT NULL,
-	clave                VARCHAR(40) NOT NULL,
-	estado               NUMERIC(2,0) NOT NULL,
+	idemp                INTEGER NOT NULL COMMENT 'Identificador del empleado.',
+	usuario              VARCHAR(20) NOT NULL COMMENT 'Cuenta de usuario asociado al empleado.',
+	clave                VARCHAR(40) NOT NULL COMMENT 'Clave del usuario.',
+	estado               NUMERIC(2,0) NOT NULL COMMENT 'Estado del usuario: 1 - Activo 0 - Inactivo',
 	PRIMARY KEY (idemp),
   CONSTRAINT CHK_USUARIO_ESTADO CHECK ( estado IN (1, 0) ),
 	FOREIGN KEY fk_usuario_empleado (idemp) REFERENCES EMPLEADO (idemp)
@@ -91,8 +92,8 @@ VALUES(1004,'lcarrasco',SHA('felicidad'),0);
 
 CREATE TABLE CATEGORIA
 (
-	idcat                INTEGER NOT NULL,
-	nombre               VARCHAR(50) NOT NULL,
+	idcat                INTEGER NOT NULL     COMMENT 'Identificador de categoría.',
+	nombre               VARCHAR(50) NOT NULL COMMENT 'Nombre de categoría.',
 	PRIMARY KEY (idcat)
 );
 
@@ -112,14 +113,15 @@ INSERT INTO CATEGORIA(IDCAT,NOMBRE) VALUES(11,'COMPUTO');
 
 CREATE TABLE PRODUCTO
 (
-	idprod               INTEGER AUTO_INCREMENT,
-	idcat                INTEGER NOT NULL,
-	nombre               VARCHAR(100) NOT NULL,
-	precio               NUMERIC(10,2) NOT NULL,
-	stock                INTEGER NOT NULL,
+	idprod               INTEGER AUTO_INCREMENT COMMENT 'Identificador de producto.',
+	idcat                INTEGER NOT NULL COMMENT 'Identificador de categoría.',
+	nombre               VARCHAR(100) NOT NULL COMMENT 'Nombre de producto.',
+	precio               NUMERIC(10,2) NOT NULL COMMENT 'Precio del producto.',
+	stock                INTEGER NOT NULL COMMENT 'Stock del producto.',
 	PRIMARY KEY (idprod),
 	FOREIGN KEY FK_PRODUCTO_CATEGORIA (idcat) REFERENCES CATEGORIA (idcat)
 );
+
 
 INSERT INTO PRODUCTO(IDPROD,IDCAT,NOMBRE,PRECIO,STOCK)
 VALUES(1,1,'COCINA',900.0,456);
@@ -149,24 +151,23 @@ VALUES(7,6,'PANTALON MODELO A1',1180.00,450);
 
 CREATE TABLE VENTA
 (
-	idventa              INTEGER AUTO_INCREMENT,
-	cliente              VARCHAR(100) NOT NULL,
-	fecha                DATE NOT NULL,
-	importe              NUMERIC(10,2) NOT NULL,
-	idemp                INTEGER NOT NULL,
+	idventa              INTEGER AUTO_INCREMENT COMMENT 'Identificador de venta.',
+	idemp                INTEGER NOT NULL COMMENT 'Identificador del empleado.',	
+	cliente              VARCHAR(100) NOT NULL COMMENT 'Nombre del cliente.',
+	fecha                DATE NOT NULL COMMENT 'Fecha de venta.',
+	importe              NUMERIC(10,2) NOT NULL COMMENT 'Importe de la venta.',
 	PRIMARY KEY (idventa),
 	FOREIGN KEY FK_VENTA_USUARIO (idemp) REFERENCES USUARIO (idemp)
 );
 
-
 CREATE TABLE DETALLE
 (
-	iddetalle            INTEGER AUTO_INCREMENT,
-	idventa              INTEGER NOT NULL,
-	idprod               INTEGER NOT NULL,
-	cant                 NUMERIC NOT NULL,
-	precio               NUMERIC(10,2) NOT NULL,
-	subtotal             NUMERIC(10,2) NULL,
+	iddetalle            INTEGER AUTO_INCREMENT COMMENT 'Identificador del detalle.',
+	idventa              INTEGER NOT NULL COMMENT 'Identificador de venta.',
+	idprod               INTEGER NOT NULL COMMENT 'Identificador de producto.',
+	cant                 NUMERIC NOT NULL COMMENT 'Cantidad vendida.',
+	precio               NUMERIC(10,2) NOT NULL COMMENT 'Precio de venta.',
+	subtotal             NUMERIC(10,2) NULL COMMENT 'Subtotal de la venta.',
 	PRIMARY KEY (iddetalle),
 	FOREIGN KEY FK_DETALLE_PRODUCTO (idprod) REFERENCES PRODUCTO (idprod),
 	FOREIGN KEY FK_DETALLE_VENTA (idventa) REFERENCES VENTA (idventa)
@@ -185,8 +186,8 @@ CREATE UNIQUE INDEX U_DETALLE ON DETALLE
 
 CREATE TABLE TIPO_PAGO
 (
-	idtipo               INTEGER NOT NULL,
-	nombre               VARCHAR(50) NOT NULL,
+	idtipo               INTEGER NOT NULL     COMMENT 'Identificador del tipo de pago.',
+	nombre               VARCHAR(50) NOT NULL COMMENT 'Nombre del tipo de pago.',
 	PRIMARY KEY (idtipo)
 );
 
@@ -201,12 +202,12 @@ INSERT INTO TIPO_PAGO(IDTIPO,NOMBRE) VALUES(6,'BONO EFECTIVO');
 
 CREATE TABLE PAGO
 (
-	idpago               INTEGER AUTO_INCREMENT,
-	idventa              INTEGER NOT NULL,
-	idtipo               INTEGER NOT NULL,
-	detalle              VARCHAR(100) NOT NULL,
-	importe              NUMERIC(10,2) NOT NULL,
-	obs                  VARCHAR(1000) NOT NULL,
+	idpago               INTEGER AUTO_INCREMENT COMMENT 'Identificador del pago.',
+	idventa              INTEGER NOT NULL COMMENT 'Identificador de venta.',
+	idtipo               INTEGER NOT NULL COMMENT 'Identificador del tipo de pago.',
+	detalle              VARCHAR(100) NOT NULL COMMENT 'Descripción del pago.',
+	importe              NUMERIC(10,2) NOT NULL COMMENT 'Importe del pago.',
+	obs                  VARCHAR(1000) NOT NULL COMMENT 'Campo para comentarios adicionales.',
 	PRIMARY KEY (idpago),
 	FOREIGN KEY FK_PAGO_VENTA (idventa) REFERENCES VENTA (idventa),
 	FOREIGN KEY FK_PAGO_TIPO_PAGO (idtipo) REFERENCES TIPO_PAGO (idtipo)
