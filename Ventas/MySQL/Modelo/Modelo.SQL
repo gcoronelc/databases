@@ -45,7 +45,7 @@ CREATE TABLE EMPLEADO
 	email                VARCHAR(50) NOT NULL COMMENT 'Email del empleado.',
 	telefono             VARCHAR(20) NULL COMMENT 'Teléfono del empleado.',
 	PRIMARY KEY (idemp)
-);
+) COMMENT='Tabla de empleados.';
 
 
 INSERT INTO EMPLEADO(IDEMP,NOMBRE,APELLIDO,EMAIL,TELEFONO) 
@@ -73,7 +73,7 @@ CREATE TABLE USUARIO
 	PRIMARY KEY (idemp),
   CONSTRAINT CHK_USUARIO_ESTADO CHECK ( estado IN (1, 0) ),
 	FOREIGN KEY fk_usuario_empleado (idemp) REFERENCES EMPLEADO (idemp)
-);
+) COMMENT='Tabla de usuarios.';
 
 INSERT INTO USUARIO(IDEMP, USUARIO, CLAVE, ESTADO)
 VALUES(1002,'atorres',SHA('suerte'),1);
@@ -95,7 +95,7 @@ CREATE TABLE CATEGORIA
 	idcat                INTEGER NOT NULL     COMMENT 'Identificador de categoría.',
 	nombre               VARCHAR(50) NOT NULL COMMENT 'Nombre de categoría.',
 	PRIMARY KEY (idcat)
-);
+) COMMENT='Tabla de categorías.';
 
 INSERT INTO CATEGORIA(IDCAT,NOMBRE) VALUES(1,'LINEA BLANCA');
 INSERT INTO CATEGORIA(IDCAT,NOMBRE) VALUES(2,'MENAJE');
@@ -120,7 +120,7 @@ CREATE TABLE PRODUCTO
 	stock                INTEGER NOT NULL COMMENT 'Stock del producto.',
 	PRIMARY KEY (idprod),
 	FOREIGN KEY FK_PRODUCTO_CATEGORIA (idcat) REFERENCES CATEGORIA (idcat)
-);
+) COMMENT='Tabla de productos.';
 
 
 INSERT INTO PRODUCTO(IDPROD,IDCAT,NOMBRE,PRECIO,STOCK)
@@ -158,7 +158,7 @@ CREATE TABLE VENTA
 	importe              NUMERIC(10,2) NOT NULL COMMENT 'Importe de la venta.',
 	PRIMARY KEY (idventa),
 	FOREIGN KEY FK_VENTA_USUARIO (idemp) REFERENCES USUARIO (idemp)
-);
+) COMMENT='Tabla de ventas.';
 
 CREATE TABLE DETALLE
 (
@@ -171,7 +171,7 @@ CREATE TABLE DETALLE
 	PRIMARY KEY (iddetalle),
 	FOREIGN KEY FK_DETALLE_PRODUCTO (idprod) REFERENCES PRODUCTO (idprod),
 	FOREIGN KEY FK_DETALLE_VENTA (idventa) REFERENCES VENTA (idventa)
-);
+) COMMENT='Tabla de detalle de ventas.';
 
 CREATE UNIQUE INDEX U_DETALLE ON DETALLE
 (
@@ -189,7 +189,7 @@ CREATE TABLE TIPO_PAGO
 	idtipo               INTEGER NOT NULL     COMMENT 'Identificador del tipo de pago.',
 	nombre               VARCHAR(50) NOT NULL COMMENT 'Nombre del tipo de pago.',
 	PRIMARY KEY (idtipo)
-);
+) COMMENT='Tabla de tipos de pago.';
 
 
 INSERT INTO TIPO_PAGO(IDTIPO,NOMBRE) VALUES(1,'EFECTIVO');
@@ -211,7 +211,7 @@ CREATE TABLE PAGO
 	PRIMARY KEY (idpago),
 	FOREIGN KEY FK_PAGO_VENTA (idventa) REFERENCES VENTA (idventa),
 	FOREIGN KEY FK_PAGO_TIPO_PAGO (idtipo) REFERENCES TIPO_PAGO (idtipo)
-);
+) COMMENT='Tabla de pagos.';
 
 CREATE UNIQUE INDEX U_PAGO_UNIQUE ON PAGO
 (
