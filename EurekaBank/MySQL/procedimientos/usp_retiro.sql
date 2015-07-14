@@ -1,4 +1,4 @@
-﻿
+﻿// Algo
 DELIMITER $$
 
 DROP PROCEDURE IF EXISTS usp_retiro$$
