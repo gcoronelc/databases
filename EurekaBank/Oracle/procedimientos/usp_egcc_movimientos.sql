@@ -14,7 +14,8 @@ as begin
     from tipomovimiento t
     join movimiento m 
     on t.chr_tipocodigo = m.chr_tipocodigo
-    where m.chr_cuencodigo = p_cuenta;
+    where m.chr_cuencodigo = p_cuenta
+    order by 2 desc;
 end;
 /
 
