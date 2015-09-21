@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 Empresa        :  EurekaBank
 Software       :  Sistema de Cuentas de Ahorro
 DBMS           :  MySQL Server
@@ -13,7 +13,7 @@ Blog           :  http://gcoronelc.blogspot.com
 
 
 -- =============================================
--- Creación de la Base de Datos
+-- CreaciÃ³n de la Base de Datos
 -- =============================================
 
 DROP DATABASE IF EXISTS eurekabank;
@@ -30,7 +30,7 @@ USE eurekabank;
 
 
 -- =============================================
--- Creación de los Objetos de la Base de Datos
+-- CreaciÃ³n de los Objetos de la Base de Datos
 -- =============================================
 
 CREATE TABLE TipoMovimiento (

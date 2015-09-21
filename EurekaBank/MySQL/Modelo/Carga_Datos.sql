@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 Empresa        :  EurekaBank
 Software       :  Sistema de Cuentas de Ahorro
 DBMS           :  MySQL Server
@@ -16,6 +16,7 @@ Blog           :  http://gcoronelc.blogspot.com
 -- =============================================
 
 use eurekabank;
+set names utf8;
 
 
 -- =============================================
@@ -71,7 +72,7 @@ insert into sucursal values( '007', 'Grau', 'Piura', 'Av. Grau 1528', 0 );
 INSERT INTO empleado VALUES( '9999', 'Internet', 'Internet', 'internet', 'Internet', 'internet', 'internet', 'internet' );
 INSERT INTO empleado VALUES( '0001', 'Romero', 'Castillo', 'Carlos Alberto', 'Trujillo', 'Call1 1 Nro. 456', 'cromero', 'chicho' );
 INSERT INTO empleado VALUES( '0002', 'Castro', 'Vargas', 'Lidia', 'Lima', 'Federico Villarreal 456 - SMP', 'lcastro', 'flaca' );
-INSERT INTO empleado VALUES( '0003', 'Reyes', 'Ortiz', 'Claudia', 'Lima', 'Av. Aviación 3456 - San Borja', 'creyes', 'linda' );
+INSERT INTO empleado VALUES( '0003', 'Reyes', 'Ortiz', 'Claudia', 'Lima', 'Av. AviaciÃ³n 3456 - San Borja', 'creyes', 'linda' );
 INSERT INTO empleado VALUES( '0004', 'Ramos', 'Garibay', 'Angelica', 'Chiclayo', 'Calle Barcelona 345', 'aramos', 'china' );
 INSERT INTO empleado VALUES( '0005', 'Ruiz', 'Zabaleta', 'Claudia', 'Cusco', 'Calle Cruz Verde 364', 'cvalencia', 'angel' );
 INSERT INTO empleado VALUES( '0006', 'Cruz', 'Tarazona', 'Ricardo', 'Areguipa', 'Calle La Gruta 304', 'rcruz', 'cerebro' );
@@ -98,7 +99,7 @@ insert into Asignado values( '000011', '006', '0010', '20080108', null );
 -- Tabla: Parametro
 
 insert into Parametro values( '001', 'ITF - Impuesto a la Transacciones Financieras', '0.08', 'ACTIVO' );
-insert into Parametro values( '002', 'Número de Operaciones Sin Costo', '15', 'ACTIVO' );
+insert into Parametro values( '002', 'NÃºmero de Operaciones Sin Costo', '15', 'ACTIVO' );
 
 -- Tabla: Cliente
 
