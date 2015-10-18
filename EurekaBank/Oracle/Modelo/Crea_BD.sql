@@ -28,9 +28,15 @@ BEGIN
 END;
 /
 
+-- Valido para la versión 12
+ALTER SESSION SET "_ORACLE_SCRIPT"=TRUE;
+
 CREATE USER eureka IDENTIFIED BY admin;
 
 GRANT CONNECT, RESOURCE TO eureka;
+
+ALTER USER EUREKA
+QUOTA UNLIMITED ON USERS;
 
 
 -- =============================================
