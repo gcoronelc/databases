@@ -19,3 +19,8 @@ VENTAS
 Base de datos de Ventas.
 
 Maneja diferentes formas de tipo de pago.
+
+
+------------------------------------------------------------
+
+Puede consultar articulos sobre EUREKABANK en http://gcoronelc.blogspot.pe
