@@ -36,6 +36,8 @@ GRANT CONNECT, RESOURCE TO eureka;
 ALTER USER EUREKA
 QUOTA UNLIMITED ON USERS;
 
+GRANT CREATE VIEW TO eureka;
+
 
 -- =============================================
 -- CONECTARSE A LA APLICACIÓN
