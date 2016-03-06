@@ -205,4 +205,10 @@ update contador
 set int_contitem = (select count(*) from Parametro)
 where vch_conttabla = 'Parametro';
 
+update sucursal
+set int_sucucontcuenta =
+(select count(*) from cuenta
+where cuenta.chr_sucucodigo=sucursal.chr_sucucodigo);
+
+
 commit;
