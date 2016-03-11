@@ -182,7 +182,7 @@ set int_contitem = (select count(*) from cliente)
 where vch_conttabla = 'Cliente';
 
 update contador
-set int_contitem = (select count(*) from empleado)
+set int_contitem = (select count(*) from empleado where chr_emplcodigo <> '9999')
 where vch_conttabla = 'Empleado';
 
 update contador
