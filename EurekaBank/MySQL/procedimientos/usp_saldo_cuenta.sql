@@ -3,16 +3,12 @@ DELIMITER $$
 DROP PROCEDURE IF EXISTS usp_saldo_cuenta$$
 
 CREATE PROCEDURE usp_saldo_cuenta
-(IN p_cuencodigo char(8), OUT p_cuensaldo decimal(12,2))
+(IN p_cuenta char(8), OUT p_saldo decimal(12,2)) 
 BEGIN
 	
-	DECLARE cuensaldo decimal(12,2);
-	
-	select dec_cuensaldo into cuensaldo
+	select dec_cuensaldo into p_saldo
 	from cuenta
-	where chr_cuencodigo = p_cuencodigo;
-	
-	set p_cuensaldo = cast(cuensaldo as char);
+	where chr_cuencodigo = p_cuenta;
 	
 END$$
 
@@ -20,7 +16,10 @@ DELIMITER ;
 
 /*
 
-CALL usp_saldo_cuenta('00100002',@saldo);
+CALL usp_saldo_cuenta('00200002',@saldo);
+select @saldo;
+
+CALL usp_saldo_cuenta('00200008',@saldo);
 select @saldo;
 
 */
