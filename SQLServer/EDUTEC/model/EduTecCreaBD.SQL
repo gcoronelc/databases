@@ -582,8 +582,8 @@ BEGIN
 				Set @Ok = 1
 		END
 		-- Notas
-		Set @Parcial = Rand() * 20 + 1
-		Set @Final   = Rand() * 20 + 1
+		Set @Parcial = Rand() * 19 + 1
+		Set @Final   = Rand() * 19 + 1
 		Set @Prom    = ( @Parcial + @Final ) / 2
 		-- Fecha de matricula
 		set @FecMat = @Fecha - RAND() * 30
