@@ -38,19 +38,29 @@ where cuencodigo='00100002';
 
 
 select 
-CUENCODIGO,
-MONENOMBRE,
-CUENSALDO,
-CUENESTADO,
-MOVINUMERO,
-MOVIFECHA,
-MOVIIMPORTE,
-TIPOCODIGO,
-TIPONOMBRE
+cuencodigo,
+monenombre,
+cuensaldo,
+cuenestado,
+movinumero,
+movifecha,
+moviimporte,
+tipocodigo,
+tiponombre
 from v_movimiento
 
-
-
+create or replace view v_resumen
+as
+select 
+cuencodigo, cuensaldo,
+sum(case when tipoaccion='INGRESO'
+	then moviimporte else 0 end) ingresos,
+sum(case when tipoaccion='SALIDA'
+	then moviimporte else 0 end) salida,
+sum(moviimporte * case when tipoaccion='SALIDA'
+	then -1 else 1 end) saldo
+from v_movimiento
+group by cuencodigo, cuensaldo;
 
 
 
