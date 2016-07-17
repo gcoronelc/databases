@@ -13,7 +13,7 @@ end;
 declare
 	v_saldo number;
 begin
-	usp_egcc_saldo_cuenta('00100034',v_saldo);
+	usp_egcc_saldo_cuenta('00100001',v_saldo);
 	dbms_output.put_line('Saldo: ' || v_saldo);
 end;
 /
