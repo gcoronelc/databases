@@ -1,3 +1,11 @@
+----------------------------------------------------
+-- Autor: Eric Gustavo Coronel Castillo
+-- Blog:  gcoronelc.blogspot.com
+-- Email: gcoronelc@gmail.com
+----------------------------------------------------
+
+-- Procedimiento
+
 create or replace procedure usp_egcc_movimientos
 ( p_cuenta IN cuenta.chr_cuencodigo%TYPE, 
   p_cursor OUT NOCOPY SYS_REFCURSOR )
@@ -12,12 +20,16 @@ as begin
       t.vch_tipoaccion accion,
       m.dec_moviimporte importe
     from tipomovimiento t
-    join movimiento m 
-    on t.chr_tipocodigo = m.chr_tipocodigo
+    join movimiento m on t.chr_tipocodigo = m.chr_tipocodigo
     where m.chr_cuencodigo = p_cuenta
     order by 2 asc;
 end;
 /
+
+
+-- Prueba
+
+set serveroutput on
 
 declare
   v_cursor SYS_REFCURSOR;
