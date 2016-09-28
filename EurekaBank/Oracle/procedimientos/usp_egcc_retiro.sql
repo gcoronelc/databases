@@ -1,3 +1,11 @@
+----------------------------------------------------
+-- Autor: Eric Gustavo Coronel Castillo
+-- Blog:  gcoronelc.blogspot.com
+-- Email: gcoronelc@gmail.com
+----------------------------------------------------
+
+-- Procedimiento
+
 create or replace procedure usp_egcc_retiro
 (p_cuenta varchar2, p_importe number, 
 p_empleado varchar2, p_clave varchar2)
