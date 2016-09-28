@@ -1,14 +1,16 @@
-﻿-- Empresa        :  FastFood Restaurant
--- Producto       :  Servicio de Comida Rápida
--- Software       :  Sistema de Atención al Público (SAP)
--- DBMS           :  MySQL
--- Base de Datos  :  FastFood
--- Script         :  Crea la base de datos y sus respectivos objetos
--- Programado por :  Ing. Eric G. Coronel Castillo
--- Teléfono       :  (511) 996-664-457
--- Email          :  gcoronelc@gmail.com
--- Blog           :  http://gcoronelc.blogspot.com
+-- Empresa           :  FastFood Restaurant
+-- Producto          :  Servicio de Comida Rápida
+-- Software          :  Sistema de Atención al Público (SAP)
+-- DBMS              :  MySQL
+-- Base de Datos     :  FastFood
+-- Script            :  Crea la base de datos y sus respectivos objetos
+-- Programado por    :  Ing. Eric G. Coronel Castillo
+-- Teléfono          :  (511) 996-664-457
+-- Email             :  gcoronelc@gmail.com
+-- Blog              :     http://gcoronelc.blogspot.com
+-- Fecha de creación : Abril-2001
 
+-- 28/09/2016 gcoronelc Agrega la columna stock a la tabla ARTICULO.
 
 -- =============================================
 -- Creacióe la Base de Datos
@@ -72,6 +74,7 @@ CREATE TABLE Articulo (
        IdCategoria          tinyint unsigned NOT NULL,
        NomArticulo          varchar(50) NOT NULL,
        PreArticulo          numeric(10,2) NOT NULL,
+       stock                int NOT NULL,
        CONSTRAINT pkArticulo PRIMARY KEY(IdArticulo),
        CONSTRAINT fkArticuloCategoria
             FOREIGN KEY(IdCategoria)

@@ -1,4 +1,4 @@
-﻿-- Empresa        :  FastFood Restaurant
+-- Empresa        :  FastFood Restaurant
 -- Producto       :  Servicio de Comida Rápida
 -- Software       :  Sistema de Atención al Público (SAP)
 -- DBMS           :  MySQL
@@ -8,7 +8,10 @@
 -- Teléfono       :  (511) 996-664-457
 -- Email          :  gcoronelc@gmail.com
 -- Blog           :  http://gcoronelc.blogspot.com
+-- Creación       : !bril-2001
 
+
+-- 28/09/2016 gcoronelc Agrega stock en la tabla ARTICULO.
 
 -- =============================================
 -- Cargar Datos a la Base de Datos
@@ -73,15 +76,15 @@ Insert Into Categoria( IdCategoria, NomCategoria, Prefijo, ConCategoria ) Values
 
 -- Tabla ARTICULO
 
-Insert Into Articulo Values( 'BEB00001', 1, 'Gaseosa (Mediana)', 2.0 );
-Insert Into Articulo Values( 'BEB00002', 1, 'Gaseosa ( 1 Litro)', 3.5 );
-Insert Into Articulo Values( 'BEB00003', 1, 'Gaseosa (1.5 Litro)', 4.5 );
-Insert Into Articulo Values( 'BEB00004', 1, 'Cerveza Cristal (Chica)', 5.0 );
-Insert Into Articulo Values( 'COM00001', 5, 'Combo Económico', 7.99 );
-Insert Into Articulo Values( 'COM00002', 5, 'Combo Personal', 10.99 );
-Insert Into Articulo Values( 'COM00003', 5, 'Combo Especial', 13.99 );
-Insert Into Articulo Values( 'COM00004', 5, 'Combo Familiar', 28.99 );
-Insert Into Articulo Values( 'COM00005', 5, 'Combo para dos', 16.99 );
+Insert Into Articulo Values( 'BEB00001', 1, 'Gaseosa (Mediana)', 2.5, 300 );
+Insert Into Articulo Values( 'BEB00002', 1, 'Gaseosa ( 1 Litro)', 5.5, 280 );
+Insert Into Articulo Values( 'BEB00003', 1, 'Gaseosa (1.5 Litro)', 7.5, 570 );
+Insert Into Articulo Values( 'BEB00004', 1, 'Cerveza Cristal (Chica)', 10.0, 1000 );
+Insert Into Articulo Values( 'COM00001', 5, 'Combo Económico', 10.00, 400 );
+Insert Into Articulo Values( 'COM00002', 5, 'Combo Personal', 14.00, 460 );
+Insert Into Articulo Values( 'COM00003', 5, 'Combo Especial', 18.00, 200 );
+Insert Into Articulo Values( 'COM00004', 5, 'Combo Familiar', 40.00, 600 );
+Insert Into Articulo Values( 'COM00005', 5, 'Combo para dos', 25.00, 420 );
 
 
 -- Tabla PARAMETRO
