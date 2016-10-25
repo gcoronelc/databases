@@ -129,6 +129,7 @@ insert into cuenta values('00200002','01','002','0001','00001',6800,'20080109','
 insert into cuenta values('00200003','02','002','0001','00007',6000,'20080111','ACTIVO',6,'123456');
 insert into cuenta values('00100001','01','001','0004','00005',6900,'20080106','ACTIVO',7,'123456');
 insert into cuenta values('00100002','02','001','0004','00005',4500,'20080108','ACTIVO',4,'123456');
+insert into cuenta values('00300001','01','003','0002','00010',0000,'20080107','CANCELADO',3,'123456');
 
 -- Tabla: Movimiento
 
@@ -171,6 +172,10 @@ insert into movimiento values('00200001',12,'20080204','0001','003',2000,null);
 insert into movimiento values('00200001',13,'20080208','0001','004',4000,null);
 insert into movimiento values('00200001',14,'20080213','0001','003',2000,null);
 insert into movimiento values('00200001',15,'20080219','0001','004',1000,null);
+
+insert into movimiento values('00300001',01,'20080107','0002','001',5600,null);
+insert into movimiento values('00300001',02,'20080118','0002','003',1400,null);
+insert into movimiento values('00300001',03,'20080125','0002','002',7000,null);
 
 --  Tabla: Contador
 

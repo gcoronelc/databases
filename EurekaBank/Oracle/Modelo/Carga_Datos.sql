@@ -117,7 +117,7 @@ insert into cuenta values('00100002','02','001','0004','00005',4500,to_date('200
 insert into cuenta values('00200001','01','002','0001','00008',7000,to_date('20080105 13:15:30','YYYYMMDD HH24:MI:SS'),'ACTIVO',16,'123456');
 insert into cuenta values('00200002','01','002','0001','00001',6800,to_date('20080109 10:30:25','YYYYMMDD HH24:MI:SS'),'ACTIVO',4,'123456');
 insert into cuenta values('00200003','02','002','0001','00007',6000,to_date('20080111 15:45:12','YYYYMMDD HH24:MI:SS'),'ACTIVO',7,'123456');
-
+insert into cuenta values('00300001','01','003','0002','00010',0000,to_date('20080107 12:45:12','YYYYMMDD HH24:MI:SS'),'CANCELADO',3,'123456');
 
 -- Tabla: Movimiento
 
@@ -160,6 +160,11 @@ insert into movimiento values('00200003',03,to_date('20080120 14:12:12','YYYYMMD
 insert into movimiento values('00200003',04,to_date('20080209 15:45:34','YYYYMMDD HH24:MI:SS'),'0001','004',0500,null);
 insert into movimiento values('00200003',05,to_date('20080225 11:18:20','YYYYMMDD HH24:MI:SS'),'0001','003',3500,null);
 insert into movimiento values('00200003',06,to_date('20080311 10:56:23','YYYYMMDD HH24:MI:SS'),'0001','004',0500,null);
+
+insert into movimiento values('00300001',01,to_date('20080107 12:45:12','YYYYMMDD HH24:MI:SS'),'0002','001',5600,null);
+insert into movimiento values('00300001',02,to_date('20080118 11:17:12','YYYYMMDD HH24:MI:SS'),'0002','003',1400,null);
+insert into movimiento values('00300001',03,to_date('20080125 15:12:12','YYYYMMDD HH24:MI:SS'),'0002','002',7000,null);
+
 
 --  Tabla: Contador
 
