@@ -1,3 +1,10 @@
+----------------------------------------------------
+-- Autor:   Eric Gustavo Coronel Castillo
+-- Blog:    gcoronelc.blogspot.com
+-- Email:   gcoronelc@gmail.com
+-- Youtube: https://goo.gl/9GFBaC
+----------------------------------------------------
+
 DELIMITER $$
 
 DROP PROCEDURE IF EXISTS usp_actualiza_datos_cliente$$

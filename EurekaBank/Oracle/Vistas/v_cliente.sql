@@ -1,13 +1,9 @@
-SQL> conn system/oracle
-Conectado.
-
-SQL> grant create view to eureka;
-Concesión terminada correctamente.
-
-SQL> connect eureka/admin
-Conectado.
-
-
+----------------------------------------------------
+-- Autor:   Eric Gustavo Coronel Castillo
+-- Blog:    gcoronelc.blogspot.com
+-- Email:   gcoronelc@gmail.com
+-- Youtube: https://goo.gl/9GFBaC
+----------------------------------------------------
 
 create or replace
 view v_cliente

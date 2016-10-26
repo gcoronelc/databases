@@ -1,3 +1,10 @@
+----------------------------------------------------
+-- Autor:   Eric Gustavo Coronel Castillo
+-- Blog:    gcoronelc.blogspot.com
+-- Email:   gcoronelc@gmail.com
+-- Youtube: https://goo.gl/9GFBaC
+----------------------------------------------------
+
 create or replace procedure usp_egcc_clientes
 ( p_nombre IN cliente.vch_clienombre%TYPE, 
   p_cursor OUT NOCOPY SYS_REFCURSOR )

@@ -1,3 +1,10 @@
+----------------------------------------------------
+-- Autor:   Eric Gustavo Coronel Castillo
+-- Blog:    gcoronelc.blogspot.com
+-- Email:   gcoronelc@gmail.com
+-- Youtube: https://goo.gl/9GFBaC
+----------------------------------------------------
+
 create or replace view v_cuenta(
 sucucodigo, sucunombre, cliecodigo, 
 cliepaterno, cliematerno, clienombre, 
