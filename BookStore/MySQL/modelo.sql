@@ -286,3 +286,15 @@
    Insert Into control(parametro,valor) Values('Empleado','6');
    Insert Into control(parametro,valor) Values('Site','www.perudev.net'); 
 
+
+-- Usuario
+
+USE MYSQL;
+GRANT ALL PRIVILEGES ON *.* TO 'book'@'%' IDENTIFIED BY 'admin' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+USE EUREKABANK;
+
+USE MYSQL;
+GRANT ALL PRIVILEGES ON *.* TO 'book'@'localhost' IDENTIFIED BY 'admin' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+USE EUREKABANK;
