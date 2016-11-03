@@ -53,8 +53,8 @@
 
    CREATE TABLE publicacion (
        idpublicacion        char(8) NOT NULL,
-       titulo               varchar(30) NOT NULL,
-       autor                varchar(50) NOT NULL,
+       titulo               varchar(100) NOT NULL,
+       autor                varchar(60) NOT NULL,
        nroedicion           smallint NOT NULL,
        precio               decimal(8,2) NOT NULL,
        stock                smallint NOT NULL,
@@ -292,9 +292,8 @@
 USE MYSQL;
 GRANT ALL PRIVILEGES ON *.* TO 'book'@'%' IDENTIFIED BY 'admin' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
-USE EUREKABANK;
 
-USE MYSQL;
 GRANT ALL PRIVILEGES ON *.* TO 'book'@'localhost' IDENTIFIED BY 'admin' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
-USE EUREKABANK;
+
+USE bookstore;
