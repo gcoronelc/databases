@@ -7,15 +7,25 @@
 
 -- Procedimiento
 
-create or replace procedure usp_egcc_saldo_cuenta
-( p_cuenta varchar2, p_saldo out number )
+create or replace procedure usp_egcc_saldo_sucursal
+( 
+	p_sucursal varchar2, 
+	p_saldo_soles out number,
+	p_saldo_dolares out number	
+)
 is
 begin
 
-	select dec_cuensaldo into p_saldo
+	select sum(dec_cuensaldo) into p_saldo_soles
 	from cuenta
-	where chr_cuencodigo = p_cuenta;
+	where chr_sucucodigo = p_sucursal
+	and chr_monecodigo = '01';
 
+	select sum(dec_cuensaldo) into p_saldo_dolares
+	from cuenta
+	where chr_sucucodigo = p_sucursal
+	and chr_monecodigo = '02';
+	
 end;
 /
 
