@@ -11,6 +11,20 @@ Sitio Web      :  http://www.perudev.net
 Blog           :  http://gcoronelc.blogspot.com
 */
 
+-- =============================================
+-- Ultimos cambios
+-- =============================================
+/*
+02-Junio-2017
+   En la tabla EMPLEADO se ha modificado las columnas vch_emplusuario y vch_emplclave 
+   para que acepten NULL, esto debido por que no todos los empleados deben tener
+   cuentas para utilizar las aplicaciones.
+   Quiere decir, que la creación de cuentas de usuario es un proceso independiente
+   del mantenimiento de los datos del empleado.
+   En el archivo Carga_Datos.sql se han agregado algunos registros de empleados
+   con los campos vch_emplusuario y vch_emplclave nulos para ilustrar los cambios.
+*/                                                       
+
 
 -- =============================================
 -- Creación de la Base de Datos
@@ -63,8 +77,8 @@ CREATE TABLE Empleado (
 	vch_emplnombre       VARCHAR(30) NOT NULL,
 	vch_emplciudad       VARCHAR(30) NOT NULL,
 	vch_empldireccion    VARCHAR(50) NULL,
-	vch_emplusuario      VARCHAR(15) NOT NULL,
-	vch_emplclave        VARCHAR(15) NOT NULL,
+	vch_emplusuario      VARCHAR(15) NULL,
+	vch_emplclave        VARCHAR(15) NULL,
 	CONSTRAINT PK_Empleado 
 		PRIMARY KEY (chr_emplcodigo),
 	CONSTRAINT U_Empleado_vch_emplusuario
