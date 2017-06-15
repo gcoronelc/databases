@@ -15,6 +15,7 @@ Blog           :  http://gcoronelc.blogspot.com
 -- Ultimos cambios
 -- =============================================
 /*
+
 02-Junio-2017
    En la tabla EMPLEADO se ha modificado las columnas vch_emplusuario y vch_emplclave 
    para que acepten NULL, esto debido por que no todos los empleados deben tener
@@ -23,6 +24,10 @@ Blog           :  http://gcoronelc.blogspot.com
    del mantenimiento de los datos del empleado.
    En el archivo Carga_Datos.sql se han agregado algunos registros de empleados
    con los campos vch_emplusuario y vch_emplclave nulos para ilustrar los cambios.
+   
+14-Jun-2017
+   Se crea la tala para el log de sesiones.
+   
 */                                                       
 
 
@@ -84,6 +89,22 @@ CREATE TABLE Empleado (
 	CONSTRAINT U_Empleado_vch_emplusuario
 		UNIQUE (vch_emplusuario)
 ) ENGINE = INNODB ;
+
+
+CREATE TABLE LOG_SESSION(
+	ID                 INT NOT NULL AUTO_INCREMENT,
+	chr_emplcodigo     CHAR(4) NOT NULL,
+	fec_ingreso        DATETIME NOT NULL,
+	fec_salida         DATETIME NULL,
+	ip                 VARCHAR(20) NOT NULL,
+	CONSTRAINT PK_LOG_SESSION PRIMARY KEY (ID),
+	CONSTRAINT fk_log_session_empleado
+		FOREIGN KEY (chr_emplcodigo)
+		REFERENCES Empleado (chr_emplcodigo)
+		ON DELETE RESTRICT
+		ON UPDATE RESTRICT
+) ENGINE = INNODB ;
+
 
 CREATE TABLE Asignado (
 	chr_asigcodigo       CHAR(6) NOT NULL,
