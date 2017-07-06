@@ -7,6 +7,17 @@
 -- Email          :  gcoronelc@gmail.com
 -- Site           :  gcoronelc.blogspot.com
 
+-- =============================================
+-- Ultimos cambios
+-- =============================================
+/*
+
+20-Junio-2017
+   Se agrego la tabla USUARIO.
+
+*/
+
+
 -- ==========================================================
 -- Creación de la Base de Datos
 -- ==========================================================
@@ -26,20 +37,21 @@
    DROP TABLE IF EXISTS venta;
    DROP TABLE IF EXISTS publicacion;
    DROP TABLE IF EXISTS tipo;
+   DROP TABLE IF EXISTS usuario;
    DROP TABLE IF EXISTS empleado;
    DROP TABLE IF EXISTS promocion;
    DROP TABLE IF EXISTS control;
 
+   
 -- ==========================================================
 -- Creación de la Tablas
 -- ==========================================================
 
    CREATE TABLE tipo (
        idtipo               char(3) NOT NULL,
-       descripcion          varchar(20) NOT NULL,
-       contador             int NOT NULL,
-       CONSTRAINT pk_tipo PRIMARY KEY (idtipo),
-       KEY idx_tipo (idtipo)
+       descripcion          varchar(50) NOT NULL,
+       contador             integer NOT NULL,
+       CONSTRAINT pk_tipo PRIMARY KEY (idtipo)
    )  ENGINE = INNODB;
 
    CREATE TABLE promocion (
@@ -47,69 +59,73 @@
        cantmin              smallint NOT NULL,
        cantmax              smallint NOT NULL,
        porcentaje           decimal(4,2) NOT NULL,
-       CONSTRAINT pk_promocion PRIMARY KEY (idpromocion),
-       KEY idx_promocion (idpromocion)
+       CONSTRAINT pk_promocion PRIMARY KEY (idpromocion)
    )  ENGINE = INNODB;
 
    CREATE TABLE publicacion (
        idpublicacion        char(8) NOT NULL,
        titulo               varchar(100) NOT NULL,
-       autor                varchar(60) NOT NULL,
+       autor                varchar(100) NOT NULL,
        nroedicion           smallint NOT NULL,
-       precio               decimal(8,2) NOT NULL,
-       stock                smallint NOT NULL,
+       precio               decimal(10,2) NOT NULL,
+       stock                integer NOT NULL,
        idtipo               char(3) NOT NULL,
        CONSTRAINT pk_publicacion PRIMARY KEY (idpublicacion),
-       KEY idx_publicacion_01 (idpublicacion),
        CONSTRAINT fk_publicacion_tipo 
             FOREIGN KEY (idtipo)
             REFERENCES tipo (idtipo)
             ON DELETE RESTRICT
-            ON UPDATE RESTRICT,
-       KEY idx_publicacion_02 (idtipo)
+            ON UPDATE RESTRICT
    )  ENGINE = INNODB;
 
    CREATE TABLE empleado (
-       idempleado           int NOT NULL,
-       apellido             varchar(30) NOT NULL,
-       nombre               varchar(30) NOT NULL,
-       usuario              varchar(15) NOT NULL,
-       clave                varchar(10) NOT NULL,
-       CONSTRAINT pk_empleado PRIMARY KEY (idempleado),
-       KEY idx_empleado (idempleado)
+	   idempleado           INTEGER NOT NULL,
+	   apellido             VARCHAR(50) NOT NULL,
+	   nombre               VARCHAR(50) NOT NULL,
+	   direccion            VARCHAR(100) NOT NULL,
+	   email                VARCHAR(50) NOT NULL,
+	   CONSTRAINT pk_empleado PRIMARY KEY (idempleado)
    ) ENGINE = INNODB;
+   
+   CREATE TABLE usuario
+   (
+	   idempleado           INTEGER NOT NULL,
+	   usuario              varchar(20) NOT NULL,
+	   clave                VARCHAR(100) NOT NULL,
+	   activo               INTEGER NOT NULL,
+	   PRIMARY KEY (idempleado),
+	   FOREIGN KEY FK_Usuario_Empleado (idempleado) 
+		REFERENCES empleado (idempleado)
+   );   
 
    CREATE TABLE venta (
        idventa              int NOT NULL,
-       cliente              varchar(30) NOT NULL,
-       fecha                datetime NOT NULL,
+       cliente              varchar(100) NOT NULL,
+       fecha                date NOT NULL,
        idempleado           int NOT NULL,
        idpublicacion        char(8) NOT NULL,
-       cantidad             smallint NOT NULL,
-       precio               decimal(8,2) NOT NULL,
-       dcto                 decimal(8,2) NOT NULL,
-       subtotal             decimal(8,2) NOT NULL,
-       impuesto             decimal(8,2) NOT NULL,
-       total                decimal(8,2) NOT NULL,
+       cantidad             integer NOT NULL,
+       precio               decimal(10,2) NOT NULL,
+       dcto                 decimal(10,2) NOT NULL,
+       subtotal             decimal(10,2) NOT NULL,
+       impuesto             decimal(10,2) NOT NULL,
+       total                decimal(10,2) NOT NULL,
        CONSTRAINT pk_venta PRIMARY KEY (idventa),
-       KEY idx_venta_01 (idventa),
        CONSTRAINT fk_venta_publicacion 
             FOREIGN KEY (idpublicacion)
             REFERENCES publicacion  (idpublicacion)
             ON DELETE RESTRICT
             ON UPDATE RESTRICT,
-       KEY idx_venta_02 (idpublicacion),
        CONSTRAINT fk_venta_empleado 
             FOREIGN KEY (idempleado)
             REFERENCES empleado  (idempleado)
             ON DELETE RESTRICT
-            ON UPDATE RESTRICT,
-       KEY idx_venta_03 (idempleado)
+            ON UPDATE RESTRICT
    )  ENGINE = INNODB;
 
    CREATE TABLE control (
-       parametro            varchar(25) NOT NULL,
-       valor                varchar(25) NOT NULL,
+       parametro            varchar(50) NOT NULL,
+       valor                varchar(50) NOT NULL,
        CONSTRAINT pk_control PRIMARY KEY (parametro)
    ) ENGINE = INNODB;
 
@@ -191,19 +207,30 @@
 
 -- empleados
 
-   Insert Into empleado(idempleado,apellido,nombre,usuario,clave) 
-     Values(1,'AGUERO RAMOS','EMILIO','eaguero','123456');
-   Insert Into empleado(idempleado,apellido,nombre,usuario,clave) 
-     Values(2,'SANCHEZ ROMERO','KATHIA','ksanchez','123456');
-   Insert Into empleado(idempleado,apellido,nombre,usuario,clave) 
-     Values(3,'LUNG WON','FELIX','flung','123456');
-   Insert Into empleado(idempleado,apellido,nombre,usuario,clave) 
-     Values(4,'CASTILLO RAMOS','EDUARDO','ecastillo','123456');
-   Insert Into empleado(idempleado,apellido,nombre,usuario,clave) 
-     Values(5,'MILICICH FLORES','LAURA','lmilicich','123456');
-   Insert Into empleado(idempleado,apellido,nombre,usuario,clave) 
-     Values(6,'DELGADO BARRERA','KENNETH','kdelgado','123456');
+   Insert Into empleado(idempleado,apellido,nombre,direccion,email) 
+     Values(1,'AGUERO RAMOS','EMILIO','Lima','emilio@gmail.com');
+   Insert Into empleado(idempleado,apellido,nombre,direccion,email) 
+     Values(2,'SANCHEZ ROMERO','KATHIA','Miraflores','kathia@yahoo.es');
+   Insert Into empleado(idempleado,apellido,nombre,direccion,email) 
+     Values(3,'LUNG WON','FELIX','Los Olivos','gato@hotmail.com');
+   Insert Into empleado(idempleado,apellido,nombre,direccion,email) 
+     Values(4,'CASTILLO RAMOS','EDUARDO','Barrios altos','lalo@gmail.com');
+   Insert Into empleado(idempleado,apellido,nombre,direccion,email) 
+     Values(5,'MILICICH FLORES','LAURA','Collique','laura@usil.pe');
+   Insert Into empleado(idempleado,apellido,nombre,direccion,email) 
+     Values(6,'DELGADO BARRERA','KENNETH','La punta','pochita@gmail.com');
+   Insert Into empleado(idempleado,apellido,nombre,direccion,email) 
+     Values(7,'GARCIA SOLIS','JOSE ELVIS','Barranco','pepe@gmail.com');
      
+ -- usuarios  
+   
+   Insert Into usuario(idempleado,usuario,clave,activo) Values
+   (1,'eaguero',SHA('cazador'),1),
+   (2,'ksanchez',SHA('suerte'),1),
+   (3,'flung',SHA('por100pre'),0),
+   (4,'ecastillo',SHA('hastalavista'),1),
+   (5,'lmilicich',SHA('turuleka'),0),
+   (6,'kdelgado',SHA('noimporta'),1);   
    
 -- ventas
 
@@ -282,17 +309,15 @@
 
    Insert Into control(parametro,valor) Values('IGV','0.18');
    Insert Into control(parametro,valor) Values('venta','24');
-   Insert Into control(parametro,valor) Values('Empresa','PeruDev');
-   Insert Into control(parametro,valor) Values('Empleado','6');
-   Insert Into control(parametro,valor) Values('Site','www.perudev.net'); 
+   Insert Into control(parametro,valor) Values('Empresa','EGCC');
+   Insert Into control(parametro,valor) Values('Empleado','7');
+   Insert Into control(parametro,valor) Values('Site','www.egcc.net'); 
 
 
 -- Usuario
 
 USE MYSQL;
 GRANT ALL PRIVILEGES ON *.* TO 'book'@'%' IDENTIFIED BY 'admin' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
-
 GRANT ALL PRIVILEGES ON *.* TO 'book'@'localhost' IDENTIFIED BY 'admin' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 
