@@ -27,6 +27,9 @@ Blog           :  http://gcoronelc.blogspot.com
    
 14-Jun-2017
    Se crea la tala para el log de sesiones.
+
+20-Jun-2017
+   Se agrega tablas para el modulo de seguridad.
    
 */                                                       
 
@@ -52,6 +55,7 @@ USE eurekabank;
 -- Creación de los Objetos de la Base de Datos
 -- =============================================
 
+
 CREATE TABLE TipoMovimiento (
 	chr_tipocodigo       CHAR(3) NOT NULL,
 	vch_tipodescripcion  VARCHAR(40) NOT NULL,
@@ -65,6 +69,7 @@ CREATE TABLE TipoMovimiento (
 		CHECK (vch_tipoestado IN ('ACTIVO', 'ANULADO', 'CANCELADO'))						
 ) ENGINE = INNODB ;
 
+
 CREATE TABLE Sucursal (
 	chr_sucucodigo       CHAR(3) NOT NULL,
 	vch_sucunombre       VARCHAR(50) NOT NULL,
@@ -75,6 +80,7 @@ CREATE TABLE Sucursal (
 		PRIMARY KEY (chr_sucucodigo)
 ) ENGINE = INNODB ;
 
+
 CREATE TABLE Empleado (
 	chr_emplcodigo       CHAR(4) NOT NULL,
 	vch_emplpaterno      VARCHAR(25) NOT NULL,
@@ -82,12 +88,44 @@ CREATE TABLE Empleado (
 	vch_emplnombre       VARCHAR(30) NOT NULL,
 	vch_emplciudad       VARCHAR(30) NOT NULL,
 	vch_empldireccion    VARCHAR(50) NULL,
-	vch_emplusuario      VARCHAR(15) NULL,
-	vch_emplclave        VARCHAR(15) NULL,
-	CONSTRAINT PK_Empleado 
-		PRIMARY KEY (chr_emplcodigo),
-	CONSTRAINT U_Empleado_vch_emplusuario
-		UNIQUE (vch_emplusuario)
+	CONSTRAINT PK_Empleado PRIMARY KEY (chr_emplcodigo)
+) ENGINE = INNODB ;
+
+
+CREATE TABLE Modulo
+(
+	int_moducodigo       INTEGER NOT NULL,
+	vch_modunombre       VARCHAR(50) NULL,
+	vch_moduestado       VARCHAR(15) NOT NULL 
+						           DEFAULT 'ACTIVO' 
+		                   CHECK ( vch_moduestado IN ('ACTIVO', 'ANULADO', 'CANCELADO') ),
+	CONSTRAINT PK_Modulo PRIMARY KEY (int_moducodigo)
+) ENGINE = INNODB ;
+
+
+CREATE TABLE Usuario
+(
+	chr_emplcodigo       CHAR(4) NOT NULL,
+	vch_emplusuario      VARCHAR(20) NOT NULL,
+	vch_emplclave        VARCHAR(50) NOT NULL,
+  vch_emplestado       VARCHAR(15) NULL DEFAULT 'ACTIVO' 
+                       CHECK ( vch_emplestado IN ('ACTIVO', 'ANULADO', 'CANCELADO') ),
+	CONSTRAINT PK_Usuario PRIMARY KEY (chr_emplcodigo),
+	CONSTRAINT U_Usuario_vch_emplusuario UNIQUE (vch_emplusuario),
+	FOREIGN KEY FK_Usuario_Empleado (chr_emplcodigo) REFERENCES Empleado (chr_emplcodigo)
+) ENGINE = INNODB ;
+
+
+CREATE TABLE Permiso
+(
+	chr_emplcodigo       CHAR(4) NOT NULL,
+	int_moducodigo       INTEGER NOT NULL,
+	vch_permestado       VARCHAR(15) NOT NULL 
+	                     DEFAULT 'ACTIVO' 
+						           CHECK ( vch_permestado IN ('ACTIVO', 'ANULADO', 'CANCELADO') ),
+	CONSTRAINT PK_Permiso PRIMARY KEY (chr_emplcodigo,int_moducodigo),
+	FOREIGN KEY FK_Permiso_Modulo (int_moducodigo) REFERENCES Modulo (int_moducodigo),
+	FOREIGN KEY FK_Permiso_Usuario (chr_emplcodigo) REFERENCES Usuario (chr_emplcodigo)
 ) ENGINE = INNODB ;
 
 
@@ -284,10 +322,6 @@ CREATE TABLE Contador (
 
 USE MYSQL;
 GRANT ALL PRIVILEGES ON *.* TO 'eureka'@'%' IDENTIFIED BY 'admin' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
-USE EUREKABANK;
-
-USE MYSQL;
 GRANT ALL PRIVILEGES ON *.* TO 'eureka'@'localhost' IDENTIFIED BY 'admin' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 USE EUREKABANK;

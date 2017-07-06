@@ -69,21 +69,72 @@ insert into sucursal values( '007', 'Grau', 'Piura', 'Av. Grau 1528', 0 );
 
 -- Tabla: Empleado
 
-INSERT INTO empleado VALUES( '9999', 'Internet', 'Internet', 'internet', 'Internet', 'internet', 'internet', 'internet' );
-INSERT INTO empleado VALUES( '0001', 'Romero', 'Castillo', 'Carlos Alberto', 'Trujillo', 'Call1 1 Nro. 456', 'cromero', 'chicho' );
-INSERT INTO empleado VALUES( '0002', 'Castro', 'Vargas', 'Lidia', 'Lima', 'Federico Villarreal 456 - SMP', 'lcastro', 'flaca' );
-INSERT INTO empleado VALUES( '0003', 'Reyes', 'Ortiz', 'Claudia', 'Lima', 'Av. Aviación 3456 - San Borja', 'creyes', 'linda' );
-INSERT INTO empleado VALUES( '0004', 'Ramos', 'Garibay', 'Angelica', 'Chiclayo', 'Calle Barcelona 345', 'aramos', 'china' );
-INSERT INTO empleado VALUES( '0005', 'Ruiz', 'Zabaleta', 'Claudia', 'Cusco', 'Calle Cruz Verde 364', 'cvalencia', 'angel' );
-INSERT INTO empleado VALUES( '0006', 'Cruz', 'Tarazona', 'Ricardo', 'Areguipa', 'Calle La Gruta 304', 'rcruz', 'cerebro' );
-INSERT INTO empleado VALUES( '0007', 'Diaz', 'Flores', 'Edith', 'Lima', 'Av. Pardo 546', 'ediaz', 'princesa' );
-INSERT INTO empleado VALUES( '0008', 'Sarmiento', 'Bellido', 'Claudia Rocio', 'Areguipa', 'Calle Alfonso Ugarte 1567', 'csarmiento', 'chinita' );
-INSERT INTO empleado VALUES( '0009', 'Pachas', 'Sifuentes', 'Luis Alberto', 'Trujillo', 'Francisco Pizarro 1263', 'lpachas', 'gato' );
-INSERT INTO empleado VALUES( '0010', 'Tello', 'Alarcon', 'Hugo Valentin', 'Cusco', 'Los Angeles 865', 'htello', 'machupichu' );
-INSERT INTO empleado VALUES( '0011', 'Carrasco', 'Vargas', 'Pedro Hugo', 'Chiclayo', 'Av. Balta 1265', 'pcarrasco', 'tinajones' );
-INSERT INTO empleado VALUES( '0012', 'Mendoza', 'Jara', 'Monica Valeria', 'Lima', 'Calle Las Toronjas 450', null, null );
-INSERT INTO empleado VALUES( '0013', 'Espinoza', 'Melgar', 'Victor Eduardo', 'Huancayo', 'Av. San Martin 6734 Dpto. 508 ', null, null );
-INSERT INTO empleado VALUES( '0014', 'Hidalgo', 'Sandoval', 'Milagros Leonor', 'Chiclayo', 'Av. Luis Gonzales 1230', null, null );
+INSERT INTO empleado VALUES( '9999', 'Internet', 'Internet', 'internet', 'Internet', 'internet' );
+INSERT INTO empleado VALUES( '0001', 'Romero', 'Castillo', 'Carlos Alberto', 'Trujillo', 'Call1 1 Nro. 456' );
+INSERT INTO empleado VALUES( '0002', 'Castro', 'Vargas', 'Lidia', 'Lima', 'Federico Villarreal 456 - SMP' );
+INSERT INTO empleado VALUES( '0003', 'Reyes', 'Ortiz', 'Claudia', 'Lima', 'Av. Aviación 3456 - San Borja' );
+INSERT INTO empleado VALUES( '0004', 'Ramos', 'Garibay', 'Angelica', 'Chiclayo', 'Calle Barcelona 345' );
+INSERT INTO empleado VALUES( '0005', 'Ruiz', 'Zabaleta', 'Claudia', 'Cusco', 'Calle Cruz Verde 364' );
+INSERT INTO empleado VALUES( '0006', 'Cruz', 'Tarazona', 'Ricardo', 'Areguipa', 'Calle La Gruta 304' );
+INSERT INTO empleado VALUES( '0007', 'Diaz', 'Flores', 'Edith', 'Lima', 'Av. Pardo 546' );
+INSERT INTO empleado VALUES( '0008', 'Sarmiento', 'Bellido', 'Claudia Rocio', 'Areguipa', 'Calle Alfonso Ugarte 1567' );
+INSERT INTO empleado VALUES( '0009', 'Pachas', 'Sifuentes', 'Luis Alberto', 'Trujillo', 'Francisco Pizarro 1263' );
+INSERT INTO empleado VALUES( '0010', 'Tello', 'Alarcon', 'Hugo Valentin', 'Cusco', 'Los Angeles 865' );
+INSERT INTO empleado VALUES( '0011', 'Carrasco', 'Vargas', 'Pedro Hugo', 'Chiclayo', 'Av. Balta 1265' );
+INSERT INTO empleado VALUES( '0012', 'Mendoza', 'Jara', 'Monica Valeria', 'Lima', 'Calle Las Toronjas 450' );
+INSERT INTO empleado VALUES( '0013', 'Espinoza', 'Melgar', 'Victor Eduardo', 'Huancayo', 'Av. San Martin 6734 Dpto. 508 ' );
+INSERT INTO empleado VALUES( '0014', 'Hidalgo', 'Sandoval', 'Milagros Leonor', 'Chiclayo', 'Av. Luis Gonzales 1230' );
+
+
+-- Tabla: Usuario
+
+INSERT INTO usuario VALUES( '9999',  'internet',     SHA('internet'), 'ACTIVO' );
+INSERT INTO usuario VALUES( '0001',  'cromero',      SHA('chicho'), 'ACTIVO' );
+INSERT INTO usuario VALUES( '0002',  'lcastro',      SHA('flaca'), 'ACTIVO' );
+INSERT INTO usuario VALUES( '0003',  'creyes',       SHA('linda'), 'ANULADO' );
+INSERT INTO usuario VALUES( '0004',  'aramos',       SHA('china'), 'ACTIVO' );
+INSERT INTO usuario VALUES( '0005',  'cvalencia',    SHA('angel'), 'ACTIVO' );
+INSERT INTO usuario VALUES( '0006',  'rcruz',        SHA('cerebro'), 'ACTIVO' );
+INSERT INTO usuario VALUES( '0007',  'ediaz',        SHA('princesa'), 'ANULADO' );
+INSERT INTO usuario VALUES( '0008',  'csarmiento',   SHA('chinita'), 'ANULADO' );
+INSERT INTO usuario VALUES( '0009',  'lpachas',      SHA('gato'), 'ACTIVO' );
+INSERT INTO usuario VALUES( '0010',  'htello',       SHA('machupichu'), 'ACTIVO' );
+INSERT INTO usuario VALUES( '0011',  'pcarrasco',    SHA('tinajones'), 'ACTIVO' );
+
+-- Tabla: Modulo
+
+INSERT INTO Modulo VALUES( 1, 'Procesos', 'ACTIVO');
+INSERT INTO Modulo VALUES( 2, 'Tablas', 'ACTIVO');
+INSERT INTO Modulo VALUES( 3, 'Consultas', 'ACTIVO');
+INSERT INTO Modulo VALUES( 4, 'Reportes', 'ACTIVO');
+INSERT INTO Modulo VALUES( 5, 'Util', 'ACTIVO');
+INSERT INTO Modulo VALUES( 6, 'Seguridad', 'ACTIVO');
+
+-- Tabla: Permiso
+
+-- Usuario: 0001
+INSERT INTO Permiso VALUES( '0001', 1, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0001', 2, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0001', 3, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0001', 4, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0001', 5, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0001', 6, 'ACTIVO');
+
+-- Usuario: 0002
+INSERT INTO Permiso VALUES( '0002', 1, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0002', 2, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0002', 3, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0002', 4, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0002', 5, 'CANCELADO');
+INSERT INTO Permiso VALUES( '0002', 6, 'CANCELADO');
+
+-- Usuario: 0003
+INSERT INTO Permiso VALUES( '0003', 1, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0003', 2, 'CANCELADO');
+INSERT INTO Permiso VALUES( '0003', 3, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0003', 4, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0003', 5, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0003', 6, 'CANCELADO');
 
 
 -- Asignado
