@@ -7,7 +7,7 @@ Script         :  Carga Datos
 Responsable    :  Ing. Eric Gustavo Coronel Castillo
 Telefono       :  (511) 9966-64457
 Email          :  gcoronelc@gmail.com
-Sitio Web      :  www.perudev.net
+Sitio Web      :  www.desarrollasoftware.com
 Blog           :  http://gcoronelc.blogspot.com
 */
 
@@ -190,7 +190,7 @@ insert into Parametro values( '002', 'Número de Operaciones Sin Costo', '15', '
 
 -- Tabla: Cliente
 
-insert into cliente values( '00001', 'CORONEL', 'CASTILLO', 'ERIC GUSTAVO', '06914897', 'LIMA', 'LOS OLIVOS', '9666-4457', 'gcoronel@viabcp.com' );
+insert into cliente values( '00001', 'CORONEL', 'CASTILLO', 'ERIC GUSTAVO', '06914897', 'LIMA', 'LOS OLIVOS', '996-664-457', 'gcoronelc@gmail.com' );
 insert into cliente values( '00002', 'VALENCIA', 'MORALES', 'PEDRO HUGO', '01576173', 'LIMA', 'MAGDALENA', '924-7834', 'pvalencia@terra.com.pe' );
 insert into cliente values( '00003', 'MARCELO', 'VILLALOBOS', 'RICARDO', '10762367', 'LIMA', 'LINCE', '993-62966', 'ricardomarcelo@hotmail.com' );
 insert into cliente values( '00004', 'ROMERO', 'CASTILLO', 'CARLOS ALBERTO', '06531983', 'LIMA', 'LOS OLIVOS', '865-84762', 'c.romero@hotmail.com' );
