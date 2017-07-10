@@ -129,12 +129,13 @@ CREATE TABLE Permiso
 ) ENGINE = INNODB ;
 
 
-CREATE TABLE LOG_SESSION(
+CREATE TABLE LOGSESSION(
 	ID                 INT NOT NULL AUTO_INCREMENT,
 	chr_emplcodigo     CHAR(4) NOT NULL,
 	fec_ingreso        DATETIME NOT NULL,
 	fec_salida         DATETIME NULL,
 	ip                 VARCHAR(20) NOT NULL,
+  hostname           VARCHAR(100) NOT NULL,
 	CONSTRAINT PK_LOG_SESSION PRIMARY KEY (ID),
 	CONSTRAINT fk_log_session_empleado
 		FOREIGN KEY (chr_emplcodigo)
