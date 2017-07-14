@@ -129,19 +129,19 @@ CREATE TABLE Permiso
 ) ENGINE = INNODB ;
 
 
-CREATE TABLE LOGSESSION(
-	ID                 INT NOT NULL AUTO_INCREMENT,
-	chr_emplcodigo     CHAR(4) NOT NULL,
-	fec_ingreso        DATETIME NOT NULL,
-	fec_salida         DATETIME NULL,
-	ip                 VARCHAR(20) NOT NULL,
-  hostname           VARCHAR(100) NOT NULL,
-	CONSTRAINT PK_LOG_SESSION PRIMARY KEY (ID),
-	CONSTRAINT fk_log_session_empleado
-		FOREIGN KEY (chr_emplcodigo)
-		REFERENCES Empleado (chr_emplcodigo)
-		ON DELETE RESTRICT
-		ON UPDATE RESTRICT
+CREATE TABLE LOGSESSION( 
+	ID                 INT NOT NULL AUTO_INCREMENT, 
+	chr_emplcodigo     CHAR(4) NOT NULL, 
+	fec_ingreso        DATETIME NOT NULL, 
+	fec_salida         DATETIME NULL, 
+	ip                 VARCHAR(20) NOT NULL DEFAULT 'NONE', 
+  hostname           VARCHAR(100) NOT NULL DEFAULT 'NONE', 
+	CONSTRAINT PK_LOG_SESSION PRIMARY KEY (ID), 
+	CONSTRAINT fk_log_session_empleado 
+		FOREIGN KEY (chr_emplcodigo) 
+		REFERENCES Empleado (chr_emplcodigo) 
+		ON DELETE RESTRICT 
+		ON UPDATE RESTRICT 
 ) ENGINE = INNODB ;
 
 
