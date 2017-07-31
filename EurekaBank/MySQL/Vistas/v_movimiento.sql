@@ -1,3 +1,11 @@
+----------------------------------------------------
+-- Autor:   Eric Gustavo Coronel Castillo
+-- Blog:    gcoronelc.blogspot.com
+-- Email:   gcoronelc@gmail.com
+-- Youtube: https://goo.gl/9GFBaC
+-- Código fuente: https://goo.gl/GRaOQg
+----------------------------------------------------
+
 create view v_movimiento(
 sucucodigo, sucunombre, cliecodigo, cliepaterno,
 cliematerno, clienombre, cuencodigo, cuensaldo,
@@ -18,7 +26,7 @@ select
   m.int_movinumero  movinumero,
   m.dtt_movifecha   movifecha,
   m.dec_moviimporte moviimporte,
-  m.chr_cuenreferencia cuenreferencia,
+  IF(ISNULL(m.chr_cuenreferencia),'NONE',m.chr_cuenreferencia)  cuenreferencia,
   tm.chr_tipocodigo  tipocodigo,
   tm.vch_tipodescripcion tiponombre,
   tm.vch_tipoaccion  tipoaccion,
@@ -36,6 +44,7 @@ join sucursal su on c.chr_sucucodigo = su.chr_sucucodigo;
 select * from v_movimiento  
 where cuencodigo='00100002';
 
+/*
 
 select   
 CUENCODIGO, MONENOMBRE, CUENSALDO, CUENESTADO,  
@@ -46,7 +55,7 @@ order by movinumero desc
 limit 2;
 
 
-
+*/
 
 
 

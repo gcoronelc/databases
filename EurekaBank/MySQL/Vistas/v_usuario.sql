@@ -3,6 +3,7 @@
 -- Blog:    gcoronelc.blogspot.com
 -- Email:   gcoronelc@gmail.com
 -- Youtube: https://goo.gl/9GFBaC
+-- Código fuente: https://goo.gl/GRaOQg
 ----------------------------------------------------
 
 create view v_usuario(codigo,empleado,usuario,clave,estado)
@@ -17,5 +18,7 @@ from empleado e
 left join usuario u on e.chr_emplcodigo = u.chr_emplcodigo;
 
 
+
+select * from v_usuario;
 
 

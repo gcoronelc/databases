@@ -3,9 +3,10 @@
 -- Blog:    gcoronelc.blogspot.com
 -- Email:   gcoronelc@gmail.com
 -- Youtube: https://goo.gl/9GFBaC
+-- Código fuente: https://goo.gl/GRaOQg
 ----------------------------------------------------
 
-alter view v_log(id,codigo,empleado,inicio,fin,tiempo)
+create view v_log(id,codigo,empleado,inicio,fin,tiempo)
 as
 select 
   l.id id, 
@@ -18,5 +19,5 @@ from empleado e
 join logsession l on e.chr_emplcodigo = l.chr_emplcodigo;
 
 
-
+select * from v_log;
 
