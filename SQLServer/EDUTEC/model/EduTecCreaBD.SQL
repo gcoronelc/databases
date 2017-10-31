@@ -467,6 +467,7 @@ Insert Into alumno(IdAlumno,ApeAlumno,NomAlumno,EmailAlumno,Clave) Values('A0047
 Insert Into alumno(IdAlumno,ApeAlumno,NomAlumno,EmailAlumno,Clave) Values('A0048','Val Del Carpio', 'Silvia Verónica','sval@gmail.com','123456')
 Insert Into alumno(IdAlumno,ApeAlumno,NomAlumno,EmailAlumno,Clave) Values('A0049','Venturi Díaz', 'Ismael Martín','iventuri@peru.com','123456')
 Insert Into alumno(IdAlumno,ApeAlumno,NomAlumno,EmailAlumno,Clave) Values('A0050','Vera Pozo', 'Iván José Luis','ivera@hotmail.com','123456')
+Insert Into alumno(IdAlumno,ApeAlumno,NomAlumno,EmailAlumno,Clave) Values('A0051','Arbieto Chavez', 'Julio César','jarbieto@hotmail.com','123456')
 go
 
 -- Agregar Datos a la Tabla Empleado
