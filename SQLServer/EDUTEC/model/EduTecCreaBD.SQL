@@ -468,6 +468,8 @@ Insert Into alumno(IdAlumno,ApeAlumno,NomAlumno,EmailAlumno,Clave) Values('A0048
 Insert Into alumno(IdAlumno,ApeAlumno,NomAlumno,EmailAlumno,Clave) Values('A0049','Venturi Díaz', 'Ismael Martín','iventuri@peru.com','123456')
 Insert Into alumno(IdAlumno,ApeAlumno,NomAlumno,EmailAlumno,Clave) Values('A0050','Vera Pozo', 'Iván José Luis','ivera@hotmail.com','123456')
 Insert Into alumno(IdAlumno,ApeAlumno,NomAlumno,EmailAlumno,Clave) Values('A0051','Arbieto Chavez', 'Julio César','jarbieto@hotmail.com','123456')
+Insert Into alumno(IdAlumno,ApeAlumno,NomAlumno,EmailAlumno,Clave) Values('A0052','Ramirez Linares', 'Max Alberto','mramirez@hotmail.com','123456')
+Insert Into alumno(IdAlumno,ApeAlumno,NomAlumno,EmailAlumno,Clave) Values('A0053','Aquino Chero', 'Flor de Maria','faquino@hotmail.com','123456')
 go
 
 -- Agregar Datos a la Tabla Empleado
@@ -569,7 +571,7 @@ BEGIN
 	set @Fecha = @Fecha + 7
 
 	-- Determina el número de matriculados
-	Set @Cont = Rand() * 15 + 6 
+	Set @Cont = Rand() * 11 + 10 
 
 	WHILE (@Cont > 0) 
 	BEGIN
