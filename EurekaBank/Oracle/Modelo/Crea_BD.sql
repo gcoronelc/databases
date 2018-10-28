@@ -10,6 +10,11 @@ Email          :  gcoronelc@gmail.com
 Blog           :  http://gcoronelc.blogspot.com
 */
 
+SET TERMOUT ON
+SET ECHO OFF
+SET SERVEROUTPUT ON
+
+
 -- =============================================
 -- CRACIÓN DE LA APLICACIÓN
 -- =============================================
