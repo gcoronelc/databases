@@ -4,7 +4,6 @@ Rem DBMS           :  Oracle
 Rem Esquema        :  ventas
 Rem Script         :  Crea el esquema con sus respectivas tablas
 Rem Responsable    :  Ing. Eric Gustavo Coronel Castillo
-Rem Telefono       :  (511) 9966-64457
 Rem Email          :  gcoronelc@gmail.com
 Rem Blog           :  http://gcoronelc.blogspot.com
 Rem Creado el      :  20-FEB-2015

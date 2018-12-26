@@ -5,7 +5,8 @@
 -- Script         :  Crea la base de datos y carga Datos de Prueba a la Base de Datos
 -- Programado por :  Eric Gustavo Coronel Castillo
 -- Email          :  gcoronelc@gmail.com
--- Site           :  gcoronelc.blogspot.com
+-- Sitio Web      :  www.desarrollasoftware.com
+-- Blog           :  gcoronelc.blogspot.com
 
 -- =============================================
 -- Ultimos cambios

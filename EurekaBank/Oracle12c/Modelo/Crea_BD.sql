@@ -5,8 +5,8 @@ DBMS           :  Oracle
 Base de Datos  :  eurekabank
 Script         :  Crea la Base de Datos
 Responsable    :  Ing. Eric Gustavo Coronel Castillo
-Telefono       :  (511) 9966-64457
 Email          :  gcoronelc@gmail.com
+Sitio Web      :  www.desarrollasoftware.com
 Blog           :  http://gcoronelc.blogspot.com
 */
 
@@ -45,7 +45,7 @@ GRANT CREATE VIEW TO eureka;
 -- CONECTARSE A LA APLICACIÓN
 -- =============================================
 
-CONNECT eureka/admin
+CONNECT eureka/admin@ORCL
 
 
 -- =============================================
