@@ -48,7 +48,7 @@ GRANT CREATE VIEW TO eureka;
 -- CONECTARSE A LA APLICACIÓN
 -- =============================================
 
-CONNECT eureka/admin@XE
+CONNECT eureka/admin
 
 
 -- =============================================
