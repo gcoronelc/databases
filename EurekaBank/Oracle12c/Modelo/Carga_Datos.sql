@@ -5,9 +5,8 @@ DBMS           :  Orecle
 Base de Datos  :  eurekabank
 Script         :  Carga Datos
 Responsable    :  Eric Gustavo Coronel Castillo
-Telefono       :  (511) 9966-64457
 Email          :  gcoronelc@gmail.com
-Sitio          :  http://www.perudev.net
+Sitio Web      :  www.desarrollasoftware.com
 Blog           :  http://gcoronelc.blogspot.com
 */
 

@@ -6,7 +6,8 @@
  * Script         :  Crea el esquema y sus respectivas tablas
  * Creao por      :  Ing. Eric Gustavo Coronel Castillo
  * Email          :  gcoronelc@gmail.com
- * Web site       :  http://gcoronelc.blogspot.com
+ * Sitio Web      :  www.desarrollasoftware.com
+ * Blog           :  http://gcoronelc.blogspot.com
  * Fecha          :  22-NOV-2017
  * 
 **/

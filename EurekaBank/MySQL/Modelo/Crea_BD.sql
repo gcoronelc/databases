@@ -5,7 +5,6 @@ DBMS           :  MySQL Server
 Base de Datos  :  eurekabank
 Script         :  Crea la Base de Datos
 Responsable    :  Ing. Eric Gustavo Coronel Castillo
-Telefono       :  (511) 9966-64457
 Email          :  gcoronelc@gmail.com
 Sitio Web      :  http://www.desarrollasoftware.com
 Blog           :  http://gcoronelc.blogspot.com

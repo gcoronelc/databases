@@ -25,6 +25,9 @@ END ;
 /
 SET TERMOUT OFF
 
+-- Valido para la versión 12 o mas
+ALTER SESSION SET "_ORACLE_SCRIPT"=TRUE;
+
 -- ==========================================================
 -- CREACIÓN DEL ESQUEMA
 -- ==========================================================
@@ -45,7 +48,7 @@ end;
 -- Asigna privilegios
 
 grant connect, resource to recursos;
-
+grant UNLIMITED TABLESPACE to recursos;
 
 -- Conexión con la base de datos
 

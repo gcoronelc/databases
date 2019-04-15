@@ -7,7 +7,7 @@
 
 -- Procedimiento
 
-create or replace procedure usp_egcc_deposito
+create or replace procedure eureka.usp_egcc_deposito
 (p_cuenta varchar2, p_importe number, p_empleado varchar2)
 as
   v_msg varchar2(1000);
@@ -52,7 +52,7 @@ begin
   select dec_cuensaldo into v_saldo 
     from cuenta where chr_cuencodigo = v_cuenta;
   dbms_output.put_line('Saldo inicial: ' || v_saldo);
-  usp_egcc_deposito(v_cuenta,v_importe,'0001');
+  eureka.usp_egcc_deposito(v_cuenta,v_importe,'0001');
   select dec_cuensaldo into v_saldo 
     from cuenta where chr_cuencodigo = v_cuenta;
   dbms_output.put_line('Saldo final: ' || v_saldo);

@@ -5,7 +5,6 @@ DBMS           :  SQL SERVER
 Esquema        :  ventas
 Script         :  Crea la base de datos con sus respectivas tablas
 Responsable    :  Ing. Eric Gustavo Coronel Castillo
-Telefono       :  (511) 9966-64457
 Email          :  gcoronelc@gmail.com
 Blog           :  http://gcoronelc.blogspot.com
 Creado el      :  20-FEB-2015
