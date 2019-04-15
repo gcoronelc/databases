@@ -7,6 +7,7 @@ Rem Responsable    :  Ing. Eric Gustavo Coronel Castillo
 Rem Telefono       :  (511) 9966-64457
 Rem Email          :  gcoronelc@gmail.com
 Rem Blog           :  http://gcoronelc.blogspot.com
+Rem Youtube        :  www.youtube.com/c/DesarrollaSoftware
 Rem Creado el      :  20-FEB-2015
 
 Rem 20-FEB-2015 Se agrega la tabla USUARIO.
@@ -47,7 +48,7 @@ GRANT CREATE VIEW TO ventas;
 -- CONECTARSE A ORACLE
 -- =============================================
 
-CONNECT ventas/admin
+CONNECT ventas/admin@ORCL
 
 
 -- =============================================
