@@ -6,6 +6,7 @@ Esquema        :  ventas
 Script         :  Crea la base de datos con sus respectivas tablas
 Responsable    :  Ing. Eric Gustavo Coronel Castillo
 Email          :  gcoronelc@gmail.com
+Sitio Web      :  www.desarrollasoftware.com
 Blog           :  http://gcoronelc.blogspot.com
 Creado el      :  20-FEB-2015
 
