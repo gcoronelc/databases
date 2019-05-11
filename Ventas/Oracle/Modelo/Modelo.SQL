@@ -5,6 +5,7 @@ Rem Esquema        :  ventas
 Rem Script         :  Crea el esquema con sus respectivas tablas
 Rem Responsable    :  Ing. Eric Gustavo Coronel Castillo
 Rem Email          :  gcoronelc@gmail.com
+Rem Sitio Web      :  www.desarrollasoftware.com
 Rem Blog           :  http://gcoronelc.blogspot.com
 Rem Youtube        :  www.youtube.com/c/DesarrollaSoftware
 Rem Creado el      :  20-FEB-2015
