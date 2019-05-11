@@ -5,11 +5,12 @@
 -- Youtube: https://goo.gl/9GFBaC
 ----------------------------------------------------
 
-create or replace view v_cuenta(
-sucucodigo, sucunombre, cliecodigo, 
-cliepaterno, cliematerno, clienombre, 
-cuencodigo, cuensaldo, cuenestado, 
-monecodigo, monenombre )
+create or replace view EUREKA.v_cuenta(
+  sucucodigo, sucunombre, cliecodigo, 
+  cliepaterno, cliematerno, clienombre, 
+  cuencodigo, cuensaldo, cuenestado, 
+  monecodigo, monenombre 
+)
 as
 select 
   su.chr_sucucodigo  sucucodigo,
@@ -26,17 +27,20 @@ select
 from cuenta c 
 join moneda mo on c.chr_monecodigo = mo.chr_monecodigo
 join cliente cl on c.chr_cliecodigo = cl.chr_cliecodigo
-join sucursal su on c.chr_sucucodigo = su.chr_sucucodigo;
+join sucursal su on c.chr_sucucodigo = su.chr_sucucodigo; 
 
 
 
-select * from v_cuenta
+select * from EUREKA.v_cuenta
 where cuencodigo='00100002';
 
 
-select cuencodigo, monenombre,
-cuensaldo, cuenestado
-from v_cuenta where cuencodigo = ?;
+select cuencodigo, monenombre, cuensaldo, cuenestado
+from EUREKA.v_cuenta;
+
+
+
+SELECT * FROM EUREKA.CUENTA;
 
 
 

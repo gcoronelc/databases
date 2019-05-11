@@ -6,7 +6,7 @@
 ----------------------------------------------------
 
 
-create or replace view v_movimiento(
+create or replace view EUREKA.v_movimiento(
 sucucodigo, sucunombre, cliecodigo, cliepaterno,
 cliematerno, clienombre, cuencodigo, cuensaldo,
 cuenestado, movinumero, movifecha, moviimporte,
@@ -32,16 +32,16 @@ select
   tm.vch_tipoaccion  tipoaccion,
   mo.chr_monecodigo  monecodigo,
   mo.vch_monedescripcion monenombre
-from tipomovimiento tm
-join movimiento m on tm.chr_tipocodigo = m.chr_tipocodigo
-join cuenta c on m.chr_cuencodigo = c.chr_cuencodigo
-join moneda mo on c.chr_monecodigo = mo.chr_monecodigo
-join cliente cl on c.chr_cliecodigo = cl.chr_cliecodigo
-join sucursal su on c.chr_sucucodigo = su.chr_sucucodigo;
+from EUREKA.tipomovimiento tm
+join EUREKA.movimiento m on tm.chr_tipocodigo = m.chr_tipocodigo
+join EUREKA.cuenta c on m.chr_cuencodigo = c.chr_cuencodigo
+join EUREKA.moneda mo on c.chr_monecodigo = mo.chr_monecodigo
+join EUREKA.cliente cl on c.chr_cliecodigo = cl.chr_cliecodigo
+join EUREKA.sucursal su on c.chr_sucucodigo = su.chr_sucucodigo;
 
 
 
-select * from v_movimiento
+select * from EUREKA.v_movimiento
 where cuencodigo='00100002';
 
 
@@ -55,9 +55,11 @@ movifecha,
 moviimporte,
 tipocodigo,
 tiponombre
-from v_movimiento
+from EUREKA.v_movimiento;
 
-create or replace view v_resumen
+
+
+create or replace view EUREKA.v_resumen
 as
 select 
 cuencodigo, cuensaldo,
@@ -67,8 +69,9 @@ sum(case when tipoaccion='SALIDA'
 	then moviimporte else 0 end) salida,
 sum(moviimporte * case when tipoaccion='SALIDA'
 	then -1 else 1 end) saldo
-from v_movimiento
+from EUREKA.v_movimiento
 group by cuencodigo, cuensaldo;
 
 
 
+SELECT * FROM EUREKA.v_resumen;
