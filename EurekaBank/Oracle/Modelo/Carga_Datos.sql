@@ -1,14 +1,21 @@
-/*
-Empresa        :  EurekaBank
-Software       :  Sistema de Cuentas de Ahorro
-DBMS           :  Orecle
-Base de Datos  :  eurekabank
-Script         :  Carga Datos
-Responsable    :  Eric Gustavo Coronel Castillo
-Email          :  gcoronelc@gmail.com
-Sitio Web      :  www.desarrollasoftware.com
-Blog           :  http://gcoronelc.blogspot.com
-*/
+REM Empresa        :  EUREKABANK
+REM Software       :  Sistema de Cuentas de Ahorro
+REM DBMS           :  ORACLE
+REM Eequema        :  EUREKA
+REM Script         :  Crea el esquema EUREKA
+REM Responsable    :  Ing. Eric Gustavo Coronel Castillo
+REM Email          :  gcoronelc@gmail.com
+REM Sitio Web      :  www.desarrollasoftware.com
+REM Blog           :  http://gcoronelc.blogspot.com
+REM Youtube        :  https://www.youtube.com/c/DesarrollaSoftware
+
+
+REM ============================================
+REM DESHABILITAR SALIDAS
+REM ============================================
+
+SET TERMOUT OFF
+SET ECHO OFF
 
 
 -- =============================================
@@ -63,7 +70,7 @@ insert into sucursal values( '006', 'Machupicchu', 'Cusco', 'Calle El Sol 534', 
 INSERT INTO empleado VALUES( '9999', 'Internet', 'Internet', 'internet', 'Internet', 'internet', 'internet', 'internet' );
 INSERT INTO empleado VALUES( '0001', 'Romero', 'Castillo', 'Carlos Alberto', 'Trujillo', 'Call1 1 Nro. 456', 'cromero', 'chicho' );
 INSERT INTO empleado VALUES( '0002', 'Castro', 'Vargas', 'Lidia', 'Lima', 'Federico Villarreal 456 - SMP', 'lcastro', 'suerte' );
-INSERT INTO empleado VALUES( '0003', 'Reyes', 'Ortiz', 'Claudia', 'Lima', 'Av. Aviación 3456 - San Borja', 'creyes', 'linda' );
+INSERT INTO empleado VALUES( '0003', 'Reyes', 'Ortiz', 'Claudia', 'Lima', 'Av. AviaciÃ³n 3456 - San Borja', 'creyes', 'linda' );
 INSERT INTO empleado VALUES( '0004', 'Ramos', 'Garibay', 'Angelica', 'Chiclayo', 'Calle Barcelona 345', 'aramos', 'china' );
 INSERT INTO empleado VALUES( '0005', 'Ruiz', 'Zabaleta', 'Claudia', 'Cusco', 'Calle Cruz Verde 364', 'cvalencia', 'angel' );
 INSERT INTO empleado VALUES( '0006', 'Cruz', 'Tarazona', 'Ricardo', 'Areguipa', 'Calle La Gruta 304', 'rcruz', 'cerebro' );
@@ -84,7 +91,7 @@ insert into Asignado values( '000009', '004', '0007', to_date('20080101','YYYYMM
 -- Tabla: Parametro
 
 insert into Parametro values( '001', 'ITF - Impuesto a la Transacciones Financieras', '0.08', 'ACTIVO' );
-insert into Parametro values( '002', 'Número de Operaciones Sin Costo', '15', 'ACTIVO' );
+insert into Parametro values( '002', 'NÃºmero de Operaciones Sin Costo', '15', 'ACTIVO' );
 
 -- Tabla: Cliente
 
