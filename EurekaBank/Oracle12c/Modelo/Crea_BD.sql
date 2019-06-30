@@ -45,7 +45,7 @@ GRANT CREATE VIEW TO eureka;
 -- CONECTARSE A LA APLICACIÓN
 -- =============================================
 
-CONNECT eureka/admin@ORCL
+CONNECT eureka/admin
 
 
 -- =============================================
