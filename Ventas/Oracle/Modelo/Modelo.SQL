@@ -48,7 +48,7 @@ GRANT CREATE VIEW TO ventas;
 -- CONECTARSE A ORACLE
 -- =============================================
 
-CONNECT ventas/admin@ORCL
+CONNECT ventas/admin
 
 
 -- =============================================
