@@ -6,7 +6,7 @@
 ----------------------------------------------------
 
 
-create or replace view EUREKA.v_movimiento(
+create or replace view EUREKA.v_movimientos(
 sucucodigo, sucunombre, cliecodigo, cliepaterno,
 cliematerno, clienombre, cuencodigo, cuensaldo,
 cuenestado, movinumero, movifecha, moviimporte,
@@ -41,7 +41,7 @@ join EUREKA.sucursal su on c.chr_sucucodigo = su.chr_sucucodigo;
 
 
 
-select * from EUREKA.v_movimiento
+select * from EUREKA.v_movimientos
 where cuencodigo='00100002';
 
 
@@ -55,7 +55,7 @@ movifecha,
 moviimporte,
 tipocodigo,
 tiponombre
-from EUREKA.v_movimiento;
+from EUREKA.v_movimientos;
 
 
 
@@ -69,7 +69,7 @@ sum(case when tipoaccion='SALIDA'
 	then moviimporte else 0 end) salida,
 sum(moviimporte * case when tipoaccion='SALIDA'
 	then -1 else 1 end) saldo
-from EUREKA.v_movimiento
+from EUREKA.v_movimientos
 group by cuencodigo, cuensaldo;
 
 
