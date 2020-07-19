@@ -7,6 +7,7 @@
 -- Responsable    :  Eric Gustavo Coronel Castillo
 --                   Email: gcoronelc@gmail.com
 --                   Site: gcoronelc.blogspot.com
+--                   Canal: www.youtube.com/c/DesarrollaSoftware
 -- Creado por     :  Club de los Jueves
 --                   Guino Henostroza, Sergio Matsukawa, 
 --                   Cesar Bustamante, Gustavo Coronel
