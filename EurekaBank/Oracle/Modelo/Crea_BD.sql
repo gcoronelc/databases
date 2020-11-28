@@ -11,7 +11,7 @@ REM Youtube        :  https://www.youtube.com/c/DesarrollaSoftware
 
 
 
-REM 21-MAY-201 Se agrega comentarios a las columnas.
+REM 21-MAY-2001 Se agrega comentarios a las columnas.
 
 
 
