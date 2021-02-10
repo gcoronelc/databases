@@ -185,4 +185,4 @@ insert into Contador Values( 'Sucursal', 7, 3 );
 insert into Contador Values( 'Empleado', 11, 4 );
 insert into Contador Values( 'Asignado', 11, 6 );
 insert into Contador Values( 'Parametro', 2, 3 );
-insert into Contador Values( 'Cliente', 21, 5 );
+insert into Contador Values( 'Cliente', 20, 5 );

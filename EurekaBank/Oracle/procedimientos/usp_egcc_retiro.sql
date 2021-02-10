@@ -8,17 +8,16 @@
 -- Procedimiento
 
 create or replace procedure usp_egcc_retiro
-(p_cuenta varchar2, p_importe number, 
-p_empleado varchar2, p_clave varchar2)
+(p_cuenta varchar2, p_importe number, p_empleado varchar2, p_clave varchar2)
 as
-  v_msg varchar2(1000);
-  v_saldo number(12,2);
-  v_moneda char(2);
-  v_cont number(5,0);
-  v_estado varchar2(15);
-  v_costoMov number(12,2);
-  v_clave varchar2(10);
-  v_excep1 Exception;
+    v_msg varchar2(1000);
+    v_saldo number(12,2);
+    v_moneda char(2);
+    v_cont number(5,0);
+    v_estado varchar2(15);
+    v_costoMov number(12,2);
+    v_clave varchar2(10);
+    v_excep1 Exception;
 begin
 	select 
     dec_cuensaldo, chr_monecodigo, int_cuencontmov, 
@@ -69,3 +68,12 @@ exception
     raise_application_error(-20001,v_msg);
 end;
 /
+
+
+call usp_egcc_retiro('00100001',200,'0001','123456');
+/
+
+select * from empleado;
+select * from cuenta;
+
+
