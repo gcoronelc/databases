@@ -371,12 +371,12 @@ go
 
 -- Agragar Datos a la Tabla Profesor
 
-Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P001','Valencia Morales','Pedro Hugo','Magdalena','None','hugovm@terra.com.pe','123456')
+Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P001','Valencia Morales','Pedro Hugo','Magdalena','984567234','hugovm@terra.com.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P002','Coronel Castillo','Eric Gustavo','Los Olivos','None','gcoronel@uni.edu.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P003','Diaz Vilela','Pedro Pablo','Rimac','None','pdiaz@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P004','Matsukawa Maeda','Sergio','Bella Vista','None','smatsukawa@isil.edu.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P005','Bustamante Gutierrez','Cesar Augusto','Lince','None','cbustamente@ipeci.pe','123456')
-Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P006','Henostroza Macedo','Guino','Los Olivos','None','guinoh@hotmail.com','123456')
+Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P006','Henostroza Macedo','Guino','Los Olivos','934784092','guinoh@hotmail.com','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P007','Flores Manco','Julio Enrrique','Los Olivos','None','jflores@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P008','Bardon Mayta','Julio Cesar','SMP','None','jbardon@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P009','Allauca Paucar','Juan Jose','Los Olivos','None','jallauca@edutec.pe','123456')
@@ -386,31 +386,31 @@ Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P013','Quispe Tineo','Cesar','SMP','None','cquispe@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P014','Ramirez Salvador','Julio','SMP','None','jramirez@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P015','Chuquin Espinoza','Willian','Lince','None','wchuquin@edutec.pe','123456')
-Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P016','Rosas Ayala','Dario','Rimac','None','drosas@edutec.pe','123456')
+Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P016','Rosas Ayala','Dario','Rimac','943761238','drosas@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P017','Rodriguez Villacorta','Manuel','Lima','None','mrodriguez@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P018','Zegarra Zavaleta','Tereza','SMP','None','tzegarra@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P019','Guzman Azcurra','Manuel','Rimac','None','mguzman@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P020','Zegarra Zavaleta','Daniel','SMP','None','dzagarra@edutec.pe','123456')
-Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P021','Cueva Contreras','Martin','Rimac','None','mcueva@edutec.pe','123456')
+Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P021','Cueva Contreras','Martin','Rimac','984326934','mcueva@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P022','Lostaunau Navarro','Alberto','Lima','None','alostaunau@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P023','Condor Ortiz','Saul','SMP','None','scondor@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P024','Ganoza Zelada','David','Comas','None','dganoza@edutec.pe','123456')
-Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P025','Fabian Avila','Dionicio','Comas','None','dfabian@edutec.pe','123456')
+Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P025','Fabian Avila','Dionicio','Comas','923567095','dfabian@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P026','Quintana Saenz','Jorge','Rimac','None','jquintana@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P027','Yupanqui Villegas','Juan','SMP','None','juan.yupanqui@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P028','Yupanqui Villegas','Julio','SMP','None','julio.yupanqui@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P029','Alcantara Cerna','Violeta','SMP','None','valcantara@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P030','Oceda Samaniego','Cesar Miguel','San Miguel','None','coceda@edutec.pe','123456')
-Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P031','Becerra Flores','Ursula','San Miguel','None','ubecerra@edutec.pe','123456')
+Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P031','Becerra Flores','Ursula','San Miguel','978954222','ubecerra@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P032','Marcelo Villalobos','Marvin','Lince','None','mmarcelo@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P033','Narvaez Garcia','Victor','Lima','None','vnarcaez@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P034','Reynoso Zarate','Jose','Los Olivos','None','jreynoso@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P035','Suarez Valenzuela','Misael','Lima','None','msuarez@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P036','Carrasco Muñoz','Joel','Rimac','None','jcarrasco@edutec.pe','123456')
-Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P037','Salcedo Martinez','Percy','Lima','None','psalcedo@edutec.pe','123456')
+Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P037','Salcedo Martinez','Percy','Lima','939765232','psalcedo@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P038','Vasquez Valenzuela','Javier','Comas','None','jvasquez@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P039','Herrera Huanca','Javier','Comas','None','jherrera@edutec.pe','123456')
-Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P040','Marcelo Villalobos','Ricardo','SMP','None','rmarcelo@edutec.pe','123456')
+Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P040','Marcelo Villalobos','Ricardo','SMP','999777666','rmarcelo@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P041','Quiroz Villon','Edgar','Rimac','None','equiroz@edutec.pe','123456')
 Insert Into Profesor(IdProfesor,ApeProfesor,NomProfesor,DirProfesor,TelProfesor,EmailProfesor,Clave) Values ('P042','Veliz','Fortumato','La Molina','None','fveliz@edutec.pe','123456')
 go
@@ -523,11 +523,8 @@ BEGIN
 		Select @Precio = PrecioVenta From Tarifa 
 			Where IdTarifa = ( Select IdTarifa From Curso Where IdCurso = @IdCurso )
 		-- Codigo del Profesor
-		Set @Id = Round( Rand() * (@NProfesores + 1), 0, 1)
-		if ( @Id = 0 )
-			set @IdProfesor = null
-		else
-			Set @IdProfesor = 'P' + Right ( '000' + Convert( VarChar(3), @Id ), 3 )
+		Set @Id = Round( Rand() * @NProfesores, 0, 1) + 1
+		Set @IdProfesor = 'P' + Right ( '000' + Convert( VarChar(3), @Id ), 3 )
 		-- Horario
 		Set @Id = Rand() * 4 + 1
 		Set @Horario = Case @Id
@@ -572,7 +569,7 @@ BEGIN
 	set @Fecha = @Fecha + 7
 
 	-- Determina el número de matriculados
-	Set @Cont = Rand() * 11 + 10 
+	Set @Cont = Rand() * 14 + 7 
 
 	WHILE (@Cont > 0) 
 	BEGIN

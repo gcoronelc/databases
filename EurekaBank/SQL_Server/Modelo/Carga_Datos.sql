@@ -58,7 +58,7 @@ insert into TipoMovimiento values( '010', 'Cargo por Movimiento', 'SALIDA', 'ACT
 
 insert into sucursal values( '001', 'Sipan', 'Chiclayo', 'Av. Balta 1456', 2 );
 insert into sucursal values( '002', 'Chan Chan', 'Trujillo', 'Jr. Independencia 456', 3 );
-insert into sucursal values( '003', 'Los Olivos', 'Lima', 'Av. Central 1234', 0 );
+insert into sucursal values( '003', 'Los Olivos', 'Lima', 'Av. Central 1234', 1 );
 insert into sucursal values( '004', 'Pardo', 'Lima', 'Av. Pardo 345 - Miraflores', 0 );
 insert into sucursal values( '005', 'Misti', 'Arequipa', 'Bolivar 546', 0 );
 insert into sucursal values( '006', 'Machupicchu', 'Cusco', 'Calle El Sol 534', 0 );
