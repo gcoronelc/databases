@@ -42,6 +42,10 @@ exception
 end;
 /
 
+-- Habilitar las salidas
+
+set SERVEROUTPUT ON;
+
 -- Prueba
 
 declare

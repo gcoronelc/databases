@@ -42,7 +42,7 @@ join EUREKA.sucursal su on c.chr_sucucodigo = su.chr_sucucodigo;
 
 
 select * from EUREKA.v_movimientos
-where cuencodigo='00100002';
+where cuencodigo='00100001';
 
 
 select 

@@ -1,6 +1,6 @@
 REM Empresa           :  BookStore S.A.C.
 REM Software          :  Sistema de Comercialización y Control de Stock  (SCCS)
-REM DBMS              :  ORACLE 11G
+REM DBMS              :  ORACLE 12G o Superior
 REM Esquema           :  BookStore
 REM Script            :  Crea el esquema y carga Datos de Prueba
 REM Autor             :  Eric Gustavo Coronel Castillo
