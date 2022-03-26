@@ -1,8 +1,8 @@
 DELIMITER $$
 
-DROP PROCEDURE IF EXISTS usp_saldo_cuenta$$
+DROP PROCEDURE IF EXISTS usp_egcc_saldo_cuenta$$
 
-CREATE PROCEDURE usp_saldo_cuenta
+CREATE PROCEDURE usp_egcc_saldo_cuenta
 (IN p_cuenta char(8), OUT p_saldo decimal(12,2)) 
 BEGIN
 	
