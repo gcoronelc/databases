@@ -1,0 +1,2 @@
+git checkout .
+pause
