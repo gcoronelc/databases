@@ -1,13 +1,15 @@
 /*
  *
- * Empresa        :  PeruDev
- * DBMS           :  SQL Server 2008
+ * Empresa        :  Desarrolla Software
+ * DBMS           :  SQL Server
  * Base de Datos  :  RH
  * Descripción    :  Base de Datos de Recursos Humanos
  * Script         :  Crea la Base de Datos
  * Responsable    :  Ing. Eric Gustavo Coronel Castillo
  * Email          :  gcoronelc@gmail.com
  * Blog           :  gcoronelc.blogspot.com
+ * Cursos         :  gcoronelc.github.io
+ * Pagina web     :  www.desarollasoftware.com
  * Fecha          :  10-Mayo-2011
  *
 */
@@ -202,70 +204,79 @@ GO
 -- ==========================================================
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0001', 'Coronel', 'Gustavo', '20000401', 'gcoronelc@gmail.com', '996-664-457', 'C01', 100, 25000, NULL, NULL );
+VALUES ( 'E0001', 'Coronel', 'Gustavo', '20000401', 'gcoronelc@gmail.com', '996674457', 'C01', 100, 25000, NULL, NULL );
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0002', 'Fernandez', 'Claudia', '20000501', 'cfernandez@perudev.com', '9345-8365', 'C03', 100, 8000, NULL, 'E0001' );
+VALUES ( 'E0002', 'Fernandez', 'Claudia', '20000501', 'cfernandez@desarrollasoftware.com', '934528365', 'C03', 100, 8000, NULL, 'E0001' );
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0003', 'Matsukawa', 'Sergio', '20000401', 'smatsukawa@perudev.com', '9772-8369', 'C02', 102, 15000, NULL, 'E0001' );
+VALUES ( 'E0003', 'Matsukawa', 'Sergio', '20000401', 'smatsukawa@desarrollasoftware.com', '977248369', 'C02', 102, 15000, NULL, 'E0001' );
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0004', 'Diaz', 'Mariela', '20000410', 'mdiaz@hotmail.com', '8654-6734', 'C06', 102, 1800, NULL, 'E0003' );
+VALUES ( 'E0004', 'Diaz', 'Mariela', '20000410', 'mdiaz@desarrollasoftware.com', '865466734', 'C06', 102, 1800, NULL, 'E0003' );
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0005', 'Martinez', 'Roberto', '20000405', 'rmartinez@perudev.com', NULL, 'C08', 102, 9000, 500, 'E0003' );
+VALUES ( 'E0005', 'Martinez', 'Roberto', '20000405', 'rmartinez@desarrollasoftware.com', NULL, 'C08', 102, 9000, 500, 'E0003' );
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0006', 'Espinoza', 'Miguel', '20000406', 'mespinoza@perudev.com', '', 'C08', 102, 7500, 500, 'E0003' );
+VALUES ( 'E0006', 'Espinoza', 'Miguel', '20000406', 'mespinoza@desarrollasoftware.com', '', 'C08', 102, 7500, 500, 'E0003' );
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0007', 'Ramos', 'Vanessa', '20020406', 'vramos@yahoo.com', '9456-3456', 'C08', 102, 7000, 500, 'E0003' );
+VALUES ( 'E0007', 'Ramos', 'Vanessa', '20020406', 'vramos@desarrollasoftware.com', '945663456', 'C08', 102, 7000, 500, 'E0003' );
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0008', 'Flores', 'Julio', '20000401', 'jflores@perudev.com', NULL, 'C07', 102, 3500, 1000, 'E0003' );
+VALUES ( 'E0008', 'Flores', 'Julio', '20000401', 'jflores@desarrollasoftware.com', NULL, 'C07', 102, 3500, 1000, 'E0003' );
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0009', 'Marcelo', 'Ricardo', '20000401', 'rmarcelo@perudev.com', '9936-2966', 'C02', 101, 15000, NULL, 'E0001' );
+VALUES ( 'E0009', 'Marcelo', 'Ricardo', '20000401', 'rmarcelo@desarrollasoftware.com', '993672966', 'C02', 101, 15000, NULL, 'E0001' );
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0010', 'Barrios', 'Guisella', '20010115', 'gbarrios@desarrollasoftware.com', '9023-4512', 'C03', 101, 8000, NULL, 'E0009' );
+VALUES ( 'E0010', 'Barrios', 'Guisella', '20010115', 'gbarrios@desarrollasoftware.com', '902324512', 'C03', 101, 8000, NULL, 'E0009' );
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0011', 'Cuellar', 'Lucy', '20030218', 'lcuellar@perudev.com', NULL, 'C06', 101, 2000, NULL, 'E0009' );
+VALUES ( 'E0011', 'Cuellar', 'Lucy', '20030218', 'lcuellar@desarrollasoftware.com', NULL, 'C06', 101, 2000, NULL, 'E0009' );
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0012', 'Valencia', 'Hugo', '20000501', 'hvalencia@perudev.pe', '9732-5601', 'C02', 105, 18000, NULL, 'E0001' );
+VALUES ( 'E0012', 'Valencia', 'Hugo', '20000501', 'hvalencia@desarrollasoftware.com', '973285601', 'C02', 105, 18000, NULL, 'E0001' );
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0013', 'Veliz', 'Fortunato', '20000505', 'fveliz@perudev.pe', '9826-7603', 'C04', 105, 6000, NULL, 'E0012' );
+VALUES ( 'E0013', 'Veliz', 'Fortunato', '20000505', 'fveliz@desarrollasoftware.com', '982677603', 'C04', 105, 6000, NULL, 'E0012' );
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0014', 'Aguero', 'Octavio', '20000515', 'oaguero@perudev.pe', NULL, 'C07', 105, 3000, 300, 'E0012' );
+VALUES ( 'E0014', 'Aguero', 'Octavio', '20000515', 'oaguero@desarrollasoftware.com', NULL, 'C07', 105, 3000, 300, 'E0012' );
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0015', 'Rosales', 'Cesar', '20030315', 'crosales@perudev.com', NULL, 'C07', 105, 2500, 300, 'E0012' );
+VALUES ( 'E0015', 'Rosales', 'Cesar', '20030315', 'crosales@desarrollasoftware.com', NULL, 'C07', 105, 2500, 300, 'E0012' );
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0016', 'Villarreal', 'Nora', '20000501', 'nvillarreal@soporte.pe', '9371-3641', 'C02', 103, 15000, NULL, 'E0001' );
+VALUES ( 'E0016', 'Villarreal', 'Nora', '20000501', 'nvillarreal@soporte.pe', '937183641', 'C02', 103, 15000, NULL, 'E0001' );
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0017', 'Romero', 'Alejandra', '20000503', 'aromero@perudev.com', '8345-9526', 'C03', 103, 7500, NULL, 'E0016' );
+VALUES ( 'E0017', 'Romero', 'Alejandra', '20000503', 'aromero@desarrollasoftware.com', '834519526', 'C03', 103, 7500, NULL, 'E0016' );
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0018', 'Valdiviezo', 'Jennifer', '20000612', 'jvaldiviezo@perudev.com', '9263-5172', 'C06', 103, 2000, NULL, 'E0016' );
+VALUES ( 'E0018', 'Valdiviezo', 'Jennifer', '20000612', 'jvaldiviezo@desarrollasoftware.com', '926375172', 'C06', 103, 2000, NULL, 'E0016' );
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0019', 'Muchotrigo', 'Omar', '20000512', 'omuchotrigo@perudev.com', '9963-5542', 'C05', 103, 3500, 500, 'E0016' );
+VALUES ( 'E0019', 'Muchotrigo', 'Omar', '20000512', 'omuchotrigo@desarrollasoftware.com', '996325542', 'C05', 103, 3500, 500, 'E0016' );
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0020', 'Baltazar', 'Victor', '20000518', 'vbaltazar@perudev.com', '9893-4433', 'C05', 103, 3000, 800, 'E0016' );
+VALUES ( 'E0020', 'Baltazar', 'Victor', '20000518', 'vbaltazar@desarrollasoftware.com', '989394433', 'C05', 103, 3000, 800, 'E0016' );
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0021', 'Castillo', 'Ronald', '20010518', 'rcastillo@perudev.com', '9234-3487', 'C05', 103, 3000, 800, 'E0016' );
+VALUES ( 'E0021', 'Castillo', 'Ronald', '20010518', 'rcastillo@desarrollasoftware.com', '923433487', 'C05', 103, 3000, 800, 'E0016' );
 
 INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
-VALUES ( 'E0022', 'Espilco', 'Luis', '20020417', 'lespilco@perudev.com', '9554-3456', 'C05', 103, 3000, 300, 'E0016' );
+VALUES ( 'E0022', 'Espilco', 'Luis', '20020417', 'lespilco@desarrollasoftware.com', '955413456', 'C05', 103, 3000, 300, 'E0016' );
+
+INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
+VALUES ( 'E0023', 'Alvarez', 'Valeria', '20020520', 'valvarez@desarrollasoftware.com', '965458236', 'C07', 105, 4500, 0, 'E0012' );
+
+INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
+VALUES ( 'E0024', 'Cordova', 'Andrea', '20020610', 'acordova@desarrollasoftware.com', '993612854', 'C06', 101, 2500, 0, 'E0009' );
+
+INSERT INTO empleado ( idempleado, apellido, nombre, fecingreso, email, telefono, idcargo, iddepartamento, sueldo, comision, jefe )
+VALUES ( 'E0025', 'Ramirez', 'Diego', '20020503', 'dramirez@desarrollasoftware.com', '968321756', 'C08', 102, 7000, 0, 'E0003' );
 
 GO
 
@@ -276,7 +287,7 @@ GO
 INSERT INTO control ( parametro, valor ) VALUES ( 'Cargo', '10' );
 INSERT INTO control ( parametro, valor ) VALUES ( 'Ubicacion', '4' );
 INSERT INTO control ( parametro, valor ) VALUES ( 'Departamento', '107' );
-INSERT INTO control ( parametro, valor ) VALUES ( 'Empleado', '22' );
-INSERT INTO control ( parametro, valor ) VALUES ( 'Empresa', 'PeruDev' );
+INSERT INTO control ( parametro, valor ) VALUES ( 'Empleado', '25' );
+INSERT INTO control ( parametro, valor ) VALUES ( 'Empresa', 'Desarrolla Software' );
 GO
 

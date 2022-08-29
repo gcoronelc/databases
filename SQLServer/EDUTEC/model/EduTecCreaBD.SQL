@@ -6,8 +6,9 @@
 -- Script         :  Crea los objetos de la base de datos y carga datos de prueba
 -- Responsable    :  Eric Gustavo Coronel Castillo
 --                   Email: gcoronelc@gmail.com
---                   Site: gcoronelc.blogspot.com
---                   Canal: www.youtube.com/c/DesarrollaSoftware
+--                   blog: gcoronelc.blogspot.com
+--                   Canal: www.youtube.com/DesarrollaSoftware
+--                   Site: www.desarrollasoftware.com
 -- Creado por     :  Club de los Jueves
 --                   Guino Henostroza, Sergio Matsukawa, 
 --                   Cesar Bustamante, Gustavo Coronel
