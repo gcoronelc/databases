@@ -33,6 +33,13 @@ GO
 -- ======================================================
 
 IF( EXISTS ( SELECT 1 FROM sys.sysobjects 
+	WHERE name='EMPLEADO' and xtype = 'u') )
+BEGIN
+	DROP TABLE dbo.EMPLEADO;
+END;
+GO
+
+IF( EXISTS ( SELECT 1 FROM sys.sysobjects 
 	WHERE name='PAGO' and xtype = 'u') )
 BEGIN
 	DROP TABLE dbo.PAGO;
@@ -58,6 +65,25 @@ IF( EXISTS ( SELECT 1 FROM sys.sysobjects
 BEGIN
 	DROP TABLE dbo.ALUMNO;
 END;
+GO
+
+
+-- ======================================================
+-- TABLA EMPLEADO
+-- ======================================================
+
+
+CREATE TABLE dbo.EMPLEADO
+(
+	idempleado           INT NOT NULL ,
+	apellido             VARCHAR(100) NOT NULL ,
+	nombre               VARCHAR(100) NOT NULL ,
+	direccion            VARCHAR(150) NOT NULL ,
+	email                VARCHAR(100) NOT NULL ,
+	usuario              VARCHAR(20) NOT NULL ,
+	clave                VARCHAR(100) NOT NULL ,
+CONSTRAINT  XPKempleado PRIMARY KEY (idempleado)
+);
 GO
 
 -- ======================================================
@@ -295,7 +321,27 @@ ALTER TABLE dbo.MATRICULA
 go
 
 
+-- empleados
 
+   Insert Into dbo.empleado(idempleado,apellido,nombre,direccion,email,usuario,clave) 
+     Values(1,'AGUERO RAMOS','EMILIO','Lima','emilio@gmail.com','eaguero','cazador');
+   Insert Into dbo.empleado(idempleado,apellido,nombre,direccion,email,usuario,clave) 
+     Values(2,'SANCHEZ ROMERO','KATHIA','Miraflores','kathia@yahoo.es','ksanchez','suerte');
+   Insert Into dbo.empleado(idempleado,apellido,nombre,direccion,email,usuario,clave) 
+     Values(3,'LUNG WON','FELIX','Los Olivos','gato@hotmail.com','flung','por100pre');
+   Insert Into dbo.empleado(idempleado,apellido,nombre,direccion,email,usuario,clave) 
+     Values(4,'CASTILLO RAMOS','EDUARDO','Barrios altos','lalo@gmail.com','ecastillo','hastalavista');
+   Insert Into dbo.empleado(idempleado,apellido,nombre,direccion,email,usuario,clave) 
+     Values(5,'MILICICH FLORES','LAURA','Collique','laura@usil.pe','lmilicich','turuleka');
+   Insert Into dbo.empleado(idempleado,apellido,nombre,direccion,email,usuario,clave) 
+     Values(6,'DELGADO BARRERA','KENNETH','La punta','pochita@gmail.com','kdelgado','noimporta');
+   Insert Into dbo.empleado(idempleado,apellido,nombre,direccion,email,usuario,clave) 
+     Values(7,'GARCIA SOLIS','JOSE ELVIS','Barranco','pepe@gmail.com','jgarcia','noselodigas');
+   GO
+
+
+
+-- Operaciones finales
 
 SET DATEFORMAT DMY
 GO
