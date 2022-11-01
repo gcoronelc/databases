@@ -124,58 +124,58 @@ insert into cliente values( '00020', 'ZEGARRA', 'GARCIA', 'FERNANDO MOISES', '10
 
 -- Tabla: Cuenta
 
-insert into cuenta values('00200001','01','002','0001','00008',7000,'20080105','ACTIVO',15,'123456');
-insert into cuenta values('00200002','01','002','0001','00001',6800,'20080109','ACTIVO',3,'123456');
-insert into cuenta values('00200003','02','002','0001','00007',6000,'20080111','ACTIVO',6,'123456');
-insert into cuenta values('00100001','01','001','0004','00005',6900,'20080106','ACTIVO',7,'123456');
-insert into cuenta values('00100002','02','001','0004','00005',4500,'20080108','ACTIVO',4,'123456');
-insert into cuenta values('00300001','01','003','0002','00010',0000,'20080107','CANCELADO',3,'123456');
+insert into cuenta values('00200001','01','002','0001','00008',7000,'20220105','ACTIVO',15,'123456');
+insert into cuenta values('00200002','01','002','0001','00001',6800,'20220109','ACTIVO',3,'123456');
+insert into cuenta values('00200003','02','002','0001','00007',6000,'20220111','ACTIVO',6,'123456');
+insert into cuenta values('00100001','01','001','0004','00005',6900,'20220106','ACTIVO',7,'123456');
+insert into cuenta values('00100002','02','001','0004','00005',4500,'20220108','ACTIVO',4,'123456');
+insert into cuenta values('00300001','01','003','0002','00010',0000,'20220107','CANCELADO',3,'123456');
 
 -- Tabla: Movimiento
 
-insert into movimiento values('00100002',01,'20080108','0004','001',1800,null);
-insert into movimiento values('00100002',02,'20080125','0004','004',1000,null);
-insert into movimiento values('00100002',03,'20080213','0004','003',2200,null);
-insert into movimiento values('00100002',04,'20080308','0004','003',1500,null);
+insert into movimiento values('00100002',01,'20220108','0004','001',1800,null);
+insert into movimiento values('00100002',02,'20220125','0004','004',1000,null);
+insert into movimiento values('00100002',03,'20220213','0004','003',2200,null);
+insert into movimiento values('00100002',04,'20220308','0004','003',1500,null);
 
-insert into movimiento values('00100001',01,'20080106','0004','001',2800,null);
-insert into movimiento values('00100001',02,'20080115','0004','003',3200,null);
-insert into movimiento values('00100001',03,'20080120','0004','004',0800,null);
-insert into movimiento values('00100001',04,'20080214','0004','003',2000,null);
-insert into movimiento values('00100001',05,'20080225','0004','004',0500,null);
-insert into movimiento values('00100001',06,'20080303','0004','004',0800,null);
-insert into movimiento values('00100001',07,'20080315','0004','003',1000,null);
+insert into movimiento values('00100001',01,'20220106','0004','001',2800,null);
+insert into movimiento values('00100001',02,'20220115','0004','003',3200,null);
+insert into movimiento values('00100001',03,'20220120','0004','004',0800,null);
+insert into movimiento values('00100001',04,'20220214','0004','003',2000,null);
+insert into movimiento values('00100001',05,'20220225','0004','004',0500,null);
+insert into movimiento values('00100001',06,'20220303','0004','004',0800,null);
+insert into movimiento values('00100001',07,'20220315','0004','003',1000,null);
 
-insert into movimiento values('00200003',01,'20080111','0001','001',2500,null);
-insert into movimiento values('00200003',02,'20080117','0001','003',1500,null);
-insert into movimiento values('00200003',03,'20080120','0001','004',0500,null);
-insert into movimiento values('00200003',04,'20080209','0001','004',0500,null);
-insert into movimiento values('00200003',05,'20080225','0001','003',3500,null);
-insert into movimiento values('00200003',06,'20080311','0001','004',0500,null);
+insert into movimiento values('00200003',01,'20220111','0001','001',2500,null);
+insert into movimiento values('00200003',02,'20220117','0001','003',1500,null);
+insert into movimiento values('00200003',03,'20220120','0001','004',0500,null);
+insert into movimiento values('00200003',04,'20220209','0001','004',0500,null);
+insert into movimiento values('00200003',05,'20220225','0001','003',3500,null);
+insert into movimiento values('00200003',06,'20220311','0001','004',0500,null);
 
-insert into movimiento values('00200002',01,'20080109','0001','001',3800,null);
-insert into movimiento values('00200002',02,'20080120','0001','003',4200,null);
-insert into movimiento values('00200002',03,'20080306','0001','004',1200,null);
+insert into movimiento values('00200002',01,'20220109','0001','001',3800,null);
+insert into movimiento values('00200002',02,'20220120','0001','003',4200,null);
+insert into movimiento values('00200002',03,'20220306','0001','004',1200,null);
 
-insert into movimiento values('00200001',01,'20080105','0001','001',5000,null);
-insert into movimiento values('00200001',02,'20080107','0001','003',4000,null);
-insert into movimiento values('00200001',03,'20080109','0001','004',2000,null);
-insert into movimiento values('00200001',04,'20080111','0001','003',1000,null);
-insert into movimiento values('00200001',05,'20080113','0001','003',2000,null);
-insert into movimiento values('00200001',06,'20080115','0001','004',4000,null);
-insert into movimiento values('00200001',07,'20080119','0001','003',2000,null);
-insert into movimiento values('00200001',08,'20080121','0001','004',3000,null);
-insert into movimiento values('00200001',09,'20080123','0001','003',7000,null);
-insert into movimiento values('00200001',10,'20080127','0001','004',1000,null);
-insert into movimiento values('00200001',11,'20080130','0001','004',3000,null);
-insert into movimiento values('00200001',12,'20080204','0001','003',2000,null);
-insert into movimiento values('00200001',13,'20080208','0001','004',4000,null);
-insert into movimiento values('00200001',14,'20080213','0001','003',2000,null);
-insert into movimiento values('00200001',15,'20080219','0001','004',1000,null);
+insert into movimiento values('00200001',01,'20220105','0001','001',5000,null);
+insert into movimiento values('00200001',02,'20220107','0001','003',4000,null);
+insert into movimiento values('00200001',03,'20220109','0001','004',2000,null);
+insert into movimiento values('00200001',04,'20220111','0001','003',1000,null);
+insert into movimiento values('00200001',05,'20220113','0001','003',2000,null);
+insert into movimiento values('00200001',06,'20220115','0001','004',4000,null);
+insert into movimiento values('00200001',07,'20220119','0001','003',2000,null);
+insert into movimiento values('00200001',08,'20220121','0001','004',3000,null);
+insert into movimiento values('00200001',09,'20220123','0001','003',7000,null);
+insert into movimiento values('00200001',10,'20220127','0001','004',1000,null);
+insert into movimiento values('00200001',11,'20220130','0001','004',3000,null);
+insert into movimiento values('00200001',12,'20220204','0001','003',2000,null);
+insert into movimiento values('00200001',13,'20220208','0001','004',4000,null);
+insert into movimiento values('00200001',14,'20220213','0001','003',2000,null);
+insert into movimiento values('00200001',15,'20220219','0001','004',1000,null);
 
-insert into movimiento values('00300001',01,'20080107','0002','001',5600,null);
-insert into movimiento values('00300001',02,'20080118','0002','003',1400,null);
-insert into movimiento values('00300001',03,'20080125','0002','002',7000,null);
+insert into movimiento values('00300001',01,'20220107','0002','001',5600,null);
+insert into movimiento values('00300001',02,'20220118','0002','003',1400,null);
+insert into movimiento values('00300001',03,'20220125','0002','002',7000,null);
 
 --  Tabla: Contador
 
