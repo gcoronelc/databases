@@ -19,7 +19,6 @@
 -- =============================================
 
 -- Valido pa partir de la version 12
-
 ALTER SESSION SET "_ORACLE_SCRIPT"=TRUE;
 
 
@@ -302,49 +301,46 @@ ALTER TABLE MATRICULA
 -- DATOS DE LA TABLA MATRICULA
 -- ======================================================
 
-
 DECLARE 
 
-   fecha DATE;
+   anio VARCHAR(10);
    
 BEGIN
 
-  fecha :=  sysdate;
+  anio :=  to_char(sysdate, 'YYYY');
 
   INSERT INTO MATRICULA ( cur_id, alu_id, mat_fecha, mat_precio, mat_cuotas, mat_nota ) 
-  VALUES(1, 5, fecha - 20, 800.0, 1, 15);
+  VALUES(1, 5, to_date( anio || '0415 10:30','YYYYMMDD HH24:MI'), 800.0, 1, 15);
 
   INSERT INTO MATRICULA ( cur_id, alu_id, mat_fecha, mat_precio, mat_cuotas, mat_nota ) 
-  VALUES(1, 3, fecha - 20, 1000.0, 2, 18);
+  VALUES(1, 3, to_date( anio || '0416 11:45','YYYYMMDD HH24:MI'), 1000.0, 2, 18);
 
   INSERT INTO MATRICULA ( cur_id, alu_id, mat_fecha, mat_precio, mat_cuotas, mat_nota ) 
-  VALUES(1, 4, fecha - 19, 1200.0, 3, 12);
-  
-  INSERT INTO MATRICULA ( cur_id, alu_id, mat_fecha, mat_precio, mat_cuotas, mat_nota ) 
-  VALUES(1, 8, fecha - 19, 1200.0, 3, null);
+  VALUES(1, 4, to_date( anio || '0418 08:33','YYYYMMDD HH24:MI'), 1200.0, 3, 12);
 
   INSERT INTO MATRICULA ( cur_id, alu_id, mat_fecha, mat_precio, mat_cuotas, mat_nota ) 
-  VALUES(2, 1,fecha - 21,800.0,1,16);
+  VALUES(2, 1, to_date( anio || '0415 12:33','YYYYMMDD HH24:MI'),800.0,1,16);
 
   INSERT INTO MATRICULA ( cur_id, alu_id, mat_fecha, mat_precio, mat_cuotas, mat_nota ) 
-  VALUES(2, 2, fecha - 21,1000.0,2,10);
+  VALUES(2, 2, to_date( anio || '0501 15:34','YYYYMMDD HH24:MI'),1000.0,2,10);
 
   INSERT INTO MATRICULA ( cur_id, alu_id, mat_fecha, mat_precio, mat_cuotas, mat_nota ) 
-  VALUES(2, 3, fecha - 18, 1300.0, 3, 14);
+  VALUES(2, 3, to_date( anio || '0503 16:55','YYYYMMDD HH24:MI'), 1300.0, 3, 14);
 
   INSERT INTO MATRICULA ( cur_id, alu_id, mat_fecha, mat_precio, mat_cuotas, mat_nota ) 
-  VALUES(2, 4, fecha - 18, 400.0, 1, 18);
+  VALUES(2, 4, to_date( anio || '0504 17:00','YYYYMMDD HH24:MI'), 400.0, 1, 18);
 
   INSERT INTO MATRICULA ( cur_id, alu_id, mat_fecha, mat_precio, mat_cuotas, mat_nota ) 
-  VALUES(2, 5, fecha - 16, 750.0, 1, null);
+  VALUES(2, 5, to_date( anio || '0506 13:12','YYYYMMDD HH24:MI'), 750.0, 1, 17);
 
   INSERT INTO MATRICULA ( cur_id, alu_id, mat_fecha, mat_precio, mat_cuotas, mat_nota ) 
-  VALUES(3, 7, fecha - 10, 950.0, 2, null);
+  VALUES(3, 7, to_date( anio || '0602 13:12','YYYYMMDD HH24:MI'), 950.0, 2, 15);
 
 END;
 /
 
-COMMIT;
+
+commit;
 
 -- ======================================================
 -- Actualizar la columna matriculados en la tabla curso
@@ -355,7 +351,7 @@ SET cur_matriculados = (
 	SELECT COUNT(*) FROM MATRICULA
 	WHERE MATRICULA.cur_id = CURSO.cur_id );
 
-COMMIT;	
+commit;	
 
 -- ======================================================
 -- RESTRICCIONES EN LA TABLA PAGO
@@ -376,61 +372,37 @@ ALTER TABLE PAGO
 	REFERENCES MATRICULA(cur_id,alu_id);
 
 
-
--- ======================================================
--- DATOS EN LA TABLA PAGO
--- ======================================================
+-- Cargar Datos
 
 
 DECLARE 
 
-   fecha DATE;
+  anio VARCHAR(10);
    
 BEGIN
 
-  fecha :=  sysdate;
+  anio :=  to_char(sysdate, 'YYYY');
   
-  insert into PAGO values(1,3,1,fecha-20,500);
-  insert into PAGO values(1,3,2,fecha-10,500);
-  insert into PAGO values(1,4,1,fecha-19,400);
-  insert into PAGO values(1,4,2,fecha-9,400);
-  insert into PAGO values(2,1,1,fecha-21,800);
-  insert into PAGO values(2,2,1,fecha-20,500);
-  insert into PAGO values(2,3,1,fecha-18,430);
-  insert into PAGO values(2,3,2,fecha-10,430);
-  insert into PAGO values(2,4,1,fecha-18,400);
-  insert into PAGO values(2,5,1,fecha-16,750);
+  insert into PAGO values(1,3,1,to_date( anio || '0406','YYYYMMDD'),500);
+  insert into PAGO values(1,3,2,to_date( anio || '0516','YYYYMMDD'),500);
+  insert into PAGO values(1,4,1,to_date( anio || '0418','YYYYMMDD'),400);
+  insert into PAGO values(1,4,2,to_date( anio || '0518','YYYYMMDD'),400);
+  insert into PAGO values(2,1,1,to_date( anio || '0415','YYYYMMDD'),800);
+  insert into PAGO values(2,2,1,to_date( anio || '0501','YYYYMMDD'),500);
+  insert into PAGO values(2,3,1,to_date( anio || '0503','YYYYMMDD'),430);
+  insert into PAGO values(2,3,2,to_date( anio || '0603','YYYYMMDD'),430);
+  insert into PAGO values(2,4,1,to_date( anio || '0504','YYYYMMDD'),400);
+  insert into PAGO values(2,5,1,to_date( anio || '0506','YYYYMMDD'),750);
 
 END;
 /
 
-COMMIT;
+commit;
 
 
 -- ======================================================
 -- FIN
 -- ======================================================
-
--- Formatenado la salida
-
-set pagesize 1000
-set linesize 600
-
-column cur_id format 99999
-column cur_nombre format a32
-column cur_profesor format a20
-column cur_precio format 99,999.00
-
-column alu_id format 99999
-column alu_nombre format a35
-column alu_direccion format a15
-column alu_telefono format a15
-column alu_email format a25
-
-column mat_precio format 99,999.00
-column pag_importe format 99,999.00
-
--- Consultando las tablas
 
 select * from ALUMNO;
 select * from CURSO;
