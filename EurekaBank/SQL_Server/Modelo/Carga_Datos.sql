@@ -87,12 +87,15 @@ insert into Asignado values( '000002', '002', '0001', '20071120', null );
 insert into Asignado values( '000003', '003', '0002', '20071128', null );
 insert into Asignado values( '000004', '004', '0003', '20071212', '20080325' );
 insert into Asignado values( '000005', '005', '0006', '20071220', null );
-insert into Asignado values( '000006', '006', '0005', '20080105', null );
+insert into Asignado values( '000006', '006', '0005', '20080105', '20090415' );
 insert into Asignado values( '000007', '004', '0007', '20080107', null );
 insert into Asignado values( '000008', '005', '0008', '20080107', null );
 insert into Asignado values( '000009', '001', '0011', '20080108', null );
 insert into Asignado values( '000010', '002', '0009', '20080108', null );
 insert into Asignado values( '000011', '006', '0010', '20080108', null );
+insert into Asignado values( '000012', '004', '0005', '20090416', null );
+
+
 
 -- Tabla: Parametro
 
@@ -183,6 +186,6 @@ insert into Contador Values( 'Moneda', 2, 2 );
 insert into Contador Values( 'TipoMovimiento', 10, 3 );
 insert into Contador Values( 'Sucursal', 7, 3 );
 insert into Contador Values( 'Empleado', 11, 4 );
-insert into Contador Values( 'Asignado', 11, 6 );
+insert into Contador Values( 'Asignado', 12, 6 );
 insert into Contador Values( 'Parametro', 2, 3 );
 insert into Contador Values( 'Cliente', 20, 5 );
