@@ -24,6 +24,10 @@ SET ECHO OFF
 -- CRACIÓN DEL USUARIO
 -- =============================================
 
+-- Valido para la versión 12 o superior
+ALTER SESSION SET "_ORACLE_SCRIPT"=TRUE;
+
+
 DECLARE
 	N INT;
 	COMMAND VARCHAR2(200);
@@ -38,21 +42,19 @@ BEGIN
 END;
 /
 
--- Valido para la versión 12
-ALTER SESSION SET "_ORACLE_SCRIPT"=TRUE;
 
 CREATE USER ventas IDENTIFIED BY admin;
 
-GRANT CONNECT, RESOURCE TO ventas;
-grant UNLIMITED TABLESPACE to ventas;
-GRANT CREATE VIEW TO ventas;
+GRANT CONNECT, RESOURCE, CREATE VIEW, CREATE SEQUENCE TO ventas;
+GRANT UNLIMITED TABLESPACE TO ventas;
+GRANT  TO ventas;
 
 
 -- =============================================
 -- CONECTARSE A ORACLE
 -- =============================================
 
-CONNECT ventas/admin@ORCL
+CONNECT ventas/admin
 
 
 -- =============================================
