@@ -1,7 +1,7 @@
 /**
  *
  * DBMS              :  SQL Server
- * Base de Datos     :  EDUCA
+ * Base de Datos     :  EDUCA2
  * Descripción       :  Base de Datos de control académico sencillo
  * Script            :  Crea la Base de Datos
  * Creao por         :  Ing. Eric Gustavo Coronel Castillo
@@ -24,13 +24,13 @@
 USE master;
 GO
 
-IF( NOT EXISTS ( SELECT 1 FROM sys.sysdatabases WHERE name='EDUCA' ) )
+IF( NOT EXISTS ( SELECT 1 FROM sys.sysdatabases WHERE name='EDUCA2' ) )
 BEGIN
-	CREATE DATABASE EDUCA;
+	CREATE DATABASE EDUCA2;
 END;
 GO
 
-USE EDUCA;
+USE EDUCA2;
 GO
 
 -- ======================================================
