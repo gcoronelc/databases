@@ -299,19 +299,19 @@ INSERT INTO dbo.MATRICULA ( cur_id, alu_id, emp_id, mat_tipo, mat_fecha, mat_pre
 VALUES(1, 5, 2, 'MEDIABECA', '15-04-' + @ANIO +' 10:30',500.0,1,15);
 
 INSERT INTO dbo.MATRICULA ( cur_id, alu_id, emp_id, mat_tipo, mat_fecha, mat_precio, mat_cuotas, mat_nota ) 
-VALUES(1, 3, 3, 'NORMAL', '16-04-' + @ANIO +' 11:45',1000.0,2,18);
+VALUES(1, 3, 3, 'REGULAR', '16-04-' + @ANIO +' 11:45',1000.0,2,18);
 
 INSERT INTO dbo.MATRICULA ( cur_id, alu_id, emp_id, mat_tipo, mat_fecha, mat_precio, mat_cuotas, mat_nota ) 
-VALUES(1, 4, 2, 'NORMAL', '18-04-' +@ANIO +' 08:33',1000.0,3,12);
+VALUES(1, 4, 2, 'REGULAR', '18-04-' +@ANIO +' 08:33',1000.0,3,12);
 
 INSERT INTO dbo.MATRICULA ( cur_id, alu_id, emp_id, mat_tipo, mat_fecha, mat_precio, mat_cuotas, mat_nota ) 
 VALUES(2, 1, 4, 'MEDIABECA', '15-04-' + @ANIO +' 12:33',500.0,1,16);
 
 INSERT INTO dbo.MATRICULA ( cur_id, alu_id, emp_id, mat_tipo, mat_fecha, mat_precio, mat_cuotas, mat_nota ) 
-VALUES(2, 2, 3, 'NORMAL', '01-05-' + @ANIO +' 15:34',1000.0,2,10);
+VALUES(2, 2, 3, 'REGULAR', '01-05-' + @ANIO +' 15:34',1000.0,2,10);
 
 INSERT INTO dbo.MATRICULA ( cur_id, alu_id, emp_id, mat_tipo, mat_fecha, mat_precio, mat_cuotas, mat_nota ) 
-VALUES(2, 3, 4, 'NORMAL', '03-05-' + @ANIO +' 16:55',1000.0,3,14);
+VALUES(2, 3, 4, 'REGULAR', '03-05-' + @ANIO +' 16:55',1000.0,3,14);
 
 INSERT INTO dbo.MATRICULA ( cur_id, alu_id, emp_id, mat_tipo, mat_fecha, mat_precio, mat_cuotas, mat_nota ) 
 VALUES(2, 4, 1, 'MEDIABECA', '04-05-' + @ANIO +' 17:00',500.0,1,18);
@@ -320,10 +320,10 @@ INSERT INTO dbo.MATRICULA ( cur_id, alu_id, emp_id, mat_tipo, mat_fecha, mat_pre
 VALUES(2, 5, 3, 'MEDIABECA', '06-05-' + @ANIO +' 13:12',500.0,1,17);
 
 INSERT INTO dbo.MATRICULA ( cur_id, alu_id, emp_id, mat_tipo, mat_fecha, mat_precio, mat_cuotas, mat_nota ) 
-VALUES(3, 7, 2, 'NORMAL', '02-06-' + @ANIO +' 13:12',1500.0,2,15);
+VALUES(3, 7, 2, 'REGULAR', '02-06-' + @ANIO +' 13:12',1500.0,2,15);
 
 INSERT INTO dbo.MATRICULA ( cur_id, alu_id, emp_id, mat_tipo, mat_fecha, mat_precio, mat_cuotas, mat_nota ) 
-VALUES(4, 9, 2, 'NORMAL', '03-06-' + @ANIO +' 11:10',1200.0,2,15);
+VALUES(4, 9, 2, 'REGULAR', '03-06-' + @ANIO +' 11:10',1200.0,2,15);
 GO
 
 SELECT * FROM MATRICULA;
