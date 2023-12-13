@@ -138,7 +138,7 @@ CREATE TABLE dbo.MATRICULA
 	emp_id               integer  NOT NULL ,
 	mat_tipo             varchar(20)  NOT NULL 
 	CONSTRAINT chk_matricula_tipo
-		CHECK  ( mat_tipo IN ('NORMAL','BECA','MEDIABECA') ),
+		CHECK  ( mat_tipo IN ('REGULAR','BECA','MEDIABECA') ),
 	mat_fecha            datetime  NOT NULL ,
 	mat_precio           money  NOT NULL ,
 	mat_cuotas           int  NOT NULL ,
