@@ -236,25 +236,25 @@ SET IDENTITY_INSERT dbo.Curso ON;
 GO
 
 INSERT INTO CURSO(CUR_ID,CUR_NOMBRE,CUR_VACANTES,CUR_PRECIO,CUR_PROFESOR)
-VALUES(1,'SQL Server Implementación',24,1000.0,'Gustavo coronel');
+VALUES(1,'SQL Server Implementación',30,1000.0,'Gustavo coronel');
 
 INSERT INTO CURSO(cur_id,cur_nombre,cur_vacantes,cur_precio,cur_profesor)
-VALUES(2,'SQL Server Administración',24,1000.0,' ');
+VALUES(2,'SQL Server Administración',18,1200.0,' ');
 
 INSERT INTO CURSO(cur_id,cur_nombre,cur_vacantes,cur_precio,cur_profesor)
-VALUES(3,'Inteligencia de Negocios',24,1500.0,'Sergio Matsukawa');
+VALUES(3,'Inteligencia de Negocios',18,1500.0,'Sergio Matsukawa');
 
 INSERT INTO CURSO(cur_id,cur_nombre,cur_vacantes,cur_precio,cur_profesor)
-VALUES(4,'Programación Transact-SQL',24,1200.0,NULL);
+VALUES(4,'Programación Transact-SQL',18,1200.0,NULL);
 
 INSERT INTO CURSO(cur_id,cur_nombre,cur_vacantes,cur_precio,cur_profesor)
-VALUES(5,'Java Fundamentos',24,1600.0,'Gustavo Coronel');
+VALUES(5,'Java Fundamentos',30,1600.0,'Gustavo Coronel');
 
 INSERT INTO CURSO(cur_id,cur_nombre,cur_vacantes,cur_precio,cur_profesor)
 VALUES(6,'Java Cliente-Servidor',24,1600.0,'Gustavo Coronel');
 
 INSERT INTO CURSO(CUR_ID,CUR_NOMBRE,CUR_VACANTES,CUR_PRECIO,CUR_PROFESOR)
-VALUES(7,'GESTION DE PROYECTOS',24,2200.0,'RICARDO MARCELO');
+VALUES(7,'GESTION DE PROYECTOS',30,2200.0,'Ricardo Marcelo');
 GO
 
 SET IDENTITY_INSERT dbo.Curso OFF;
