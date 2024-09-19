@@ -31,8 +31,8 @@ go
 CREATE TABLE GUIA_DETALLE (
     IdGuia               int NOT NULL,
     IdProducto           int NOT NULL,
-    PrecioVenta          money NOT NULL,
-    Cantidad             smallint NOT NULL,
+    PrecioVenta          numeric(10,2) NOT NULL,
+    Cantidad             int NOT NULL,
 	CONSTRAINT PK_GUIA_DETALLE PRIMARY KEY (IdGuia, IdProducto)
 );
 go
@@ -41,9 +41,9 @@ go
 CREATE TABLE ORDEN_DETALLE (
     IdOrden              int NOT NULL,
     IdProducto           int NOT NULL,
-    PrecioCompra         money NOT NULL,
-    CantidadSolicitada   smallint NOT NULL,
-    CantidadRecibida     smallint NULL,
+    PrecioCompra         numeric(10,2) NOT NULL,
+    CantidadSolicitada   int NOT NULL,
+    CantidadRecibida     int NULL,
     Estado               varchar(10) NULL,
 	CONSTRAINT PK_ORDEN_DETALLE PRIMARY KEY (IdOrden, IdProducto)
 );
@@ -56,9 +56,9 @@ CREATE TABLE PRODUCTO (
     IdProveedor          int NOT NULL,
     Nombre               varchar(40) NOT NULL,
     UnidadMedida         varchar(30) NULL,
-    PrecioProveedor      money NULL,
-    StockActual          smallint NULL,
-    StockMinimo          smallint NULL,
+    PrecioProveedor      numeric(10,2) NULL,
+    StockActual          int NULL,
+    StockMinimo          int NULL,
     Descontinuado        int NOT NULL,
 	CONSTRAINT PK_PRODUCTO PRIMARY KEY (IdProducto),
 	CONSTRAINT U_PRODUCTO_NOMBRE UNIQUE (Nombre, UnidadMedida) 
@@ -84,9 +84,9 @@ go
 
  
 CREATE TABLE CATEGORIA (
-    IdCategoria          int IDENTITY(1,1),
-    Nombre		     varchar(20) NOT NULL,
-    Descripcion          varchar(40) NULL,
+    IdCategoria        int IDENTITY(1,1),
+    Nombre		       varchar(20) NOT NULL,
+    Descripcion        varchar(40) NULL,
 	CONSTRAINT PK_CATEGORIA PRIMARY KEY (IdCategoria),
 	CONSTRAINT U_CATEGORIA_NOMBRE UNIQUE (Nombre)
 );
