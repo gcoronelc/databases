@@ -608,6 +608,7 @@ INSERT guia_detalle VALUES(16, 105, 0.75, 100)
 INSERT guia_detalle VALUES(16, 106, 0.75, 100)
 INSERT guia_detalle VALUES(16, 107, 7.50, 25)
 INSERT guia_detalle VALUES(16, 108, 9.00, 25)
+GO
 
 INSERT guia VALUES(17, 2, getdate() - 25, 'VELASQUEZ ORTIZ, FRANCISCO')
 INSERT guia_detalle VALUES(17, 92, 3.00, 25)
@@ -621,6 +622,7 @@ INSERT guia_detalle VALUES(17, 105, 0.75, 100)
 INSERT guia_detalle VALUES(17, 106, 0.75, 100)
 INSERT guia_detalle VALUES(17, 107, 7.50, 25)
 INSERT guia_detalle VALUES(17, 108, 9.00, 25)
+GO
 
 INSERT guia VALUES(18, 3, getdate() - 20, 'VELASQUEZ ORTIZ, FRANCISCO')
 INSERT guia_detalle VALUES(18, 92, 3.00, 25)
@@ -634,6 +636,7 @@ INSERT guia_detalle VALUES(18, 105, 0.75, 100)
 INSERT guia_detalle VALUES(18, 106, 0.75, 100)
 INSERT guia_detalle VALUES(18, 107, 7.50, 25)
 INSERT guia_detalle VALUES(18, 108, 9.00, 25)
+GO
 
 INSERT guia VALUES(19, 4, getdate() - 15, 'ALIAGA VIDAL, JEREMIAS')
 INSERT guia_detalle VALUES(19, 92, 3.00, 25)
@@ -647,6 +650,7 @@ INSERT guia_detalle VALUES(19, 105, 0.75, 100)
 INSERT guia_detalle VALUES(19, 106, 0.75, 100)
 INSERT guia_detalle VALUES(19, 107, 7.50, 25)
 INSERT guia_detalle VALUES(19, 108, 9.00, 25)
+GO
 
 INSERT guia VALUES(20, 5, getdate() - 10, 'ALIAGA VIDAL, JEREMIAS')
 INSERT guia_detalle VALUES(20, 92, 3.00, 25)
@@ -660,6 +664,8 @@ INSERT guia_detalle VALUES(20, 105, 0.75, 100)
 INSERT guia_detalle VALUES(20, 106, 0.75, 100)
 INSERT guia_detalle VALUES(20, 107, 7.50, 25)
 INSERT guia_detalle VALUES(20, 108, 9.00, 25)
+GO
+
 -- FIN LACTEOS DIA 1
 
 -- LICORES Y BEBIDAS DIA 1
@@ -675,6 +681,7 @@ INSERT guia_detalle VALUES(21, 116, 3.60, 100)
 INSERT guia_detalle VALUES(21, 117, 3.10, 100)
 INSERT guia_detalle VALUES(21, 118, 3.35, 100)
 INSERT guia_detalle VALUES(21, 119, 18.85, 5)
+GO
 
 INSERT guia VALUES(22, 2, getdate() - 25, 'VELASQUEZ ORTIZ, FRANCISCO')
 INSERT guia_detalle VALUES(22, 109, 3.85, 100)
@@ -688,6 +695,7 @@ INSERT guia_detalle VALUES(22, 116, 3.60, 100)
 INSERT guia_detalle VALUES(22, 117, 3.10, 100)
 INSERT guia_detalle VALUES(22, 118, 3.35, 100)
 INSERT guia_detalle VALUES(22, 119, 18.85, 5)
+GO
 
 INSERT guia VALUES(23, 3, getdate() - 20, 'VELASQUEZ ORTIZ, FRANCISCO')
 INSERT guia_detalle VALUES(23, 109, 3.85, 100)
@@ -701,6 +709,7 @@ INSERT guia_detalle VALUES(23, 116, 3.60, 100)
 INSERT guia_detalle VALUES(23, 117, 3.10, 100)
 INSERT guia_detalle VALUES(23, 118, 3.35, 100)
 INSERT guia_detalle VALUES(23, 119, 18.85, 5)
+GO
 
 INSERT guia VALUES(24, 4, getdate() - 15, 'ALIAGA VIDAL, JEREMIAS')
 INSERT guia_detalle VALUES(24, 109, 3.85, 100)
@@ -714,6 +723,7 @@ INSERT guia_detalle VALUES(24, 116, 3.60, 100)
 INSERT guia_detalle VALUES(24, 117, 3.10, 100)
 INSERT guia_detalle VALUES(24, 118, 3.35, 100)
 INSERT guia_detalle VALUES(24, 119, 18.85, 5)
+GO
 
 INSERT guia VALUES(25, 5, getdate() - 10, 'ALIAGA VIDAL, JEREMIAS')
 INSERT guia_detalle VALUES(25, 109, 3.85, 100)
@@ -727,6 +737,8 @@ INSERT guia_detalle VALUES(25, 116, 3.60, 100)
 INSERT guia_detalle VALUES(25, 117, 3.10, 100)
 INSERT guia_detalle VALUES(25, 118, 3.35, 100)
 INSERT guia_detalle VALUES(25, 119, 18.85, 5)
+GO
+
 -- FIN LICORES Y BEBIDAS DIA 1
 
 -- LIMPIEZA DIA 1
@@ -1921,7 +1933,7 @@ INSERT orden_detalle VALUES(8,36,21.50,100,100,'Entregado')
 -- PROVEEDOR 5
 INSERT orden VALUES(9, getdate() - 7, getdate() - 6)
 INSERT orden_detalle VALUES(9,51,3.90,100,100,'Entregado')
-INSERT orden_detalle VALUES(9,54,7.95,100,100,'Entregado')
+INSERT orden_detalle VALUES(9,54,7.95,100,0,'Agotado')
 INSERT orden_detalle VALUES(9,56,4.10,100,100,'Entregado')
 INSERT orden_detalle VALUES(9,61,4.70,100,100,'Entregado')
 INSERT orden_detalle VALUES(9,126,1.48,5000,5000,'Entregado')
@@ -1935,7 +1947,7 @@ INSERT orden_detalle VALUES(9,77,3.50,1000,1000,'Entregado')
 -- PROVEEDOR 7
 INSERT orden VALUES(10, getdate() - 7, getdate() - 6)
 INSERT orden_detalle VALUES(10,74,1.10,2000,2000,'Entregado')
-INSERT orden_detalle VALUES(10,75,2.70,2000,2000,'Entregado')
+INSERT orden_detalle VALUES(10,75,2.70,2000,1000,'Entregado')
 INSERT orden_detalle VALUES(10,79,1.65,2000,2000,'Entregado')
 INSERT orden_detalle VALUES(10,81,5.05,1000,1000,'Entregado')
 INSERT orden_detalle VALUES(10,78,2.15,2000,2000,'Entregado')
@@ -1967,7 +1979,7 @@ INSERT orden_detalle VALUES(12,21,2.50,200,200,'Entregado')
 -- PROVEEDOR 1
 INSERT orden VALUES(13, getdate() - 5, getdate() - 4)
 INSERT orden_detalle VALUES(13,44,11.50,250,250,'Entregado')
-INSERT orden_detalle VALUES(13,98,3.00,100,0,'Entregado')
+INSERT orden_detalle VALUES(13,98,3.00,100,0,'Agotado')
 INSERT orden_detalle VALUES(13,92,2.00,100,100,'Entregado')
 INSERT orden_detalle VALUES(13,37,5.50,250,250,'Entregado')
 INSERT orden_detalle VALUES(13,32,20.50,50,50,'Entregado')
@@ -1990,7 +2002,7 @@ INSERT orden_detalle VALUES(15,51,3.90,100,100,'Entregado')
 INSERT orden_detalle VALUES(15,54,7.95,100,100,'Entregado')
 INSERT orden_detalle VALUES(15,56,4.10,100,100,'Entregado')
 INSERT orden_detalle VALUES(15,61,4.70,100,100,'Entregado')
-INSERT orden_detalle VALUES(15,126,1.48,5000,5000,'Entregado')
+INSERT orden_detalle VALUES(15,126,1.48,5000,3000,'Entregado')
 INSERT orden_detalle VALUES(15,130,1.20,5000,5000,'Entregado')
 INSERT orden_detalle VALUES(15,132,1.40,5000,5000,'Entregado')
 INSERT orden_detalle VALUES(15,127,1.80,5000,5000,'Entregado')
@@ -2003,7 +2015,7 @@ INSERT orden VALUES(16, getdate() - 5, getdate() - 4)
 INSERT orden_detalle VALUES(16,74,1.10,2000,2000,'Entregado')
 INSERT orden_detalle VALUES(16,75,2.70,2000,2000,'Entregado')
 INSERT orden_detalle VALUES(16,79,1.65,2000,2000,'Entregado')
-INSERT orden_detalle VALUES(16,81,5.05,1000,1000,'Entregado')
+INSERT orden_detalle VALUES(16,81,5.05,1000,500,'Entregado')
 INSERT orden_detalle VALUES(16,78,2.15,2000,2000,'Entregado')
 -- FIN PROVEEDOR 7
 
@@ -2024,7 +2036,7 @@ INSERT orden_detalle VALUES(17,10,0.70,1000,1000,'Entregado')
 -- PROVEEDOR 14
 INSERT orden VALUES(18, getdate() - 5, getdate() - 4)
 INSERT orden_detalle VALUES(18,4,1.30,1000,1000,'Entregado')
-INSERT orden_detalle VALUES(18,3,1.50,500,500,'Entregado')
+INSERT orden_detalle VALUES(18,3,1.50,500,0,'Agotado')
 INSERT orden_detalle VALUES(18,13,0.80,500,500,'Entregado')
 INSERT orden_detalle VALUES(18,24,8.50,250,250,'Entregado')
 INSERT orden_detalle VALUES(18,21,2.50,200,200,'Entregado')
