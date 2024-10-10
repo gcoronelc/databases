@@ -87,7 +87,7 @@ CREATE TABLE dbo.CURSO
 	CONSTRAINT DF_CURSO_MATRICULADOS
 		 DEFAULT  0,
 	cur_profesor         varchar(100)  NULL ,
-	cur_precio           money  NOT NULL ,
+	cur_precio           numeric(10,2)  NOT NULL ,
 	CONSTRAINT pk_curso PRIMARY KEY (cur_id ASC),
 	CONSTRAINT u_curso_nombre UNIQUE (cur_nombre  ASC),
 	CONSTRAINT  chk_curso_vacantes
@@ -140,7 +140,7 @@ CREATE TABLE dbo.MATRICULA
 	CONSTRAINT chk_matricula_tipo
 		CHECK  ( mat_tipo IN ('REGULAR','BECA','MEDIABECA') ),
 	mat_fecha            datetime  NOT NULL ,
-	mat_precio           money  NOT NULL ,
+	mat_precio           numeric(10,2)  NOT NULL ,
 	mat_cuotas           int  NOT NULL ,
 	mat_nota             int  NULL ,
 	CONSTRAINT PK_MATRICULA PRIMARY KEY (cur_id ASC,alu_id ASC),
@@ -169,7 +169,7 @@ CREATE TABLE dbo.PAGO
 	pag_cuota            int  NOT NULL ,
 	emp_id               integer  NOT NULL ,
 	pag_fecha            datetime  NOT NULL ,
-	pag_importe          money  NOT NULL ,
+	pag_importe          numeric(10,2)  NOT NULL ,
 	CONSTRAINT PK_PAGO PRIMARY KEY (cur_id ASC,alu_id ASC,pag_cuota ASC),
 	CONSTRAINT FK_PAGO_MATRICULA FOREIGN KEY (cur_id,alu_id) REFERENCES dbo.MATRICULA(cur_id,alu_id)
 		ON DELETE NO ACTION
