@@ -4,7 +4,7 @@
  * Base de Datos     :  EDUCA2
  * Descripción       :  Base de Datos de control académico sencillo
  * Script            :  Crea la Base de Datos
- * Creao por         :  Ing. Eric Gustavo Coronel Castillo
+ * Creao por         :  Mag. Eric Gustavo Coronel Castillo
  * Email             :  gcoronelc@gmail.com
  * Blog              :  http://gcoronelc.blogspot.com
  * Cursos virtuales  :  https://gcoronelc.github.io/
