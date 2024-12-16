@@ -207,7 +207,7 @@ GO
 INSERT INTO estado(id_estado,descripcion,descripcion_ampliada) VALUES (1, 'Disponible', 'El vehículo está disponible para alquilar.');
 INSERT INTO estado(id_estado,descripcion,descripcion_ampliada) VALUES (2, 'Alquilado', 'El vehículo está actualmente alquilado a un cliente.');
 INSERT INTO estado(id_estado,descripcion,descripcion_ampliada) VALUES (3, 'Mantenimiento', 'El vehículo está en proceso de mantenimiento o reparación.');
-INSERT INTO estado(id_estado,descripcion,descripcion_ampliada) VALUES (4, 'Reservado', 'El vehículo ha sido reservado por un cliente para una fecha futura.');
+INSERT INTO estado(id_estado,descripcion,descripcion_ampliada) VALUES (4, 'Reservado', 'El vehículo ha sido reservado por un cliente, pero aún no ha sido recogido.');
 GO
 
 

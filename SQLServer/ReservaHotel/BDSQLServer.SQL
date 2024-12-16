@@ -16,25 +16,30 @@ Creado el      :  13-OCT-2024
 -- CREACIÓN DE LA BASE DE DATOS
 -- =============================================
 
-USE master;
+IF( NOT EXISTS ( SELECT name FROM master.sys.databases WHERE name = 'BDHOTELES' ) )
+BEGIN
+	CREATE DATABASE BDHOTELES;
+END;
+go
+
+USE BDHOTELES;
 go
 
 IF( EXISTS ( SELECT name FROM master.sys.databases WHERE name = 'BDHOTELES' ) )
 BEGIN
-	DROP DATABASE BDHOTELES;
+	DROP TABLE IF EXISTS PAGO;
+	DROP TABLE IF EXISTS CONSUMO;
+	DROP TABLE IF EXISTS SERVICIO;
+	DROP TABLE IF EXISTS RESERVA;
+	DROP TABLE IF EXISTS HABITACION;
+	DROP TABLE IF EXISTS TIPO;
+	DROP TABLE IF EXISTS ESTADO_RESERVA;
+	DROP TABLE IF EXISTS ESTADO_HABITACION;
+	DROP TABLE IF EXISTS CLIENTE;
+	DROP TABLE IF EXISTS EMPLEADO;
 END;
 go
 
-CREATE DATABASE BDHOTELES;
-go
-
-
--- =============================================
--- SELECCIONAR LA BASE DE DATOS
--- =============================================
-
-USE BDHOTELES;
-GO
 
 
 -- =============================================
