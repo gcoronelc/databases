@@ -21,22 +21,26 @@ Creado el        :  16-OCT-2024
 USE master;
 go
 
-IF( EXISTS ( SELECT name FROM master.sys.databases WHERE name = 'BDRentaFacil' ) )
+IF( NOT EXISTS ( SELECT name FROM master.sys.databases WHERE name = 'BDRentaFacil' ) )
 BEGIN
-	DROP DATABASE BDRentaFacil;
+	CREATE DATABASE BDRentaFacil;
 END;
 go
 
-CREATE DATABASE BDRentaFacil;
+USE BDRentaFacil;
 go
 
-
--- =============================================
--- SELECCIONAR LA BASE DE DATOS
--- =============================================
-
-USE BDRentaFacil;
+DROP TABLE IF EXISTS PAGO;
+DROP TABLE IF EXISTS METODO;
+DROP TABLE IF EXISTS ALQUILER;
+DROP TABLE IF EXISTS CLIENTE;
+DROP TABLE IF EXISTS VEHICULO;
+DROP TABLE IF EXISTS EMPLEADO;
+DROP TABLE IF EXISTS MARCA;
+DROP TABLE IF EXISTS ESTADO;
+DROP TABLE IF EXISTS TIPO;
 GO
+
 
 
 -- =============================================

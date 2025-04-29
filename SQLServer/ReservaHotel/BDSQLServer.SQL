@@ -1,14 +1,15 @@
 /*
-Empresa        :  EGCC
-Software       :  Sistema de Hoteles
-DBMS           :  SQL SERVER
-Base de datos  :  BDHoteles
-Script         :  Crea la base de datos con sus respectivas tablas
-Responsable    :  Mag. Eric Gustavo Coronel Castillo
-Email          :  gcoronelc@gmail.com
-Sitio Web      :  www.desarrollasoftware.com
-Blog           :  http://gcoronelc.blogspot.com
-Creado el      :  13-OCT-2024
+Empresa          :  EGCC
+Software         :  Sistema de Hoteles
+DBMS             :  SQL SERVER
+Base de datos    :  BDHoteles
+Script           :  Crea la base de datos con sus respectivas tablas
+Responsable      :  Mag. Eric Gustavo Coronel Castillo
+Email            :  gcoronelc@gmail.com
+Sitio Web        :  www.desarrollasoftware.com
+Blog             :  https://gcoronelc.github.io/
+Creado el        :  13-OCT-2024
+Actualización 1  :  29-ABR-2025
 */
 
 
@@ -25,19 +26,17 @@ go
 USE BDHOTELES;
 go
 
-IF( EXISTS ( SELECT name FROM master.sys.databases WHERE name = 'BDHOTELES' ) )
-BEGIN
-	DROP TABLE IF EXISTS PAGO;
-	DROP TABLE IF EXISTS CONSUMO;
-	DROP TABLE IF EXISTS SERVICIO;
-	DROP TABLE IF EXISTS RESERVA;
-	DROP TABLE IF EXISTS HABITACION;
-	DROP TABLE IF EXISTS TIPO;
-	DROP TABLE IF EXISTS ESTADO_RESERVA;
-	DROP TABLE IF EXISTS ESTADO_HABITACION;
-	DROP TABLE IF EXISTS CLIENTE;
-	DROP TABLE IF EXISTS EMPLEADO;
-END;
+
+DROP TABLE IF EXISTS PAGO;
+DROP TABLE IF EXISTS CONSUMO;
+DROP TABLE IF EXISTS SERVICIO;
+DROP TABLE IF EXISTS RESERVA;
+DROP TABLE IF EXISTS HABITACION;
+DROP TABLE IF EXISTS TIPO;
+DROP TABLE IF EXISTS ESTADO_RESERVA;
+DROP TABLE IF EXISTS ESTADO_HABITACION;
+DROP TABLE IF EXISTS CLIENTE;
+DROP TABLE IF EXISTS EMPLEADO;
 go
 
 
@@ -51,6 +50,7 @@ CREATE TABLE ESTADO_RESERVA
 ( 
 	IDESTADORESERVA      integer  NOT NULL ,
 	DESCRIPCION          varchar(20)  NOT NULL ,
+	DETALLE              varchar(500)  NOT NULL ,
 	CONSTRAINT XPKESTADO_RESERVA PRIMARY KEY (IDESTADORESERVA ASC)
 )
 go
@@ -86,6 +86,7 @@ CREATE TABLE ESTADO_HABITACION
 ( 
 	IDESTADOHABITACION   integer  NOT NULL ,
 	DESCRIPCION          varchar(20)  NOT NULL ,
+	DETALLE              varchar(500)  NOT NULL ,
 	CONSTRAINT XPKESTADO_HABITACION PRIMARY KEY (IDESTADOHABITACION ASC)
 )
 go
@@ -261,12 +262,18 @@ GO
 
 -- Datos  para Estados de Habitaciones
 
-INSERT INTO ESTADO_HABITACION VALUES (1, 'Libre');
-INSERT INTO ESTADO_HABITACION VALUES (2, 'Ocupada');
-INSERT INTO ESTADO_HABITACION VALUES (3, 'Mantenimiento');
-INSERT INTO ESTADO_HABITACION VALUES (4, 'Reservada');
-INSERT INTO ESTADO_HABITACION VALUES (5, 'Limpieza');
-INSERT INTO ESTADO_HABITACION VALUES (6, 'Inactiva');
+INSERT INTO ESTADO_HABITACION 
+VALUES (1, 'Libre', 'La habitación está disponible para ser ocupada. Está limpia, en buen estado y lista para recibir nuevos huéspedes.');
+INSERT INTO ESTADO_HABITACION 
+VALUES (2, 'Ocupada', 'La habitación está siendo utilizada actualmente por un huésped. No está disponible para asignarse a otros clientes.');
+INSERT INTO ESTADO_HABITACION 
+VALUES (3, 'Mantenimiento', 'La habitación está fuera de servicio temporalmente porque se están realizando reparaciones, mejoras o resolviendo problemas técnicos.');
+INSERT INTO ESTADO_HABITACION 
+VALUES (4, 'Reservada', 'La habitación está comprometida para un huésped que llegará próximamente. Aunque físicamente esté vacía, no está disponible para otros clientes.');
+INSERT INTO ESTADO_HABITACION 
+VALUES (5, 'Limpieza', 'La habitación está en proceso de limpieza y acondicionamiento por parte del personal de hotel después de que un huésped la desocupó.');
+INSERT INTO ESTADO_HABITACION 
+VALUES (6, 'Inactiva', 'La habitación no está en uso y tampoco está disponible para asignarse a huéspedes.');
 GO
 
 SELECT * FROM ESTADO_HABITACION;
@@ -306,11 +313,16 @@ GO
 
 -- Datos para Estados de Reservas
 
-INSERT INTO ESTADO_RESERVA(IDESTADORESERVA,DESCRIPCION) VALUES (1, 'Pendiente');
-INSERT INTO ESTADO_RESERVA(IDESTADORESERVA,DESCRIPCION) VALUES (2, 'Confirmada');
-INSERT INTO ESTADO_RESERVA(IDESTADORESERVA,DESCRIPCION) VALUES (3, 'Cancelada');
-INSERT INTO ESTADO_RESERVA(IDESTADORESERVA,DESCRIPCION) VALUES (4, 'En Progreso');
-INSERT INTO ESTADO_RESERVA(IDESTADORESERVA,DESCRIPCION) VALUES (5, 'Completada');
+INSERT INTO ESTADO_RESERVA(IDESTADORESERVA,DESCRIPCION,DETALLE) 
+VALUES (1, 'Pendiente', 'La reserva ha sido solicitada pero aún no está confirmada. Puede estar en espera de verificación de disponibilidad, aprobación de pago, o confirmación por parte del hotel o del cliente.');
+INSERT INTO ESTADO_RESERVA(IDESTADORESERVA,DESCRIPCION,DETALLE) 
+VALUES (2, 'Confirmada', 'La reserva ha sido aprobada y garantizada por el hotel. La habitación está apartada para el cliente en las fechas solicitadas.');
+INSERT INTO ESTADO_RESERVA(IDESTADORESERVA,DESCRIPCION,DETALLE) 
+VALUES (3, 'Cancelada', 'La reserva ha sido anulada, ya sea por decisión del cliente o del hotel. La habitación queda liberada para ser asignada a otros huéspedes.');
+INSERT INTO ESTADO_RESERVA(IDESTADORESERVA,DESCRIPCION,DETALLE) 
+VALUES (4, 'En Progreso', 'El huésped ya realizó el check-in y está actualmente hospedado en el hotel. La reserva está activa y el cliente está ocupando la habitación.');
+INSERT INTO ESTADO_RESERVA(IDESTADORESERVA,DESCRIPCION,DETALLE) 
+VALUES (5, 'Completada', 'El ciclo de la reserva ha finalizado. El huésped ya realizó el check-out, ha abandonado el hotel y ha completado todos los pagos correspondientes.');
 GO
 
 SELECT * FROM ESTADO_RESERVA;
