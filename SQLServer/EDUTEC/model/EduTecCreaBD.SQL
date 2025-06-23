@@ -8,7 +8,7 @@
 --                   Email: gcoronelc@gmail.com
 --                   blog: gcoronelc.blogspot.com
 --                   Canal: www.youtube.com/DesarrollaSoftware
---                   Site: www.desarrollasoftware.com
+--                   Site: https://gcoronelc.blogspot.com
 -- Creado por     :  Club de los Jueves
 --                   Guino Henostroza, Sergio Matsukawa, 
 --                   Cesar Bustamante, Gustavo Coronel

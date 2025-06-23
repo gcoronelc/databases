@@ -224,31 +224,31 @@ GO
 
 -- ACTIVAS
 
-INSERT INTO Suscripciones (ClienteID, PlanID, FechaInicio, FechaFin, Activa, RegistradoPor)
+INSERT INTO Suscripciones (ClienteID, PlanID, FechaInicio, FechaFin, Activa, RegistradoPor, FechaRegistro)
 VALUES 
-(1, 1, GETDATE() - 40, GETDATE(), 1, 2),
-(2, 2, GETDATE() - 35, GETDATE(), 1, 2),
-(3, 1, GETDATE() - 30, GETDATE(), 1, 2),
-(4, 1, GETDATE() - 25, GETDATE(), 1, 2),
-(5, 3, GETDATE() - 20, GETDATE(), 1, 2),
-(6, 2, GETDATE() - 15, GETDATE(), 1, 2),
-(7, 1, GETDATE() - 12, GETDATE(), 1, 2),
-(8, 2, GETDATE() - 10, GETDATE(), 1, 2),
-(9, 1, GETDATE() - 8, GETDATE(), 1, 2),
-(10, 3, GETDATE() - 5, GETDATE(), 1, 2);
+(1, 1, GETDATE() - 40, GETDATE(), 1, 2, GETDATE() - 42),
+(2, 2, GETDATE() - 35, GETDATE(), 1, 2, GETDATE() - 37),
+(3, 1, GETDATE() - 30, GETDATE(), 1, 2, GETDATE() - 32),
+(4, 1, GETDATE() - 25, GETDATE(), 1, 2, GETDATE() - 40),
+(5, 3, GETDATE() - 20, GETDATE(), 1, 2, GETDATE() - 22),
+(6, 2, GETDATE() - 15, GETDATE(), 1, 2, GETDATE() - 18),
+(7, 1, GETDATE() - 12, GETDATE(), 1, 2, GETDATE() - 14),
+(8, 2, GETDATE() - 10, GETDATE(), 1, 2, GETDATE() - 13),
+(9, 1, GETDATE() - 8,  GETDATE(), 1, 2, GETDATE() - 10),
+(10, 3, GETDATE() - 5, GETDATE(), 1, 2, GETDATE() - 8);
 GO
 
 -- NO ACTIVAS
-INSERT INTO Suscripciones (ClienteID, PlanID, FechaInicio, FechaFin, Activa, RegistradoPor)
+INSERT INTO Suscripciones (ClienteID, PlanID, FechaInicio, FechaFin, Activa, RegistradoPor, FechaRegistro)
 VALUES 
-(11, 1, GETDATE() - 65, GETDATE(), 0, 2),
-(12, 2, GETDATE() - 60, GETDATE(), 0, 2),
-(13, 1, GETDATE() - 40, GETDATE(), 0, 2),
-(14, 3, GETDATE() - 400, GETDATE(), 0, 2),
-(15, 2, GETDATE() - 70, GETDATE(), 0, 2),
-(1, 1, GETDATE() - 300, GETDATE(), 0, 2),
-(5, 1, GETDATE() - 350, GETDATE(), 0, 2),
-(6, 2, GETDATE() - 460, GETDATE(), 0, 2);
+(11, 1, GETDATE() - 65, GETDATE(), 0, 2, GETDATE() - 68),
+(12, 2, GETDATE() - 60, GETDATE(), 0, 2, GETDATE() - 65),
+(13, 1, GETDATE() - 40, GETDATE(), 0, 2, GETDATE() - 41),
+(14, 3, GETDATE() - 400, GETDATE(), 0, 2,GETDATE() - 400),
+(15, 2, GETDATE() - 70, GETDATE(), 0, 2, GETDATE() - 76),
+(1, 1, GETDATE() - 300, GETDATE(), 0, 2, GETDATE() - 303),
+(5, 1, GETDATE() - 350, GETDATE(), 0, 2, GETDATE() - 355),
+(6, 2, GETDATE() - 460, GETDATE(), 0, 2, GETDATE() - 464);
 GO
 
 -- Actualizar fecha de fin
