@@ -20,31 +20,44 @@ USE HelpDeskDB;
 GO
 
 -- Limpiar datos existentes (si se ejecuta varias veces)
-DELETE FROM SeguimientoTickets;
-DELETE FROM Tickets;
-DELETE FROM TecnicoEspecialidades;
-DELETE FROM CostosDepartamento;
-DELETE FROM Empleados;
-DELETE FROM EspecialidadesTecnicos;
-DELETE FROM SLAs;
-DELETE FROM Prioridades;
-DELETE FROM Servicios;
-DELETE FROM EstadosTicket;
-DELETE FROM Departamentos;
-GO
-
-
 -- Restablecer los identity
-DBCC CHECKIDENT ('SeguimientoTickets', RESEED, 0);
-DBCC CHECKIDENT ('Tickets', RESEED, 0);
-DBCC CHECKIDENT ('Empleados', RESEED, 0);
-DBCC CHECKIDENT ('EspecialidadesTecnicos', RESEED, 0);
-DBCC CHECKIDENT ('CostosDepartamento', RESEED, 0);
-DBCC CHECKIDENT ('SLAs', RESEED, 0);
-DBCC CHECKIDENT ('Prioridades', RESEED, 0);
-DBCC CHECKIDENT ('Servicios', RESEED, 0);
-DBCC CHECKIDENT ('EstadosTicket', RESEED, 0);
-DBCC CHECKIDENT ('Departamentos', RESEED, 0);
+declare @cont int;
+set @cont = (select count(1) from Empleados);
+if(@cont > 0)
+begin
+
+	DELETE FROM TecnicoEspecialidades;
+
+	DELETE FROM SeguimientoTickets;
+	DBCC CHECKIDENT ('SeguimientoTickets', RESEED, 0);
+
+	DELETE FROM Tickets;
+	DBCC CHECKIDENT ('Tickets', RESEED, 0);
+
+	DELETE FROM Empleados;
+	DBCC CHECKIDENT ('Empleados', RESEED, 0);
+
+	DELETE FROM EspecialidadesTecnicos;
+	DBCC CHECKIDENT ('EspecialidadesTecnicos', RESEED, 0);
+
+	DELETE FROM CostosDepartamento;
+	DBCC CHECKIDENT ('CostosDepartamento', RESEED, 0);
+
+	DELETE FROM SLAs;
+	DBCC CHECKIDENT ('SLAs', RESEED, 0);
+
+	DELETE FROM Prioridades;
+	DBCC CHECKIDENT ('Prioridades', RESEED, 0);
+
+	DELETE FROM Servicios;
+	DBCC CHECKIDENT ('Servicios', RESEED, 0);
+
+	DELETE FROM EstadosTicket;
+	DBCC CHECKIDENT ('EstadosTicket', RESEED, 0);
+
+	DELETE FROM Departamentos;
+	DBCC CHECKIDENT ('Departamentos', RESEED, 0);
+end;
 GO
 
 -- =============================================
