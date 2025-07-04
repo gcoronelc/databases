@@ -3,7 +3,7 @@ Empresa          :  EGCC
 Software         :  Sistema de Restaurantes
 DBMS             :  SQL SERVER
 Base de datos    :  RestauranteDB
-Script           :  Carga datos de prueba en las tabla generales
+Script           :  Carga datos de prueba
 Responsable      :  Dr. Eric Gustavo Coronel Castillo
 Email            :  gcoronelc@gmail.com
 Sitio Web        :  https://gcoronelc.blogspot.com/
@@ -105,7 +105,8 @@ INSERT INTO ROLES (nombre_rol) VALUES
 ('Mesero'),
 ('Cajero'),
 ('Cocina'),
-('Gerente');
+('Gerente'),
+('Recepcionista');
 GO
 
 -- Insertar usuarios (asumiendo id_rol: 1=Mesero, 2=Cajero, 3=Cocina, 4=Gerente)
@@ -120,7 +121,9 @@ VALUES
 ('Pedro Díaz',        'pdiaz',     'pass123', 3, 1, 'pdiaz@restaurante.com'),
 ('Sofía Morales',     'smorales',  'pass123', 3, 1, 'smorales@restaurante.com'),
 ('Ricardo Castillo',  'rcastillo', 'pass123', 4, 1, 'rcastillo@restaurante.com'),
-('Verónica Flores',   'vflores',   'pass123', 4, 1, 'vflores@restaurante.com');
+('Verónica Flores',   'vflores',   'pass123', 4, 1, 'vflores@restaurante.com'),
+('Sandra Huamán',   'shuaman', 'pass123', 5, 1, 'shuaman@restaurante.com'),
+('Jorge Aguilar',   'jaguilar','pass123', 5, 1, 'jaguilar@restaurante.com');
 GO
 
 
