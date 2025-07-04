@@ -6,7 +6,7 @@ Base de datos    :  BDHoteles
 Script           :  Crea la base de datos con sus respectivas tablas
 Responsable      :  Mag. Eric Gustavo Coronel Castillo
 Email            :  gcoronelc@gmail.com
-Sitio Web        :  www.desarrollasoftware.com
+Sitio Web        :  https://gcoronelc.blogspot.com/
 Blog             :  https://gcoronelc.github.io/
 Creado el        :  13-OCT-2024
 Actualización 1  :  29-ABR-2025
