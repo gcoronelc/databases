@@ -125,7 +125,7 @@ CREATE TABLE RESERVA (
     hora_reserva    TIME NOT NULL,
     num_personas    INT NOT NULL CHECK (num_personas > 0),
     id_usuario      INT NOT NULL,
-    estado          VARCHAR(20) NOT NULL, -- Activa, Cancelada, Cumplida
+    estado          VARCHAR(20) NOT NULL CHECK (estado in ( 'Activa', 'Cancelada', 'Cumplida' ) ), -- Activa, Cancelada, Cumplida
     CONSTRAINT FK_Reserva_Cliente FOREIGN KEY (id_cliente) REFERENCES CLIENTE(id_cliente),
     CONSTRAINT FK_Reserva_Mesa FOREIGN KEY (id_mesa) REFERENCES MESAS(id_mesa),
     CONSTRAINT FK_Reserva_Usuario FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario)
@@ -142,7 +142,7 @@ CREATE TABLE OCUPACION_MESA (
     num_comensales      INT NOT NULL CHECK (num_comensales > 0),
     id_reserva          INT,
     id_usuario          INT NOT NULL, -- Mesero
-    estado              VARCHAR(20) NOT NULL, -- Ocupada, Cerrada
+    estado              VARCHAR(20) NOT NULL CHECK (estado in ('Ocupada', 'Cerrada') ), -- Ocupada, Cerrada
     CONSTRAINT FK_Ocupacion_Mesa FOREIGN KEY (id_mesa) REFERENCES MESAS(id_mesa),
     CONSTRAINT FK_Ocupacion_Cliente FOREIGN KEY (id_cliente) REFERENCES CLIENTE(id_cliente),
     CONSTRAINT FK_Ocupacion_Reserva FOREIGN KEY (id_reserva) REFERENCES RESERVA(id_reserva),
