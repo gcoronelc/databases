@@ -6,7 +6,7 @@
  * Script         :  Crea la Base de Datos
  * Responsable    :  Ing. Eric Gustavo Coronel Castillo
  * Email          :  gcoronelc@gmail.com
- * Sitio Web      :  www.desarrollasoftware.com
+ * Sitio Web      :  gcoronelc.github.io
  * Blog           :  gcoronelc.blogspot.com
  * Fecha          :  01-ENE-2010
  *

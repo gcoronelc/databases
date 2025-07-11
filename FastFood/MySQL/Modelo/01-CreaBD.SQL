@@ -5,10 +5,9 @@
 -- Base de Datos     :  FastFood
 -- Script            :  Crea la base de datos y sus respectivos objetos
 -- Programado por    :  Ing. Eric G. Coronel Castillo
--- Teléfono          :  (511) 996-664-457
 -- Email             :  gcoronelc@gmail.com
--- Blog              :     http://gcoronelc.blogspot.com
--- Fecha de creación : Abril-2001
+-- Blog              :  http://gcoronelc.blogspot.com
+-- Fecha de creación :  Abril-2001
 
 -- 28/09/2016 gcoronelc Agrega la columna stock a la tabla ARTICULO.
 

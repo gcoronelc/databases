@@ -4,11 +4,10 @@
 -- DBMS           :  MySQL
 -- Base de Datos  :  FastFood
 -- Script         :  Crea la base de datos y sus respectivos objetos
--- Programado por :  Ing. Eric G. Coronel Castillo
--- Teléfono       :  (511) 996-664-457
+-- Programado por :  Dr. Eric G. Coronel Castillo
 -- Email          :  gcoronelc@gmail.com
 -- Blog           :  http://gcoronelc.blogspot.com
--- Creación       : !bril-2001
+-- Creación       :  Abril-2001
 
 
 -- 28/09/2016 gcoronelc Agrega stock en la tabla ARTICULO.

@@ -4,8 +4,7 @@
 -- DBMS           :  SQL Server
 -- Base de Datos  :  FastFood
 -- Script         :  Carga datos de prueba a la base de datos
--- Programado por :  Eric G. Coronel Castillo
--- Teléfono       :  (511) 996-664-457
+-- Programado por :  Dr. Eric G. Coronel Castillo
 -- Email          :  gcoronelc@gmail.com
 -- Blog           :  gcoronelc.blogspot.com
 
