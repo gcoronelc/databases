@@ -217,6 +217,8 @@ GO
    Values('REV00002','REV','El Programador','Desarrolla Software SAC',1,6.00,1200);
    Insert Into dbo.publicacion( idpublicacion,idtipo,titulo,autor,nroedicion,precio,stock ) 
    Values('REV00003','REV','La Revista del Programador','DotNET SAC',1,10.00,590);
+   Insert Into dbo.publicacion( idpublicacion,idtipo,titulo,autor,nroedicion,precio,stock ) 
+   Values('REV00004','REV','El Estadistico','UNI EPIES',1,25.00,600);
    GO
 
 -- Separatas
