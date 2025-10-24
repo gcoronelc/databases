@@ -181,7 +181,7 @@ GO
 -- Tabla: tipo
 
    Insert Into dbo.tipo( idtipo,descripcion,contador ) Values( 'LIB','Libro',10 );
-   Insert Into dbo.tipo( idtipo,descripcion,contador ) Values( 'REV','Revista',3 );
+   Insert Into dbo.tipo( idtipo,descripcion,contador ) Values( 'REV','Revista',4 );
    Insert Into dbo.tipo( idtipo,descripcion,contador ) Values( 'SEP','Separata',8 );
 	GO
 
