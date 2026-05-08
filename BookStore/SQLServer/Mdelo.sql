@@ -360,7 +360,7 @@ GO
 		
    update dbo.venta
    set impuesto = total - subtotal;
-	GO
+   GO
 
 -- control
 
@@ -369,7 +369,7 @@ GO
    Insert Into dbo.control(parametro,valor) Values('EMPLEADO','7');
    Insert Into dbo.control(parametro,valor) Values('EMPRESA','Desarrolla Software');   
    Insert Into dbo.control(parametro,valor) Values('SITE','https://gcoronelc.github.io/'); 
-	GO
+   GO
 
 
 -- =============================================
