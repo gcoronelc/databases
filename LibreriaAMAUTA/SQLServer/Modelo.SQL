@@ -4,13 +4,13 @@
  * Base de Datos     :  AMAUTA
  * Descripción       :  Base de Datos de la Librería Universitaria "Amauta"
  * Script            :  Crea la Base de Datos
- * Creao por         :  Dr. Eric Gustavo Coronel Castillo
+ * Creado por        :  Dr. Eric Gustavo Coronel Castillo
  * Email             :  gcoronelc@gmail.com
  * Blog              :  http://gcoronelc.blogspot.com
  * Cursos virtuales  :  https://gcoronelc.github.io/
  * Canal Youtube     :  https://www.youtube.com/DesarrollaSoftware
- * Fecha creación    :  03-MAY-2026
- * 
+ * Fecha creación    :  10-MAY-2026
+ *
 **/
 
 
@@ -18,12 +18,15 @@
 -- 1. CREACIÓN DE LA BASE DE DATOS
 -- -----------------------------------------------------------------------------
 
+SET NOCOUNT ON;
+GO
+
 USE master;
 GO
 
 IF( NOT EXISTS ( SELECT 1 FROM sys.sysdatabases WHERE name='AMAUTA' ) )
 BEGIN
-	CREATE DATABASE AMAUTA;
+    CREATE DATABASE AMAUTA;
 END;
 GO
 
@@ -31,50 +34,75 @@ USE AMAUTA;
 GO
 
 
--- ======================================================
+-- -----------------------------------------------------------------------------
 -- 2. ELIMINA TABLAS
--- ======================================================
+-- Orden: hijas primero, luego padres, respetando FK.
+-- -----------------------------------------------------------------------------
 
-IF( EXISTS ( SELECT 1 FROM sys.sysobjects 
-	WHERE name='VENTA' and xtype = 'u') )
+IF( EXISTS ( SELECT 1 FROM sys.sysobjects
+    WHERE name='VENTA' AND xtype='u') )
 BEGIN
-	DROP TABLE dbo.VENTA;
+    DROP TABLE dbo.VENTA;
 END;
 GO
 
-IF( EXISTS ( SELECT 1 FROM sys.sysobjects 
-	WHERE name='CLIENTE' and xtype = 'u') )
+IF( EXISTS ( SELECT 1 FROM sys.sysobjects
+    WHERE name='CLIENTE' AND xtype='u') )
 BEGIN
-	DROP TABLE dbo.CLIENTE;
+    DROP TABLE dbo.CLIENTE;
 END;
 GO
 
-IF( EXISTS ( SELECT 1 FROM sys.sysobjects 
-	WHERE name='EMPLEADO' and xtype = 'u') )
+IF( EXISTS ( SELECT 1 FROM sys.sysobjects
+    WHERE name='EMPLEADO' AND xtype='u') )
 BEGIN
-	DROP TABLE dbo.EMPLEADO;
+    DROP TABLE dbo.EMPLEADO;
 END;
 GO
 
-IF( EXISTS ( SELECT 1 FROM sys.sysobjects 
-	WHERE name='LIBRO' and xtype = 'u') )
+IF( EXISTS ( SELECT 1 FROM sys.sysobjects
+    WHERE name='LIBRO' AND xtype='u') )
 BEGIN
-	DROP TABLE dbo.LIBRO;
+    DROP TABLE dbo.LIBRO;
 END;
 GO
 
-IF( EXISTS ( SELECT 1 FROM sys.sysobjects 
-	WHERE name='CATEGORIA' and xtype = 'u') )
+IF( EXISTS ( SELECT 1 FROM sys.sysobjects
+    WHERE name='CATEGORIA' AND xtype='u') )
 BEGIN
-	DROP TABLE dbo.CATEGORIA;
+    DROP TABLE dbo.CATEGORIA;
 END;
 GO
 
+IF( EXISTS ( SELECT 1 FROM sys.sysobjects
+    WHERE name='TIPO_CLIENTE' AND xtype='u') )
+BEGIN
+    DROP TABLE dbo.TIPO_CLIENTE;
+END;
+GO
 
 
 -- -----------------------------------------------------------------------------
 -- 3. CREACIÓN DE TABLAS
 -- -----------------------------------------------------------------------------
+
+-- Tabla: TIPO_CLIENTE
+-- Centraliza los tipos de cliente y su descuento asociado.
+-- descuento: porcentaje aplicado al monto bruto de la venta.
+--   ESTUDIANTE →  15 %
+--   DOCENTE    →  20 %
+--   TRABAJADOR →  10 %
+--   EXTERNO    →   0 %
+CREATE TABLE TIPO_CLIENTE (
+    id_tipo_cliente INT            NOT NULL IDENTITY(1,1),
+    nombre          VARCHAR(20)    NOT NULL,
+    descripcion     VARCHAR(100)       NULL,
+    descuento       DECIMAL(5,2)   NOT NULL CONSTRAINT DF_TIPO_CLIENTE_DESC DEFAULT 0.00,
+    CONSTRAINT PK_TIPO_CLIENTE          PRIMARY KEY (id_tipo_cliente),
+    CONSTRAINT UQ_TIPO_CLIENTE_NOMBRE   UNIQUE      (nombre),
+    CONSTRAINT CK_TIPO_CLIENTE_DESC     CHECK (descuento >= 0 AND descuento <= 100)
+);
+GO
 
 -- Tabla: CATEGORIA
 CREATE TABLE CATEGORIA (
@@ -103,26 +131,27 @@ CREATE TABLE LIBRO (
 GO
 
 -- Tabla: CLIENTE
--- tipo  : ESTUDIANTE | DOCENTE | EXTERNO
 -- estado: ACTIVO | INACTIVO | SUSPENDIDO
+-- El tipo y su descuento se obtienen mediante FK a TIPO_CLIENTE.
 CREATE TABLE CLIENTE (
-    id_cliente  INT             NOT NULL IDENTITY(1,1),
-    nombre      VARCHAR(100)    NOT NULL,
-    apellido    VARCHAR(100)    NOT NULL,
-    correo      VARCHAR(100)    NOT NULL,
-    tipo        VARCHAR(10)     NOT NULL,
-    estado      VARCHAR(11)     NOT NULL CONSTRAINT DF_CLIENTE_ESTADO DEFAULT 'ACTIVO',
+    id_cliente      INT             NOT NULL IDENTITY(1,1),
+    nombre          VARCHAR(100)    NOT NULL,
+    apellido        VARCHAR(100)    NOT NULL,
+    correo          VARCHAR(100)    NOT NULL,
+    id_tipo_cliente INT             NOT NULL,
+    estado          VARCHAR(11)     NOT NULL CONSTRAINT DF_CLIENTE_ESTADO DEFAULT 'ACTIVO',
     CONSTRAINT PK_CLIENTE           PRIMARY KEY (id_cliente),
     CONSTRAINT UQ_CLIENTE_CORREO    UNIQUE      (correo),
-    CONSTRAINT CK_CLIENTE_TIPO      CHECK (tipo   IN ('ESTUDIANTE','DOCENTE','EXTERNO')),
+    CONSTRAINT FK_CLIENTE_TIPO      FOREIGN KEY (id_tipo_cliente)
+        REFERENCES TIPO_CLIENTE(id_tipo_cliente),
     CONSTRAINT CK_CLIENTE_ESTADO    CHECK (estado IN ('ACTIVO','INACTIVO','SUSPENDIDO'))
 );
 GO
 
 -- Tabla: EMPLEADO
--- usuario: nombre de usuario único para autenticación
--- clave  : hash SHA-256 de la contraseña (64 caracteres hexadecimales)
---          generado con: LOWER(CONVERT(VARCHAR(64), HASHBYTES('SHA2_256','texto'), 2))
+-- usuario: nombre de usuario único para autenticación.
+-- clave  : hash SHA-256 de la contraseña (64 caracteres hexadecimales).
+--          Función: LOWER(CONVERT(VARCHAR(64), HASHBYTES('SHA2_256','texto'), 2))
 CREATE TABLE EMPLEADO (
     id_empleado INT             NOT NULL IDENTITY(1,1),
     nombre      VARCHAR(100)    NOT NULL,
@@ -137,9 +166,10 @@ GO
 
 -- Tabla: VENTA
 -- Reglas de negocio:
---   R1: id_cliente debe tener estado = 'ACTIVO'
---   R2: descuento = 15% DOCENTE | 10% ESTUDIANTE | 0% EXTERNO
---   R3: stock de LIBRO debe ser >= cantidad solicitada
+--   AUTH: el empleado debe autenticarse con usuario y clave antes de operar.
+--   R1  : id_cliente debe tener estado = 'ACTIVO'.
+--   R2  : descuento se obtiene de TIPO_CLIENTE.descuento según el tipo del cliente.
+--   R3  : stock de LIBRO debe ser >= cantidad solicitada.
 --   monto_final = precio_unitario * cantidad * (1 - descuento / 100)
 CREATE TABLE VENTA (
     id_venta        INT             NOT NULL IDENTITY(1,1),
@@ -163,76 +193,3 @@ CREATE TABLE VENTA (
 );
 GO
 
-
-
--- -----------------------------------------------------------------------------
--- 4. DATOS DE PRUEBA
--- -----------------------------------------------------------------------------
-
--- CATEGORIA
-INSERT INTO CATEGORIA (nombre, descripcion) VALUES
-('Ingeniería de Sistemas',  'Programación, algoritmos y arquitectura de software'),
-('Ciencias Básicas',        'Matemáticas, física y estadística'),
-('Administración',          'Gestión empresarial y finanzas'),
-('Humanidades',             'Filosofía, comunicación y ética');
-GO
-
--- LIBRO
-INSERT INTO LIBRO (titulo, autor, precio, stock, id_categoria) VALUES
-('Clean Code',                          'Robert C. Martin',    89.90,  35, 1),
-('Java: The Complete Reference',        'Herbert Schildt',    120.00,  30, 1),
-('Patrones de Diseño',                  'Gang of Four',        95.50,  28, 1),
-('Cálculo Diferencial e Integral',      'James Stewart',      110.00,  40, 2),
-('Estadística para Ingeniería',         'Douglas Montgomery',  98.00,  32, 2),
-('Administración Estratégica',          'Fred David',          75.00,  38, 3),
-('Ética Profesional en Ingeniería',     'Martin Curd',         55.00,  55, 4);
-GO
-
--- CLIENTE
-INSERT INTO CLIENTE (nombre, apellido, correo, tipo, estado) VALUES
-('Luis',     'Torres Ríos',     'ltorres@uni.edu.pe',    'ESTUDIANTE', 'ACTIVO'),
-('María',    'Paredes Vega',    'mparedes@uni.edu.pe',   'ESTUDIANTE', 'ACTIVO'),
-('Carlos',   'Mendoza León',    'cmendoza@uni.edu.pe',   'DOCENTE',    'ACTIVO'),
-('Ana',      'Flores Castillo', 'aflores@uni.edu.pe',    'DOCENTE',    'ACTIVO'),
-('Roberto',  'Huamán Quispe',   'rhuaman@gmail.com',     'EXTERNO',    'ACTIVO'),
-('Jorge',    'Salas Puma',      'jsalas@uni.edu.pe',     'ESTUDIANTE', 'INACTIVO'),
-('Patricia', 'Rojas Díaz',      'projasuni@uni.edu.pe',  'ESTUDIANTE', 'SUSPENDIDO');
-GO
-
--- EMPLEADO
--- Credenciales (solo referencia del docente):
---   cvillanueva / carmen123
---   pquispe     / pedro456
---   sramos      / sofia789
--- Función hash: LOWER(CONVERT(VARCHAR(64), HASHBYTES('SHA2_256', 'clave'), 2))
-INSERT INTO EMPLEADO (nombre, apellido, cargo, usuario, clave) VALUES
-('Carmen', 'Villanueva Paz', 'Cajera',
-    'cvillanueva',
-    LOWER(CONVERT(VARCHAR(64), HASHBYTES('SHA2_256', 'carmen123'), 2))),
-('Pedro',  'Quispe Mamani',  'Vendedor',
-    'pquispe',
-    LOWER(CONVERT(VARCHAR(64), HASHBYTES('SHA2_256', 'pedro456'), 2))),
-('Sofia',  'Ramos Torres',   'Supervisora',
-    'sramos',
-    LOWER(CONVERT(VARCHAR(64), HASHBYTES('SHA2_256', 'sofia789'), 2)));
-GO
-
--- VENTA (datos base ya transaccionados)
--- Venta 1: Luis Torres (ESTUDIANTE 10%) compra Clean Code x1
-INSERT INTO VENTA (fecha, cantidad, precio_unitario, descuento, monto_final,
-                   id_libro, id_cliente, id_empleado)
-VALUES (CAST(GETDATE() AS DATE), 1, 89.90, 10.00, ROUND(89.90 * 1 * 0.90, 2), 1, 1, 1);
-UPDATE LIBRO SET stock = stock - 1 WHERE id_libro = 1;
-
--- Venta 2: Carlos Mendoza (DOCENTE 15%) compra Java Complete Reference x2
-INSERT INTO VENTA (fecha, cantidad, precio_unitario, descuento, monto_final,
-                   id_libro, id_cliente, id_empleado)
-VALUES (CAST(GETDATE() AS DATE), 2, 120.00, 15.00, ROUND(120.00 * 2 * 0.85, 2), 2, 3, 2);
-UPDATE LIBRO SET stock = stock - 2 WHERE id_libro = 2;
-
--- Venta 3: Roberto Huamán (EXTERNO 0%) compra Administración Estratégica x1
-INSERT INTO VENTA (fecha, cantidad, precio_unitario, descuento, monto_final,
-                   id_libro, id_cliente, id_empleado)
-VALUES (CAST(GETDATE() AS DATE), 1, 75.00, 0.00, ROUND(75.00 * 1 * 1.00, 2), 6, 5, 3);
-UPDATE LIBRO SET stock = stock - 1 WHERE id_libro = 6;
-GO
